@@ -1,0 +1,7 @@
+\subsubsection{Otočení postavy a vizuální změna směru}
+
+Metoda \texttt{CheckDirectionToFace()} kontroluje, zda se postava má otočit, a provádí vizuální změnu směru. Na rozdíl od fyzikální změny směru, která by vyžadovala změnu vektoru rychlosti, tato metoda pouze mění vizuální prezentaci postavy.
+
+Otočení se provádí překlopením \texttt{localScale.x} na zápornou hodnotu. Pokud je postava otočená doprava a vstup je doleva (záporná hodnota), \texttt{localScale.x} se nastaví na -1. Podobně při otočení doleva a vstupu doprava se \texttt{localScale.x} nastaví na 1.
+
+Tento přístup je výhodný, protože nevyžaduje změnu fyzikálního směru, který je řízen rychlostí na \texttt{Rigidbody2D}. Postava vizuálně směřuje správným směrem, zatímco fyzika může být řešena nezávisle. To je užitečné například při střelbě, kde projektil vždy směřuje k cíli bez ohledu na vizuální orientaci postavy.

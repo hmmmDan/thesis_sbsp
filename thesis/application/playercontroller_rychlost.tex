@@ -1,0 +1,7 @@
+\subsubsection{Výpočet nové rychlosti a použití Lerp}
+
+Při aplikaci pohybu se používá interpolace pomocí \texttt{Lerp} pro zajištění plynulého zrychlení a zpomalování. Tento přístup je výhodnější než přímé nastavení rychlosti, protože vytváří přirozenější herní pocit. Hráč nedosáhne maximální rychlosti okamžitě, ale postupně se k ní přibližuje.
+
+Vzorec \texttt{Mathf.Lerp(rb.linearVelocity.x, targetSpeed, Time.fixedDeltaTime \newline * accelRate)} pracuje následovně: první parametr je aktuální rychlost na ose x, druhý parametr je cílová rychlost (buď maximální rychlost ve směru pohybu nebo 0 při zastavení) a třetí parametr určuje rychlost interpolace. Parametr \texttt{Time.fixedDeltaTime} zajišťuje, že interpolace je nezávislá na snímkové frekvenci, zatímco \texttt{accelRate} určuje, jak rychle se má hráč accelerovat.
+
+Hodnota \texttt{targetSpeed} se vypočítá vynásobením vstupu (1 nebo -1) s maximální rychlostí. To zajišťuje, že hráč běží maximální rychlostí, pokud drží směrové tlačítko, a zastaví se, pokud žádné tlačítko nedrží.

@@ -1,0 +1,7 @@
+\subsubsection{Vstup skoku a registrace callbacků}
+
+Skok se registruje jako input callback v metodě \texttt{OnJumpInput()}, která se připojí k Unity Input System akci skoku. V této metodě se nastavuje \texttt{lastPressedJumpTime} na hodnotu \texttt{jumpBufferTime}, což aktivuje jump buffer systém.
+
+Proměnná \texttt{jumpPressedThisFrame} se nastaví na true, což indikuje, že v aktuálním snímku byl stisknut skok. Tato proměnná se používá pro okamžitou detekci stisknutí v rámci snímku. Na konci \texttt{Update()} se \texttt{jumpPressedThisFrame} vynuluje, aby se zabránilo opakovanému skoku v dalších snímcích.
+
+Při uvolnění tlačítka skoku se volá \texttt{OnJumpRelease()}, která aktivuje \texttt{jumpCut}. Toto rozdělení na stisk a uvolnění umožňuje jemnou kontrolu nad výškou skoku a přispívá k celkové responsivitě ovládání.

@@ -1,0 +1,7 @@
+\subsubsection{Tick-based ničení dlaždic a optimalizace}
+
+Ničení dlaždic probíhá v \texttt{FixedUpdate()} v taktovacích tikách, nikoli v každém snímku. Proměnná \texttt{timer} odpočítává čas mezi ticky, který je definován parametrem \newline \texttt{destroyCooldown}. Pokud timer klesne k nule, začne se iterovat přes všechny kolize a dlaždice, které koule prochází, se mažou.
+
+Důvod pro tick-based přístup je optimalizace. Kontrola dlaždic a jejich mazání je výpočetně náročná operace, zejména při vysoké rychlosti koule. Provedením této operace pouze jednou za několik snímků se výrazně sníží procesorová zátěž, aniž by to mělo viditelný dopad na herní zážitek.
+
+Po dokončení ticku se timer resetuje na hodnotu \texttt{destroyCooldown} a cyklus pokračuje. Toto zajišťuje konzistentní chování bez ohledu na rychlost koule nebo snímkovou frekvenci.

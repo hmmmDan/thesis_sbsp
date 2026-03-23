@@ -1,0 +1,23 @@
+\subsubsection{Provádění skoku a nastavení fyzikálních parametrů}
+
+Metoda \texttt{Jump()} se volá, když jsou splněny všechny podmínky pro skok (dostatečný coyote time a jump buffer). Nejprve se nastaví \texttt{isJumping} na true, což indikuje, že hráč je aktuálně ve vzduchu a nelze skočit znovu. Současně se nastaví \texttt{jumpCut} na false, což resetuje stav přerušení skoku.
+
+Následně se vynuluje vertikální rychlost na \texttt{Rigidbody2D} a poté se nastaví na hodnotu \texttt{jumpForce} z \texttt{PlayerControllerData}. Toto zajistí konzistentní počáteční rychlost skoku bez ohledu na předchozí pohyb. Důležité je také vynulování časových proměnných \texttt{lastOnGroundTime} a \texttt{lastPressedJumpTime}, aby se skok neopakoval v dalších snímcích.
+
+Hodnota \texttt{jumpForce} se typicky pohybuje v rozmezí 10-20 v závislosti na nastavení gravitace a požadované výšce skoku. Správné nastavení této hodnoty je klíčové pro celkový herní pocit.
+
+\begin{lstlisting}[style=csharp]
+private void Jump()
+{
+    if (rb == null || data == null) return;
+
+    isJumping = true;
+    jumpCut = false;
+    lastPressedJumpTime = 0;
+    lastOnGroundTime = 0;
+
+    rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
+    rb.linearVelocity = new Vector2(rb.linearVelocity.x, data.jumpForce);
+}
+\end{lstlisting}
+\lstcaption{Listing 7: Metoda Jump pro provedení skoku}

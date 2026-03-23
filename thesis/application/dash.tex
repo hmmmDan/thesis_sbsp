@@ -1,0 +1,19 @@
+\subsection{Dash}
+
+\subsubsection{Základní princip}
+Mechanika rychlého výpadu je implementována ve třídě \texttt{PlayerDash}, která dědí ze třídy \texttt{PlayerAbility}. Ta poskytuje základní systém pro odemykání a zamykání jednotlivých schopností. Všechny ability skripty dědí z této abstraktní třídy, která obsahuje pouze proměnnou \texttt{unlocked} a metody \texttt{Unlock()} a \texttt{Lock()}.
+
+\subsubsection{TryDash}
+Metoda \texttt{TryDash()} je veřejná metoda volaná z \texttt{PlayerController} při inputu dashe. Nejprve kontroluje, zda je schopnost odemčená. Pokud ano, kontroluje cooldown a stav dashe. Následně se určí směr -- z aktuálního vstupu pohybu, nebo podle otočení postavy jako záloha.
+
+\subsubsection{Směr dashe}
+Směr dashe se normalizuje, aby byl vždy jednotkový vektor. Pokud hráč nedává žádný vstup, použije se směr podle otočení postavy (\texttt{pc.isFacingRight ? Vector2.right : Vector2.left}). To zajišťuje, že dash vždy funguje, i když hráč stojí na místě.
+
+\subsubsection{DashMovement}
+Po dobu trvání dashe se v \texttt{FixedUpdate()} přepisuje rychlost Rigidbody na konstantní hodnotu \texttt{dashDir * dashSpeed}. Po uplynutí \texttt{dashTime} se dash ukončí a nastaví se cooldown timer. Po celou dobu trvání dashe se Rigidbody chová jako by měl nulovou hmotnost, protože rychlost je přepisována každý snímek.
+
+\subsubsection{Cooldown systém}
+Po dokončení dashe se nastaví \texttt{dashCooldownTimer} na \texttt{dashCooldown}. V \texttt{Update()} se timer snižuje. Dash lze provést pouze když je timer menší nebo roven nule. To zabraňuje spamování dashe.
+
+\subsubsection{Propojení s PlayerController}
+V \texttt{FixedUpdate()} třídy \texttt{PlayerController} se při aktivním dashi přeskočí volání \texttt{Run()} a \texttt{ApplyCustomGravity()}. Dash se registruje jako input callback v \texttt{OnDashInput()}, kde se volá \texttt{pd.TryDash()}. Metoda \texttt{IsDashing()} vrací stav dashe pro externí skripty.

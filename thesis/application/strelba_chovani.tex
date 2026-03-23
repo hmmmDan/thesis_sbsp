@@ -1,0 +1,34 @@
+\subsubsection{Chování projektilu po vystřelení}
+
+Skript \texttt{BulletStripeShot.cs} se nachází na instanci projektilu a aktivuje se až po \newline vystřelení. V \texttt{OnTriggerEnter2D()} se kontroluje, s jakým objektem projektil kolidoval.
+
+Při vstupu do trigger collideru bowlingové koule (která má tag \texttt{Ball}) se volá metoda \texttt{Stun()} na kouli. To způsobí, že koule se zpomalí a poskytne hráči čas na únik. Na rozdíl od tradičních her, kde střelba eliminuje nepřítele, v naší hře střelba pouze dočasně neutralizuje hrozbu.
+
+Při srážce s prostředím (Collider2D na ground vrstvě) se projektil okamžitě zničí voláním \texttt{Destroy(gameObject)}. Toto je implementováno pomocí layer comparison nebo tag checking, aby se rozlišilo mezi prostředím a jinými objekty.
+
+\begin{lstlisting}[style=csharp]
+public class BulletStripeShot : MonoBehaviour
+{
+    public bool stun = true;
+    public LayerMask groundLayer;
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Ball"))
+        {
+            BallMovement ball = collision.GetComponent<BallMovement>();
+            if (ball != null)
+                ball.Stun(stun);
+
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (((1 << collision.gameObject.layer) & groundLayer) != 0)
+            Destroy(gameObject);
+    }
+}
+\end{lstlisting}
+\lstcaption{Listing 13: Skript BulletStripeShot}

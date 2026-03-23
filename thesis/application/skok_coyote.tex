@@ -1,0 +1,26 @@
+\subsubsection{Coyote time a jeho implementace}
+
+Jak už bylo zmíněno v koncepci, coyote time dovolí hráči skočit i pár snímků poté, co opustil platformu. V \texttt{PlayerController} se to řeší pomocí proměnné \texttt{lastOnGroundTime}, která se při dopadu na zem nastaví na hodnotu \texttt{coyoteTime} z \texttt{PlayerControllerData}. Následně se v každém snímku v metodě \texttt{Update()} tato proměnná snižuje o \texttt{Time.deltaTime}.
+
+V momentě, kdy hráč stiskne skok, se kontroluje, zda je \texttt{lastOnGroundTime} větší než 0. Pokud ano, skok se provede i když hráč technicky už není na zemi. Toto řešení poskytuje hráči malé okno neperfektnosti, kdy se skok stále zaregistruje, i když už by hráč měl správně spadnout.
+
+Hodnota \texttt{coyoteTime} se typicky nastavuje na 0.1 až 0.2 sekundy, což odpovídá přibližně 6-12 snímkům při 60 snímcích za sekundu. Tato doba je dostatečně krátká, aby neovlivnila běžnou hru, ale dostatečně dlouhá, aby zachytila nepatrně opožděný input hráče.
+
+\begin{lstlisting}[style=csharp]
+// In Update() the timer decreases
+private void Update()
+{
+    lastOnGroundTime -= Time.deltaTime;
+    lastPressedJumpTime -= Time.deltaTime;
+    IsGrounded();
+    
+    // Set coyote time when grounded
+    if (grounded) 
+        lastOnGroundTime = data.coyoteTime;
+    
+    // Check jump with coyote time
+    if (lastPressedJumpTime > 0 && lastOnGroundTime > 0 && !pw.IsWallJumping)
+        Jump();
+}
+\end{lstlisting}
+\lstcaption{Listing 6: Implementace coyote time}

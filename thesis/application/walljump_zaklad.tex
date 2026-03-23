@@ -1,0 +1,7 @@
+\subsubsection{Základ skriptu a dědění z PlayerAbility}
+
+Skript \texttt{PlayerWall.cs} dědí z \texttt{PlayerAbility} stejně jako \texttt{PlayerDash}.
+
+Kontrola stěny se provádí pomocí \texttt{Physics2D.OverlapCircle} s bodem \texttt{wallCheck} a poloměrem \texttt{wallCheckRadius} na příslušné vrstvě (layer). Tato metoda detekuje, zda se v okolí bodu \texttt{wallCheck} nachází collider patřící do definované vrstvy. Výsledek určuje, zda je hráč v kontaktu se stěnou.
+
+Podobně jako u \textit{coyote time} se používá \texttt{lastOnWallTime}, který udržuje krátký časový window po opuštění stěny. Toto umožňuje provést wall jump i krátce poté, co hráč technicky opustil stěnu, což zlepšuje herní pocit a snižuje frustrující situace.

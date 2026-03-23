@@ -1,0 +1,7 @@
+\subsubsection{DestroyOnTouch -- přehled a funkčnost}
+
+Skript \texttt{DestroyOnTouch.cs} řeší okamžité zničení objektů s tagem \texttt{Destroyable} při kontaktu s koulí. Na rozdíl od \texttt{TileDestroy}, který neničí dlaždice, ale celé herní objekty. Tento skript umožňuje kouli ničit různé objekty ve scéně jako jsou bedny, rozbitné předměty nebo dekorace.
+
+Implementace využívá \texttt{OnTriggerEnter2D()} pro detekci vstupu do trigger collideru. Když koule vstoupí do triggeru jiného objektu, kontroluje se tag tohoto objektu. Pokud tag odpovídá \texttt{Destroyable}, objekt se zničí.
+
+Přístup s triggery je vhodný pro objekty, které nepotřebují fyzikální kolizi. Trigger collidery detekují přítomnost bez fyzické interakce, což je užitečné pro objekty, které mají být zničeny, ale nemají ovlivňovat pohyb koule.

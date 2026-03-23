@@ -1,0 +1,7 @@
+\subsubsection{Základní princip a dědění z PlayerAbility}
+
+Mechanika rychlého výpadu je implementována ve třídě \texttt{PlayerDash}, která dědí ze třídy \texttt{PlayerAbility}. \texttt{PlayerAbility} je abstraktní třída, která poskytuje základní systém pro odemykání a zamykání jednotlivých schopností. Všechny ability skripty v projektu dědí z této abstraktní třídy.
+
+Třída \texttt{PlayerAbility} obsahuje pouze proměnnou \texttt{unlocked} typu boolean a metody \texttt{Unlock()} a \texttt{Lock()}. Při volání \texttt{Unlock()} se \texttt{unlocked} nastaví na true a schopnost je k dispozici. Při volání \texttt{Lock()} se schopnost deaktivuje a hráč ji nemůže používat.
+
+Tato architektura umožňuje snadné přidávání nových schopností bez nutnosti opakovat kód pro odemykání a zamykání. Každá konkrétní schopnost pouze implementuje svou vlastní logiku, zatímco systém odemykání je společný.

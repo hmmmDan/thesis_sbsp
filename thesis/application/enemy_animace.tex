@@ -1,0 +1,7 @@
+\subsubsection{Animace rotace a dynamická rychlost}
+
+Rychlost rotace animace koule se dynamicky mění podle aktuální rychlosti pohybu. Metoda \texttt{UpdateAnimatorSpeed()} počítá podíl aktuální rychlosti a základní rychlosti. \newline Výsledek se nastaví jako \texttt{animator.speed}, což ovlivňuje rychlost přehrávání animace.
+
+Vzorec je \texttt{animator.speed = currentSpeed / baseSpeed}. Pokud je aktuální rychlost stejná jako základní, animator.speed je 1.0. Pokud je rychlost dvojnásobná, animator.speed je 2.0 a animace se přehrává dvakrát rychleji.
+
+Toto zajišťuje, že vizuální rotace koule odpovídá skutečné rychlosti pohybu. Když koule stojí, rotace se zastaví. Když koule zpomalí (stun), rotace se zpomalí. Když koule zrychlí, rotace se zrychlí. Toto přispívá k celkovému vizuálnímu dojmu a konzistenci hry.

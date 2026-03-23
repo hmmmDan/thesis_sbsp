@@ -1,0 +1,7 @@
+\subsubsection{Wall slide a zpomalený pád podél stěny}
+
+V metodě \texttt{HandleWallSlide()} se kontroluje několik podmínek současně: hráč nesmí být na zemi, musí být na stěně, musí padat dolů (negativní vertikální rychlost), a musí držet pohyb směrem ke stěně. Pokud všechny podmínky platí, vertikální rychlost se ořízne na maximální hodnotu \texttt{wallSlideSpeed}. Tím vzniká efekt zpomaleného klouzání dolů.
+
+Bez této úpravy by hráč podléhal standardní gravitaci a rychleji by padal podél stěny. \texttt{Wall slide} upravuje vertikální rychlost a poskytuje hráči časový prostor pro provedení dalšího skoku. Důležité je, že klouzání se deaktivuje během wall jump, aby nenarušovalo trajektorii odrazu.
+
+Hodnota \texttt{wallSlideSpeed} se typicky nastavuje na nízkou hodnotu, což umožňuje pomalé klouzání bez úplného zastavení. To zajišťuje, že hráč stále padá i na stěně, ale v kontrolovaném tempu.

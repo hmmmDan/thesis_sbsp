@@ -1,0 +1,7 @@
+\subsubsection{Omezený počet nábojů a systém přebíjení}
+
+Hráč má k dispozici pouze 2 náboje, což je záměrný designový prvek. Střelba v naší hře není primárním prostředkem eliminace nepřátel, ale poslední možností záchrany. Proměnná \texttt{maxShots} určuje kapacitu a \texttt{reloadTime} dobu přebíjení.
+
+Po vystřelení posledního náboje se spustí korutina \texttt{Reload()}, která čeká nastavenou dobu a následně obnoví počet nábojů na maximum. Během přebíjení nelze střílet, což vytváří strategický prvek.
+
+Tento systém podporuje myšlenku, že výstřel má být pouze poslední možností záchrany a hráč se musí soustředit na zlepšování svých dovedností v pohybu a skocích. Omezená munice nutí hráče strategicky rozhodovat, kdy použít střelbu.

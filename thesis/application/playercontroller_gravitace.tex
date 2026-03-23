@@ -1,0 +1,39 @@
+\subsubsection{Vlastní gravitace a její dynamické řízení}
+
+Jelikož je \texttt{gravityScale} na \texttt{Rigidbody} nastaven na 0, gravitace se kompletně řeší vlastním kódem v metodě \texttt{ApplyCustomGravity()}. Toto řešení poskytuje plnou kontrolu nad \newline chováním hráče ve vzduchu a umožňuje dynamické úpravy gravitace podle aktuálního stavu.
+
+Metoda rozlišuje čtyři různé stavy, z nichž každý má specifickou gravitační sílu. Prvním stavem je normální pád dolů, při kterém se použije \texttt{fallMultiplier} pro rychlejší pád. To zajistí, že hráč padá rychleji, než stoupá, což je typické pro kvalitní platformovky. Druhým stavem je přerušení skoku (jump cut), kdy hráč pustí tlačítko skoku během vzestupu. V tomto případě se použije ještě vyšší multiplikátor gravitace pro okamžité ukončení vzestupu. Třetím stavem je dosažení vrcholu skoku, kdy vertikální rychlost klesne pod \newline \texttt{jumpHangTimeThreshold}. V tomto momentě se gravitace dočasně sníží, což vytváří efekt krátkého vznášení. Posledním stavem je normální stav bez jakékoli modifikace, kdy se použije základní gravitace.
+
+\begin{lstlisting}[style=csharp]
+private void ApplyCustomGravity()
+{
+    if (rb == null || data == null) return;
+
+    float gravity = data.gravity;
+    Vector2 vel = rb.linearVelocity;
+
+    if (vel.y < 0)
+    {
+        vel.y += Physics2D.gravity.y * gravity * 
+            data.fallMultiplier * Time.fixedDeltaTime;
+    }
+    else if (jumpCut)
+    {
+        vel.y += Physics2D.gravity.y * gravity * 
+            data.jumpCutMultiplier * Time.fixedDeltaTime;
+    }
+    else if (isJumping && Mathf.Abs(vel.y) < data.jumpHangTimeThreshold)
+    {
+        vel.y += Physics2D.gravity.y * gravity * 
+            data.jumpHangGravityMult * Time.fixedDeltaTime;
+    }
+    else
+    {
+        vel.y += Physics2D.gravity.y * gravity * 
+            Time.fixedDeltaTime;
+    }
+
+    rb.linearVelocity = vel;
+}
+\end{lstlisting}
+\lstcaption{Listing 5: Metoda ApplyCustomGravity}

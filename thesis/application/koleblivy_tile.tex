@@ -1,0 +1,7 @@
+\subsubsection{TileDestroy -- přehled a účel}
+
+Skript \texttt{TileDestroy.cs} je přidělen na bowlingovou kouli a umožňuje jí ničit herní dlaždice v tilemap systému. Používá se k tomu Tilemap API, které umožňuje programově mazat dlaždice z úrovně. Tato mechanika přidává do hry dynamický prvek, kde prostředí může být poškozeno průchodem koule.
+
+Tilemap systém v Unity ukládá dlaždice do gridu a umožňuje efektivní správu velkých herních světů. \texttt{TileDestroy} využívá \texttt{GetComponent<Tilemap>()} pro přístup k tilemap a \texttt{SetTile()} pro nastavení dlaždice na null (smazání).
+
+Tato funkcionalita je klíčová pro herní design, protože vytváří časový tlak na hráče. Pokud koule dlouho stojí za hráčem, může zničit platformy a zablokovat cestu. Hráč musí neustále postupovat vpřed, aby si udržel cestu otevřenou.

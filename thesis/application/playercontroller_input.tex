@@ -1,0 +1,30 @@
+\subsubsection{Input systém a zpracování uživatelského vstupu}
+
+Vstupy od uživatele se zpracovávají pomocí Unity Input Systemu, který poskytuje modernější a flexibilnější přístup ke zpracování vstupů oproti staršímu Input Manageru. Pomocí atributu \texttt{[SerializeField] private InputActionReference} se přiřazují jednotlivé akce v editoru. Každá akce repreguje konkrétní typ vstupu, jako je pohyb, skok nebo střelba.
+
+K registraci inputu dochází v metodě \texttt{OnEnable()}, kde se připojují callbacky na jednotlivé akce. Tyto callbacky jsou metody, které se automaticky volají při změně stavu vstupu. Příkladem je \texttt{OnMoveInput()} pro pohyb, \texttt{OnJumpInput()} pro skok a podobně. Při uvolnění skriptu nebo deaktivaci objektu se v \texttt{OnDisable()} tyto callbacky odpojují, což zabraňuje chybám při volání metod na neexistující objekty.
+
+Tento přístup k input systému je výhodný, protože umožňuje snadnou rekonfiguraci vstupů bez nutnosti měnit kód. V editoru lze přiřadit libovolnou klávesu nebo tlačítko k akci a systém automaticky zpracuje změnu.
+
+\begin{lstlisting}[style=csharp]
+[Header("input")]
+public Vector2 moveInput { get; private set; }
+[SerializeField] private InputActionReference moveAction;
+[SerializeField] private InputActionReference jumpAction;
+[SerializeField] private InputActionReference dashAction;
+[SerializeField] private InputActionReference shootAction;
+
+private void OnEnable()
+{
+    moveAction.action.Enable();
+    jumpAction.action.Enable();
+    shootAction.action.Enable();
+    dashAction.action.Enable();
+
+    jumpAction.action.performed += OnJumpInput;
+    jumpAction.action.canceled += OnJumpRelease;
+    dashAction.action.performed += OnDashInput;
+    shootAction.action.performed += OnShootInput;
+}
+\end{lstlisting}
+\lstcaption{Listing 3: Deklarace vstupních akcí}

@@ -1,0 +1,7 @@
+\subsubsection{Výpočet akcelerace a její automatizace}
+
+Pro zajištění konzistentního chování pohybu bez ohledu na maximální rychlost se v metodě \texttt{OnValidate()} automaticky počítá hodnota \texttt{runAccelAmount} z parametrů \newline \texttt{runAcceleration} a \texttt{runMaxSpeed}. Tento výpočet je důležitý pro zajištění toho, aby zrychlení bylo proporcionální k maximální rychlosti.
+
+Vztah mezi akcelerací a maximální rychlostí je následující: při nízké maximální rychlosti a vysoké akceleraci by mohl hráč dosáhnout maximální rychlosti příliš rychle, což by vedlo k neintuitivnímu chování. Automatickým výpočtem se zajistí, že pohyb zůstává konzistentní a předvídatelný pro jakoukoli kombinaci hodnot.
+
+Metoda \texttt{OnValidate()} se volá v editoru při změně hodnot v inspektoru, což znamená, že výpočet probíhá automaticky při každé úpravě parametrů. Nemusíme tak manuálně počítat správnou hodnotu akcelerace a může se soustředit pouze na nastavení požadovaného chování.

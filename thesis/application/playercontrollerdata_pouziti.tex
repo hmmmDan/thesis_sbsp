@@ -1,0 +1,7 @@
+\subsubsection{Použití v PlayerController a propojení systémů}
+
+V třídě \texttt{PlayerController} je instance \texttt{PlayerControllerData} přidělena jako serializované pole pomocí atributu \texttt{[SerializeField]}. Toto pole se v editoru zobrazuje jako pole pro přetahování (drag and drop), kam lze umístit libovolný \texttt{ScriptableObject} asset vytvořený z třídy \texttt{PlayerControllerData}.
+
+Při spuštění hry se v metodě \texttt{Awake()} načtou všechny potřebné reference a inicializují se výchozí hodnoty. Parametry z \texttt{PlayerControllerData} se pak používají v celém systému pro řízení chování hráče. Toto propojení umožňuje snadné ladění hodnot bez nutnosti otevírat kód a měnit konstanty přímo ve skriptech.
+
+Výhodou tohoto přístupu je možnost vytvořit více variant \texttt{PlayerControllerData} assetů s různými parametry. Například lze vytvořit jeden asset pro testovací úroveň s nižší obtížností a jiný pro finální úroveň s vyššími nároky na ovládání. Přepínání mezi těmito variantami je pak otázkou jediného přetahovacího pole v inspektoru.

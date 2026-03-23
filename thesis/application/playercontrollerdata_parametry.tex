@@ -1,0 +1,11 @@
+\subsubsection{Důležité parametry a jejich vliv na herní pocit}
+
+Každý parametr v \texttt{PlayerControllerData} má specifický vliv na chování hráče a celkový herní pocit. Pochopení jejich vzájemného působení je klíčové pro správné nastavení mechanik.
+
+Mezi nejdůležitější parametry běhu patří \texttt{runMaxSpeed}, který definuje maximální rychlost horizontálního pohybu. Parametr \texttt{runAcceleration} určuje, jak rychle hráč dosáhne této maximální rychlosti. Vysoká hodnota zrychlení vede k okamžitému startu, zatímco nízká hodnota vytváří efekt rozjezdu. Důležitým parametrem je také \texttt{accelInAir}, který určuje procentuální poměr pozemního zrychlení použitého ve vzduchu. Nízká hodnota tohoto parametru ztěžuje změnu směru během skoku, což může být žádoucí pro obtížnější sekce.
+
+Pro skok jsou klíčové parametry \texttt{jumpForce} určující sílu počátečního výskoku, \newline \texttt{coyoteTime} definující dobu grace period po opuštění platformy, a \texttt{jumpBufferTime} pro registraci skoku před dopadem. Parametr \texttt{jumpHangTimeThreshold} určuje prahovou rychlost, při které se aktivuje efekt vznášení na vrcholu skoku.
+
+Gravitace je řízena parametrem \texttt{gravity} pro základní gravitační sílu a \texttt{fallMultiplier} pro zrychlení pádu. Vyšší hodnota fall multiplieru vede k rychlejšímu pádu a kratšímu času ve vzduchu, což zlepšuje kontrolu nad přesným načasováním dopadu.
+
+Dash je konfigurován pomocí \texttt{dashSpeed} pro rychlost výpadu, \texttt{dashTime} pro dobu trvání a \texttt{dashCooldown} pro prodlevu mezi dashi.

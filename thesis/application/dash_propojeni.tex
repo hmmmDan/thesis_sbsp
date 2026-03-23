@@ -1,0 +1,7 @@
+\subsubsection{Propojení s PlayerController a registrace inputu}
+
+Ve \texttt{FixedUpdate()} třídy \texttt{PlayerController} se při aktivním dashi přeskočí volání \texttt{Run()} a \texttt{ApplyCustomGravity()}, jak bylo popsáno v předchozí sekci. Toto propojení zajišťuje, že všechny herní systémy spolupracují a nedochází ke konfliktům.
+
+Dash se registruje jako input callback v metodě \texttt{OnDashInput()}, kde se volá \newline \texttt{pd.TryDash()}. \texttt{pd} je reference na instanci \texttt{PlayerDash}, která se získá v \texttt{Awake()}. Metoda \texttt{IsDashing()} vrací aktuální stav dashe pro externí skripty, které potřebují vědět, zda hráč právě dashuje.
+
+Toto propojení umožňuje čistou separaci kódu. \texttt{PlayerController} se stará o základní pohyb a gravitaci, zatímco \texttt{PlayerDash} se stará o specifickou logiku dashe. Spolupráce mezi těmito systémy je řízena přes veřejné metody a vlastnosti.

@@ -1,0 +1,9 @@
+\subsubsection{Propojení s Animatorem a předávání parametrů}
+
+Animace jsou důležitou součástí herního pocitu a přispívají k celkovému dojmu ze hry. V metodě \texttt{Update()} se předávají hodnoty do Animatoru, který následně přepíná mezi jednotlivými stavy animací podle aktuálního stavu hráče.
+
+Prvním předávaným parametrem je rychlost na ose x (\texttt{speed}), která se používá pro animaci běhu. Hodnota se typicky pohybuje od 0 do 1 a Animator ji používá k přechodu mezi stavy idle a run, případně k nastavení rychlosti animace.
+
+Druhým parametrem je \texttt{isGrounded}, což je boolean hodnota indikující, zda se hráč dotýká země. Tento parametr se používá pro přepínání mezi animací stání a animací vzduchu (skok, pád). Třetím parametrem je vertikální rychlost (\texttt{verticalVelocity}), která slouží k detekci pádu. Pokud je vertikální rychlost záporná a hráč není na zemi, spustí se animace pádu.
+
+Správné propojení mezi logikou a animacemi je klíčové pro plynulý herní zážitek a eliminaci vizuálních nesrovnalostí mezi chováním postavy a její animací.

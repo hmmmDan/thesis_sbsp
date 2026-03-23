@@ -1,0 +1,7 @@
+\subsubsection{Zpracování vstupu a filtrování hodnot}
+
+V metodě \texttt{Update()} se čte vstup z akce pohybu a následně filtruje pomocí prahu 0.1. Tento práh slouží k ignorování nechtěného inputu z joysticku, který může generovat velmi malé hodnoty i při neutrální pozici. Bez tohoto filtru by se hráč mohl nechtěně pohybovat i když joystick není aktivně ovládán. Tato logika platí také pro input z klávesnice.
+
+Hodnota vstupu se ukládá jako \texttt{Vector2}, který obsahuje složky x a y. Podle hodnoty na ose x se následně volá metoda \texttt{CheckDirectionToFace()}, která kontroluje otočení postavy. Pokud je vstup kladný a postava se aktuálně dívala doleva, postava se otočí doprava. Podobná logika funguje také v opačném scénáři. Toto zajišťuje, že postava vždy směřuje ve směru pohybu.
+
+Metoda \texttt{Update()} je vhodná pro zpracování vstupu, protože běží jednou za snímek a není vázána na fyzikální timestep. To umožňuje responsivní zpracování inputu bez ohledu na fyzikální nastavení hry.

@@ -1,0 +1,34 @@
+\subsubsection{DashMovement a aplikace rychlosti během dashe}
+
+Po dobu trvání dashe se ve \texttt{FixedUpdate()} přepisuje rychlost \texttt{Rigidbody} na konstantní hodnotu \texttt{dashDir * dashSpeed}. Toto zajišťuje, že hráč se pohybuje konstantní rychlostí bez ohledu na vstup nebo gravitaci. Vzorec je \texttt{rb.linearVelocity = \newline new Vector2(dashDir.x * dashSpeed, dashDir.y * dashSpeed)}.
+
+Po uplynutí \texttt{dashTime} se dash ukončí voláním \texttt{EndDash()}. Zároveň se nastaví cooldown timer na hodnotu \texttt{dashCooldown}. Po celou dobu trvání dashe se \texttt{Rigidbody} chová jako by měl nulovou hmotnost, protože rychlost je přepisována každý snímek. To znamená, že kolize během dashe fungují správně, ale hráč je řízen čistě logikou dashe.
+
+\begin{lstlisting}[style=csharp]
+private void FixedUpdate()
+{
+    if (isDashing)
+    {
+        DashMovement();
+    }
+}
+
+private void DashMovement()
+{
+    if (rb == null || data == null) return;
+
+    dashTimer -= Time.fixedDeltaTime;
+    rb.linearVelocity = dashDir * data.dashSpeed;
+
+    if (dashTimer <= 0)
+    {
+        isDashing = false;
+    }
+}
+
+public bool IsDashing()
+{
+    return isDashing;
+}
+\end{lstlisting}
+\lstcaption{Listing 10: Metoda DashMovement}

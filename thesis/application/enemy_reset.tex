@@ -1,0 +1,7 @@
+\subsubsection{Reset při smrti hráče}
+
+Při smrti hráče se volá metoda \texttt{ResetStunAndSpeed()}. Ta zastaví všechny korutiny, vynuluje počet stunů a nastaví rychlost na předanou výchozí hodnotu. Zároveň restartuje startovací delay přes \texttt{StartMovingAfterDelay()}.
+
+Tento reset zajišťuje, že po smrti hráče se koule vrátí do výchozího stavu. To je důležité pro férovost hry, protože hráč by neměl být penalizován za pokročilý stav koule z předchozího života. Po respawnu má hráč čas na únik a koule začíná opět od začátku.
+
+Zastavení korutin je důležité, aby se předešlo chybám při restartu. Pokud by nějaká korutina běžela během resetu, mohla by způsobit nekonzistentní stav. Vynulování počtu stunů zajišťuje, že žádný stun nepřetrvává mezi životy.

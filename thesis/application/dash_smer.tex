@@ -1,0 +1,7 @@
+\subsubsection{Směr dashe a normalizace vektoru}
+
+Směr dashe se normalizuje, aby byl vždy jednotkový vektor. To zajišťuje, že dash má konzistentní rychlost bez ohledu na úhel vstupu. Pokud by normalizace nebyla provedena, diagonální dash by byl rychlejší než horizontální nebo vertikální.
+
+Normalizace se provádí metodou \texttt{Normalize()} na \texttt{Vector2}. Pokud je vektor příliš krátký (méně než 0.01), považuje se za nulový a nepokračuje se v dashi.
+
+V případě, že hráč nedává žádný vstup pohybu, použije se směr podle otočení postavy. To se zjistí pomocí proměnné \texttt{pc.isFacingRight}, která vrací true pokud se postava dívá doprava. Výsledný směr je pak \texttt{Vector2.right} nebo \texttt{Vector2.left}. Toto zajišťuje, že dash vždy funguje, i když hráč stojí na místě a nedává žádný vstup.

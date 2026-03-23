@@ -1,0 +1,5 @@
+\subsubsection{Přehled a základní struktura}
+
+Hlavní nepřátelský objekt ve hře, bowlingová koule, je řízen skriptem \texttt{BallMovement.cs}. Ten je přidělen na herní objekt koule a stará se o její konstantní pohyb doprava, detekci stunu a dynamický růst rychlosti. Skript vyžaduje \texttt{Rigidbody2D} a \texttt{CircleCollider2D} přes atribut \texttt{[RequireComponent]}, což zajišťuje, že jsou vždy přítomny potřebné komponenty.
+
+Koule představuje konstantní hrozbu, která nutí hráče neustále se pohybovat vpřed. Na rozdíl od tradičních nepřátel, koule nelze zničit, pouze dočasně zpomalit. Po uplynutí stunu se koule opět zrychlí na vyšší rychlost než předtím, což vytváří progresivní obtížnost v průběhu úrovně.

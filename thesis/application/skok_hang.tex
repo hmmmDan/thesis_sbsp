@@ -1,0 +1,7 @@
+\subsubsection{Jump hang a efekt vznášení na vrcholu skoku}
+
+Po dosažení vrcholu skoku, kdy je vertikální rychlost nižší než \texttt{jumpHangTimeThreshold} z \texttt{PlayerControllerData}, se dočasně sníží gravitace. Tím vzniká krátký moment vznášení, který výrazně zlepšuje herní pocit a poskytuje hráči více času na načasování dalších akcí.
+
+Implementace probíhá v metodě \texttt{ApplyCustomGravity()}, kde se kontroluje, zda je aktivní skok a zda je vertikální rychlost nižší než práh. Pokud ano, použije se snížená gravitace. Zároveň se v metodě \texttt{Run()} detekuje tento stav a mírně se zvýší akcelerace a maximální rychlost.
+
+Toto zvýšení mobility během jump hang poskytuje hráči lepší kontrolu nad pohybem ve vzduchu v blízkosti vrcholu skoku. Hráč může lépe reagovat na herní situace a přesněji se dostat na cílovou platformu.

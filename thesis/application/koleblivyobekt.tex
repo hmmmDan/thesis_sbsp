@@ -1,0 +1,22 @@
+\subsection{Další skripty nepřítele}
+
+\subsubsection{TileDestroy -- přehled}
+Skript \texttt{TileDestroy.cs} je přidělen na bowlingovou kouli a umožňuje jí ničit herní dlaždice v tilemap systému. Používá se k tomu \texttt{Tilemap} API, které umožňuje programově mazat dlaždice z úrovně.
+
+\subsubsection{Kolekce kolizí}
+V \texttt{Awake()} se získávají všechny \texttt{Collider2D} komponenty na herním objektu pomocí \texttt{GetComponentsInChildren()}. Tyto kolize pokrývají různé části koule a slouží jako referenční body pro detekci dlaždic.
+
+\subsubsection{Tick-based ničení}
+Ničení dlaždic probíhá v \texttt{FixedUpdate()} v taktovacích tikách. Proměnná \texttt{timer} odpočítává čas mezi ticky. Pokud timer klesne k nule, začne se iterovat přes všechny kolize a dlaždice, které koule prochází, se mažou.
+
+\subsubsection{Limit dlaždic na tick}
+Aby se předešlo propadům výkonu při vysoké rychlosti koule, existuje \texttt{maxTilesPerTick}. V každém tickovi se zničí maximálně tento počet dlaždic. Jakmile je limit dosažen, další dlaždice se mažou až v dalším tickovi. Parametr \texttt{destroyCooldown} určuje, jak často tick probíhá.
+
+\subsubsection{Bounds a WorldToCell}
+Pro každou kolizi se počítají \texttt{Bounds} a převádějí na souřadnice tilemap buněk pomocí \texttt{WorldToCell()}. Iteruje se přes všechny buňky v rozsahu bounds a pokud dlaždice existuje (\texttt{HasTile()}), nastaví se na \texttt{null}.
+
+\subsubsection{DestroyOnTouch -- přehled}
+Skript \texttt{DestroyOnTouch.cs} řeší okamžité zničení objektů s tagem \texttt{Destroyable} při kontaktu s koulí. Na rozdíl od \texttt{TileDestroy} tento skript neničí dlaždice, ale celé herní objekty.
+
+\subsubsection{Ignore tags}
+Pole \texttt{ignoreTags} umožňuje nastavit objekty, které se nemají ničit, i když mají tag \texttt{Destroyable}. Při vstupu do triggeru se nejprve projde seznam ignorovaných tagů. Pokud se tam tag nachází, metoda se ukončí a nic se neděje.

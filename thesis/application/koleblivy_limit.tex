@@ -1,0 +1,7 @@
+\subsubsection{Limit dlaždic na tick a výkonová ochrana}
+
+Aby se předešlo propadům výkonu při vysoké rychlosti koule, existuje parametr \newline \texttt{maxTilesPerTick}. V každém tickovi se zničí maximálně tento počet dlaždic. Jakmile je limit dosažen, další dlaždice se mažou až v dalším tickovi. Parametr \texttt{destroyCooldown} určuje, jak často tick probíhá.
+
+Toto omezení je důležité při vysoké rychlosti koule, kdy může projít stovkami dlaždic za sekundu. Bez limitu by to mohlo způsobit výrazné zpomalení hry. S limitem je zajištěno, že i při vysoké rychlosti zůstává výkon konzistentní.
+
+Hodnota \texttt{maxTilesPerTick} se typicky nastavuje na 50-100 v závislosti na výkonu targetované platformy a typické rychlosti koule. Nižší hodnota = lepší výkon, vyšší hodnota = rychlejší ničení prostředí.

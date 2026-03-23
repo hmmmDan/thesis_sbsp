@@ -1,0 +1,23 @@
+\subsubsection{Jump cut a předčasné ukončení skoku}
+
+Při puštění tlačítka skoku během vzestupu se aktivuje jump cut, který předčasně ukončí skok a umožní hráči rychleji spadnout. Toto je důležitá mechanika, která umožňuje hráči kontrolovat výšku skoku podle délky stisknutí tlačítka.
+
+Implementace využívá metodu \texttt{OnJumpRelease()}, která se registruje jako callback při uvolnění vstupu skoku. V této metodě se kontroluje, zda je hráčova vertikální rychlost kladná (tedy stoupá). Pokud ano, vynásobí se rychlost hodnotou \newline \texttt{jumpCutVelocityMultiplier} z \texttt{PlayerControllerData}. Typicky se používá hodnota 0.5, což znamená, že při puštění tlačítka se rychlost sníží na polovinu.
+
+V metodě \texttt{ApplyCustomGravity()} se pak při aktivním \texttt{jumpCut} aplikuje ještě vyšší gravitace než při normálním pádu. Toto zajistí okamžité ukončení vzestupu a rychlý přechod do pádu, což přispívá k responsivitě ovládání.
+
+\begin{lstlisting}[style=csharp]
+private void OnJumpRelease(InputAction.CallbackContext ctx)
+{
+    if (rb != null && rb.linearVelocity.y > 0)
+    {
+        jumpCut = true;
+
+        rb.linearVelocity = new Vector2(
+            rb.linearVelocity.x,
+            rb.linearVelocity.y * data.jumpCutVelocityMultiplier
+        );
+    }
+}
+\end{lstlisting}
+\lstcaption{Listing 8: Metoda OnJumpRelease pro jump cut}

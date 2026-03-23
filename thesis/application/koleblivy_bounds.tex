@@ -1,0 +1,7 @@
+\subsubsection{Bounds a WorldToCell -- převod souřadnic}
+
+Pro každou kolizi se počítají \texttt{Bounds} a převádějí na souřadnice tilemap buněk pomocí \texttt{WorldToCell()}. \texttt{Bounds} representují ohraničující box collideru, zatímko \texttt{WorldToCell()} převádí world space souřadnice na grid space souřadnice tilemap.
+
+Iteruje se přes všechny buňky v rozsahu bounds pomocí vnořených smyček. Pro každou buňku se zkontroluje, zda dlaždice existuje voláním \texttt{tilemap.HasTile(cell)}. Pokud dlaždice existuje, nastaví se na \texttt{null} voláním \texttt{tilemap.SetTile(cell, null)}.
+
+Tento přístup zajišťuje, že všechny dlaždice v kontaktu s koulí jsou zničeny. Převod mezi world space a cell space je základní operací Tilemap API a umožňuje přesnou kontrolu nad ničením dlaždic.

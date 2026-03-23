@@ -1,0 +1,35 @@
+\subsubsection{Pohyb a konstantní rychlost}
+
+Koule se pohybuje konstantní rychlostí na ose X pomocí \texttt{Rigidbody2D}. V každém snímku se nastavuje \texttt{velocity.x = moveSpeed}, což zajišťuje konstantní pohyb doprava bez ohledu na kolize nebo jiné faktory. Tento přímý přístup k rychlosti je jednodušší a spolehlivější než použití sil.
+
+Rigidbody je nastaven na \texttt{freezeRotation}, takže se koule neotáčí vlivem fyziky. Rotace animace koule se řídí samostatně v závislosti na rychlosti pohybu. Toto oddělení fyzikální rotace od vizuální animace umožňuje přesnější kontrolu nad prezentací.
+
+\begin{lstlisting}[style=csharp]
+void Awake()
+{
+    rb = GetComponent<Rigidbody2D>();
+    rb.freezeRotation = true;
+    _baseMoveSpeed = moveSpeed;
+}
+
+void FixedUpdate()
+{
+    if (!_canMove) return;
+
+    Vector2 velocity = rb.linearVelocity;
+    velocity.x = moveSpeed;
+    rb.linearVelocity = velocity;
+
+    UpdateAnimatorSpeed();
+}
+
+void UpdateAnimatorSpeed()
+{
+    if (animator != null)
+    {
+        float baseSpeed = 5f;
+        animator.speed = Mathf.Max(0.1f, rb.linearVelocity.magnitude / baseSpeed);
+    }
+}
+\end{lstlisting}
+\lstcaption{Listing 15: Pohyb bowlingové koule}

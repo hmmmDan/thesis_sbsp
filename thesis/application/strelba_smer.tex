@@ -1,0 +1,22 @@
+\subsubsection{Směr střelby a automatické zaměření na cíl}
+
+Střelba se automaticky zaměřuje na bowlingovou kouli ve scéně. To bylo zvoleno proto, aby hráč mohl využít obě ruce na klávesnici pro pohyb a další schopnosti. Výpočet směru projektilu využívá normalizovaný vektor mezi pozicí hráče a pozicí koule.
+
+Vzorec pro výpočet směru je \texttt{(ballPosition - playerPosition).normalized()}. Tento vektor udává směr od hráče k cíli a jeho normalizace zajistí, že projektil má konstantní rychlost bez ohledu na vzdálenost.
+
+Projektil se instancuje na pozici \texttt{firePoint}, což je bod na hráči odkud vylétá projektil. Rotace projektilu se nastaví podle směru letu pomocí \texttt{Mathf.Atan2} -- tento úhel se převede na stupně a nastaví se jako rotace kolem osy Z. Toto zajišťuje, že projektil je vizuálně orientován ve směru pohybu.
+
+\begin{lstlisting}[style=csharp]
+void Shoot()
+{
+    Vector2 direction = (enemyTransform.position - firePoint.position).normalized;
+
+    GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+    Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+    rb.linearVelocity = direction * bulletSpeed;
+
+    float rotZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+    bullet.transform.rotation = Quaternion.Euler(0, 0, rotZ);
+}
+\end{lstlisting}
+\lstcaption{Listing 12: Metoda Shoot pro vytvoření projektilu}

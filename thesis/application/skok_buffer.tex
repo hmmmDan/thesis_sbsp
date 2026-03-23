@@ -1,0 +1,7 @@
+\subsubsection{Jump buffer a registrace skoku před dopadem}
+
+Jump buffer funguje obdobně jako coyote time, ale na opačnou stranu časové osy. zatímco coyote time řeší situaci po opuštění platformy, jump buffer řeší situaci před dopadem na zem. Když hra zaznamená input od hráče v momentě, kdy hráč teprve dopadá z výšky na zem, ale ještě na ní není, avšak je pár snímků nad ní, tento input se zaregistruje jako skok.
+
+Implementace využívá proměnnou \texttt{lastPressedJumpTime}, která se nastaví při stisknutí skoku na hodnotu \texttt{jumpBufferTime} z \texttt{PlayerControllerData}. V každém snímku se tato hodnota snižuje o \texttt{Time.deltaTime}.
+
+V \texttt{Update()} se pak kontroluje, zda je \texttt{lastPressedJumpTime > 0} a současně \newline \texttt{lastOnGroundTime > 0}. Pokud obě podmínky platí, provede se skok. Toto řešení eliminuje frustraci z toho, že hráč stiskne skok těsně před dopadem a skok se neprovede, protože hráč ještě není na zemi.

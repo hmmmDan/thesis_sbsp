@@ -1,0 +1,7 @@
+\subsubsection{Propojení s PlayerController a deaktivace vstupu}
+
+Po provedení wall jump se nastaví \texttt{isWallJumping} na true a odpočítává se timer \newline \texttt{wallJumpTimer}. Dokud \texttt{isWallJumping} trvá, metoda \texttt{Run()} v \texttt{PlayerController} ignoruje horizontální vstup, takže hráč nemůže během wall jump reagovat na směrové tlačítko.
+
+Po uplynutí timeru se \texttt{isWallJumping} vynuluje ve \texttt{FixedUpdate()}. Toto zajišťuje, že wall jump má předem definovanou trajektorii a hráč ji nemůže během letu měnit, což by mohlo narušit konzistenci mechaniky.
+
+Propojení mezi \texttt{PlayerWall} a \texttt{PlayerController} je implementováno přes veřejné metody a vlastnosti. \texttt{PlayerWall} poskytuje metody jako \texttt{CanWallSlide()}, \texttt{TryWallJump()} a vlastnost \texttt{IsWallJumping}. \texttt{PlayerController} tyto metody volá v průběhu herního cyklu.

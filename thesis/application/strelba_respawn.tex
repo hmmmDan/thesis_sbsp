@@ -1,0 +1,7 @@
+\subsubsection{Respawn a obnovení stavu střelby}
+
+Při respawnu hráče se volá metoda \texttt{OnRespawn()}. Ta zastaví všechny korutiny (včetně přebíjení) a obnoví plný počet nábojů. Toto zajišťuje, že hráč má po každém respawnu čerstvou zásobu střeliva a přebíjení se nepřenáší mezi respawny.
+
+Zastavení korutin je důležité, protože pokud by přebíjení běželo během respawnu, hráč by mohl přijít o munici, kterou by měl mít k dispozici. Vynulováním stavu se zajistí konzistentní herní podmínky po každém respawnu.
+
+Metoda \texttt{OnRespawn()} je volána z \texttt{PlayerDeath} skriptu, který spravuje logiku smrti a respawnu hráče. Toto propojení zajišťuje, že všechny systémy hráče jsou správně resetovány při každém novém životě.

@@ -1,0 +1,35 @@
+\section{Koncepce řešení}
+
+Nejprve bylo nutné stanovit základní koncept videohry. Bez něj není možné začít programovat mechaniky. Projekt vznikl v rámci game jamu, tedy časově omezené soutěže zaměřené na vývoj hry na zadané téma. S týmem jsme se rozhodli udělat hru o kuželce, která utíká před masivní bowlingovou koulí.
+
+Na základě tohoto konceptu bylo možné navrhnout základní funkčnost hlavních herních prvků, neboli kuželky jako hráčem ovládané postavy a bowlingové koule jako hrozby. U bowlingové koule jsme zvažovali dvě varianty řešení. První možností bylo implementovat naváděcí mechanismus, který by sledoval aktuální polohu hráče a dynamicky upravoval trajektorii pohybu. Druhou možností bylo ponechat kouli v předem definovaném směru pohybu, avšak přizpůsobit její velikost a návrh úrovně tak, aby i bez aktivního navádění představovala dostatečné nebezpečí.
+
+S ohledem na časové omezení soutěže jsme zvolili druhé řešení, což nám umožnilo věnovat více prostoru implementaci klíčových mechanik hráče. Po skončení soutěže jsme toto rozhodnutí zachovali, jelikož masivní nenaváděná koule působí herně i vizuálně \newline výrazněji a přirozeněji než přesně naváděný objekt.
+
+Následovala implementace mechanik hráče, které lze rozdělit do tří hlavních oblastí: základní pohyb, rozšiřující prvky zlepšující ovladatelnost a systém střelby.
+
+\subsection{Základní pohyb}
+
+Prvním krokem bylo vytvoření základního pohybu, na který bylo možné později navázat pokročilejší funkce. Tento základ zahrnuje horizontální pohyb (vlevo a vpravo) a základní logiku skoku, tedy vertikální pohyb. V této fázi bylo nutné implementovat zpracování vstupu (inputu) hráče s následnou reakcí herního objektu ve scéně. Základní část tedy spočívá v jednoduchém pohybu podmíněném inputem uživatele.
+
+\subsection{Rozšiřující funkce}
+
+Druhým krokem bylo rozšíření základních mechanik o prvky zvyšující plynulost a komfort ovládání. Klíčovou oblastí této fáze byl systém skoku. V základní implementaci může hráč vyskočit pouze v okamžiku, kdy se dotýká země, což je řešeno pomocí vrstev (layers) a kolizemi (collisions). V praxi však hráč často dává input ke skoku s mírným zpožděním, například v momentě, kdy již technicky opustil platformu. Bez dodatečných úprav by v takové situaci ke skoku nedošlo, což by vedlo k nepřesnému a frustrujícímu ovládání. Z tohoto důvodu jsem implementoval mechanismy označované jako \textit{Coyote time} a \textit{Jump buffer}.
+
+\input{concept/coyotetime.tex}
+\input{concept/jumpbuffer.tex}
+\input{concept/walljump.tex}
+\input{concept/variablejumpheight.tex}
+\input{concept/dash.tex}
+
+\subsection{Systém střelby}
+
+Systém střelby se dá rozdělit na 3 hlavní části. Jsou jimi míření (aim), vystřelení a chování samotného projektilu.
+
+\input{concept/aim.tex}
+\input{concept/vystrel.tex}
+\input{concept/projektil.tex}
+
+\input{concept/animace.tex}
+
+\input{concept/fyzika.tex}

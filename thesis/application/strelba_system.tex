@@ -1,0 +1,7 @@
+\subsubsection{Systém střelby a architektura skriptů}
+
+Systém střelby se skládá ze dvou částí -- skriptu na hráči \texttt{PlayerStripeShot.cs} a skriptu na projektilu \texttt{BulletStripeShot.cs}. Toto rozdělení je výhodné pro optimalizaci, protože skript projektilu se aktivuje až při výstřelu a není celou dobu aktivní v paměti.
+
+Hráčský skript \texttt{PlayerStripeShot.cs} dědí z \texttt{PlayerAbility}, což umožňuje odemykat střelbu v průběhu hry jako speciální schopnost. Instance projektilu se provádí až při výstřelu, což šetří výkon. Mezi výstřely skript pouze čeká na input a spravuje stav munice.
+
+Projektily jsou vytvořeny jako prefaby v editoru a obsahují komponenty \texttt{Rigidbody2D} pro fyzikální pohyb a \texttt{Collider2D} pro detekci kolizí. Prefab také obsahuje vizuální komponenty jako sprite renderer pro grafické zobrazení projektilu.

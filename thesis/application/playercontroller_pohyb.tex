@@ -1,0 +1,33 @@
+\subsubsection{Horizontální pohyb a akcelerace}
+
+Metoda \texttt{Run()} aplikuje horizontální pohyb pomocí \texttt{Lerp} interpolace, která zajišťuje plynulé zrychlení a zpomalování namísto okamžité změny rychlosti. Vzorec \newline \texttt{Mathf.Lerp(rb.linearVelocity.x, targetSpeed, Time.fixedDeltaTime * \newline accelRate)} postupně přesouvá aktuální rychlost k cílové rychlosti.
+
+Zrychlení se liší podle toho, zda je hráč na zemi nebo ve vzduchu. Parametr \texttt{accelInAir} určuje, kolik procent pozemního zrychlení se použije ve vzduchu. Typicky se používá nižší hodnota (například 50-70 procent), což zajišťuje, že hráč nemůže ve vzduchu měnit směr tak rychle jako na zemi. Toto omezení přidává hloubku do herní mechaniky a odměňuje hráče za správné načasování pohybu.
+
+Během provádění wall jump je volání \texttt{Run()} dočasně deaktivováno, aby hráč nemohl během letu po stěně reagovat na směrové tlačítko. Toto zajišťuje, že wall jump má konzistentní trajektorii bez ohledu na input hráče během letu.
+
+\begin{lstlisting}[style=csharp]
+private void Run()
+{
+    if (pw != null && pw.IsWallJumping)
+        return;
+    if (rb == null || data == null) return;
+
+    float targetSpeed = moveInput.x * data.runMaxSpeed;
+
+    float accelRate = lastOnGroundTime > 0 ?
+        data.runAccelAmount :
+        data.runAccelAmount * data.accelInAir;
+
+    if (isJumping && Mathf.Abs(rb.linearVelocity.y) < data.jumpHangTimeThreshold)
+    {
+        accelRate *= data.jumpHangAccelerationMult;
+        targetSpeed *= data.jumpHangMaxSpeedMult;
+    }
+
+    float newVelX = Mathf.Lerp(rb.linearVelocity.x, targetSpeed, 
+        Time.fixedDeltaTime * accelRate);
+    rb.linearVelocity = new Vector2(newVelX, rb.linearVelocity.y);
+}
+\end{lstlisting}
+\lstcaption{Listing 4: Metoda Run pro horizontální pohyb}

@@ -1,0 +1,38 @@
+\subsubsection{Účel a využití ScriptableObject}
+
+V Unity je možné vytvořit více druhů skriptů. Nejčastěji používaným je \texttt{MonoBehaviour}, který je určen především pro skripty přidělované na herní objekty v scéně. Pro ukládání dat a konfigurační parametry však není \texttt{MonoBehaviour} ideální volbou, protože vyžaduje přítomnost herního objektu a není možné jej snadno sdílet mezi více scénami.
+
+Z tohoto důvodu existuje typ \texttt{ScriptableObject}, který je navržen speciálně pro ukládání dat a konfiguračních hodnot. \texttt{ScriptableObject} je samostatný datový objekt, který není přidělen k žádnému hernímu objektu a může být vytvořen jako samostatný asset v projektu. Hlavní výhodou tohoto přístupu je možnost mít více různých sad parametrů a snadno je mezi nimi přepínat. Každý \texttt{ScriptableObject} asset může obsahovat odlišné hodnoty, což umožňuje například vytvořit různé profily obtížnosti nebo testovací scénáře.
+
+Pro vytvoření \texttt{ScriptableObject} ve editoru se používá atribut \texttt{[CreateAssetMenu]}, který přidá položku do menu pro vytvoření nového assetu. Tím získá developer možnost tweakovat hodnoty bez nutnosti otevírat samotný skript a měnit v něm konstanty. Při změně hodnot v \texttt{ScriptableObject} assetu se tyto změny okamžitě projeví ve hře, což výrazně zrychluje proces ladění herního pocitu.
+
+\begin{lstlisting}[style=csharp]
+[CreateAssetMenu(menuName = "Player Movement Data")]
+public class PlayerControllerData : ScriptableObject
+{
+    [Header("Run")]
+    public float runMaxSpeed = 8f;
+    public float runAcceleration = 20f;
+    [HideInInspector] public float runAccelAmount;
+    
+    [Header("Jump")]
+    public float jumpForce = 15f;
+    public float coyoteTime = 0.1f;
+    public float jumpBufferTime = 0.1f;
+    
+    [Header("Gravity")]
+    public float gravity = 9.8f;
+    public float fallMultiplier = 2.5f;
+    
+    [Header("Dash")]
+    public float dashSpeed = 20f;
+    public float dashTime = 0.15f;
+    public float dashCooldown = 0.3f;
+    
+    [Header("Wall Slide / Jump")]
+    public float wallSlideSpeed = 2f;
+    public float wallJumpDuration = 0.4f;
+    public float wallJumpPowerY = 16f;
+}
+\end{lstlisting}
+\lstcaption{Listing 1: Definice třídy PlayerControllerData}

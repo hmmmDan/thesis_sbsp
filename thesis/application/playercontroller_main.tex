@@ -1,0 +1,18 @@
+\subsubsection{Hlavní skript a jeho role v systému}
+
+Třída \texttt{PlayerController} představuje hlavní skript propojující všechny systémy pohybu hráče. Dědí z \texttt{MonoBehaviour} a přidává se na herní objekt hráče jako komponenta. Tento skript funguje jako centrální uzel, který koordinuje vstupy, fyziku, gravitaci a propojení s dalšími systémy jako dash, střelba a wall jump.
+
+V metodě \texttt{Awake()} probíhá inicializace skriptu. Získávají se reference na komponentu \texttt{Rigidbody2D}, která je esenciální pro fyzikální pohyb, a na ostatní skripty jako \texttt{PlayerDash}, \texttt{PlayerStripeShot} a \texttt{PlayerWall}. Důležitým krokem je nastavení \newline \texttt{gravityScale} na hodnotu 0 na komponentě \texttt{Rigidbody2D}. To je klíčové pro fungování vlastního gravitačního systému, protože Unity vestavěná gravitace je kompletně deaktivována a veškerá gravitace je řešena vlastním kódem v metodě \texttt{ApplyCustomGravity()}.
+
+\begin{lstlisting}[style=csharp]
+private void Awake()
+{
+    rb = GetComponent<Rigidbody2D>();
+    rb.gravityScale = 0;
+    isFacingRight = true;
+    pd = GetComponent<PlayerDash>();
+    pss = GetComponent<PlayerStripeShot>();
+    pw = GetComponent<PlayerWall>();
+}
+\end{lstlisting}
+\lstcaption{Listing 2: Awake metoda}

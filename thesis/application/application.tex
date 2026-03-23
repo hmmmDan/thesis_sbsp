@@ -1,0 +1,113 @@
+\section{Aplikace}
+
+Tato sekce se podrobně zabývá implementací jednotlivých herních mechanik na úrovni kódu. Budou popsány klíčové třídy, jejich metody a algoritmy, které tvoří základ herního systému.
+
+\subsection{PlayerControllerData}
+
+Třída \texttt{PlayerControllerData} představuje klíčový prvek celého systému herních mechanik, neboť definuje veškeré parametry pohybu a chování hráče na jednom centrálním místě. V této sekci bude podrobně rozebrána struktura této třídy, její účel a způsob použití v rámci celého systému.
+\newpage
+\input{application/playercontrollerdata_ucel.tex}
+\input{application/playercontrollerdata_struktura.tex}
+\input{application/playercontrollerdata_parametry.tex}
+\newpage
+\input{application/playercontrollerdata_vypocet.tex}
+\input{application/playercontrollerdata_pouziti.tex}
+
+\subsection{PlayerController}
+
+Hlavním řídicím skriptem celého systému pohybu hráče je třída \texttt{PlayerController}. Tento skript funguje jako centrální uzel, který koordinuje všechny ostatní systémy a zajišťuje jejich vzájemnou spolupráci. V této sekci budou popsány jednotlivé aspekty implementace tohoto skriptu, včetně zpracování vstupu, aplikace pohybu a propojení s dalšími systémy.
+\newpage
+\input{application/playercontroller_main.tex}
+\newpage
+\input{application/playercontroller_input.tex}
+\newpage
+\input{application/playercontroller_zpracovani.tex}
+\newpage
+\input{application/playercontroller_pohyb.tex}
+\newpage
+\input{application/playercontroller_gravitace.tex}
+\input{application/playercontroller_rychlost.tex}
+\input{application/playercontroller_kontrola.tex}
+\input{application/playercontroller_animace.tex}
+\input{application/playercontroller_otoceni.tex}
+\input{application/playercontroller_dash.tex}
+
+\subsection{Skok}
+
+Systém skoku představuje jednu z nejdůležitějších součástí každé 2D plošinovky a jeho správná implementace zásadně ovlivňuje celkový herní pocit. V této sekci budou podrobně rozebrány všechny implementované mechaniky související se skokem, včetně pokročilých technik jako je coyote time, jump buffer a proměnná výška skoku.
+
+\newpage
+\input{application/skok_coyote.tex}
+\input{application/skok_buffer.tex}
+\input{application/skok_provadeni.tex}
+\newpage
+\input{application/skok_cut.tex}
+\input{application/skok_hang.tex}
+\newpage
+\input{application/skok_vstup.tex}
+
+\subsection{Dash}
+
+Mechanika rychlého výpadu neboli dash představuje další důležitý prvek pohybového systému. Dash umožňuje hráči na krátký časový okamžik rapidní zrychlení a přesun do aktuálního směru pohybu. Tato mechanika při správném nastavení výrazně zvyšuje plynulost hry a celkově zpříjemňuje pocit z pohybu.
+
+\input{application/dash_princip.tex}
+\newpage
+\input{application/dash_try.tex}
+\input{application/dash_smer.tex}
+\input{application/dash_movement.tex}
+\newpage
+\input{application/dash_cooldown.tex}
+\input{application/dash_propojeni.tex}
+
+\subsection{Wall jump a wall slide}
+
+Další implementovanou mechanikou je skákání a klouzání po stěnách, tedy wall jump a wall slide. Tyto dvě funkce spolu úzce souvisejí a výrazně rozšiřují možnosti navigace v herním světě. Wall jump umožňuje hráči opětovně vyskočit při kontaktu se stěnou ze strany, čímž se otevírá možnost postupného pohybu mezi dvěma vertikálními plochami a dosažení vyšších částí úrovně.
+
+\input{application/walljump_zaklad.tex}
+\input{application/walljump_detekce.tex}
+\input{application/walljump_slide.tex}
+\newpage
+\input{application/walljump_jump.tex}
+\newpage
+\input{application/walljump_walltowall.tex}
+\input{application/walljump_propojeni.tex}
+
+\subsection{Střelba}
+
+Systém střelby přidává do hry další rozměr interaktivity a strategie. Na rozdíl od tradičních stříleček, kde je střelba primárním prostředkem eliminace nepřátel, v této hře slouží střelba jako záchranný mechanismus. Hráč má k dispozici pouze dva náboje, které se přebíjejí až po vystřelení obou a po krátkém časovém intervalu. Tímto designem podporujeme myšlenku, aby střelba byla pouze poslední možností záchrany a hráč se musel především soustředit na zlepšování svých dovedností v pohybu.
+
+\input{application/strelba_system.tex}
+\input{application/strelba_smer.tex}
+\input{application/strelba_vytvoreni.tex}
+\newpage
+\input{application/strelba_naboje.tex}
+\input{application/strelba_vystrel.tex}
+\input{application/strelba_respawn.tex}
+\newpage
+\input{application/strelba_chovani.tex}
+
+\subsection{Bowlingová koule}
+
+Hlavním nepřátelským objektem ve hře je bowlingová koule, která představuje konstantní hrozbu pro hráče. Koule se neustále pohybuje směrem dopředu a jejím úkolem je donutit hráče neustále se pohybovat vpřed. V této sekci bude podrobně popsána implementace chování bowlingové koule, včetně systému stunu a dynamické změny rychlosti.
+
+\input{application/enemy_prehled.tex}
+\newpage
+\input{application/enemy_pohyb.tex}
+\newpage
+\input{application/enemy_prodleva.tex}
+\newpage
+\input{application/enemy_stun.tex}
+\input{application/enemy_rust.tex}
+\input{application/enemy_reset.tex}
+\input{application/enemy_animace.tex}
+
+\subsection{Další skripty nepřítele}
+
+Kromě základního pohybu bowlingové koule obsahuje nepřítel také další skripty, které rozšiřují jeho interakci s herním světem. Tyto skripty umožňují kouli ničit prostředí a reagovat na různé herní situace.
+\newpage
+\input{application/koleblivy_tile.tex}
+\input{application/koleblivy_tick.tex}
+\input{application/koleblivy_limit.tex}
+\newpage
+\input{application/koleblivy_bounds.tex}
+\input{application/koleblivy_destroy.tex}
