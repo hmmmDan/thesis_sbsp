@@ -4,7 +4,7 @@ Třída \texttt{PlayerController} představuje hlavní skript propojující vše
 
 V metodě \texttt{Awake()} probíhá inicializace skriptu. Získávají se reference na komponentu \texttt{Rigidbody2D}, která je esenciální pro fyzikální pohyb, a na ostatní skripty jako \texttt{PlayerDash}, \texttt{PlayerStripeShot} a \texttt{PlayerWall}. Důležitým krokem je nastavení \newline \texttt{gravityScale} na hodnotu 0 na komponentě \texttt{Rigidbody2D}. To je klíčové pro fungování vlastního gravitačního systému, protože Unity vestavěná gravitace je kompletně deaktivována a veškerá gravitace je řešena vlastním kódem v metodě \texttt{ApplyCustomGravity()}.
 
-\begin{lstlisting}[style=csharp]
+\begin{lstlisting}[language=csharp]
 private void Awake()
 {
     rb = GetComponent<Rigidbody2D>();
@@ -15,4 +15,3 @@ private void Awake()
     pw = GetComponent<PlayerWall>();
 }
 \end{lstlisting}
-\lstcaption{Listing 2: Awake metoda}

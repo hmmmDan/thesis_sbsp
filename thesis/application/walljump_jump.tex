@@ -6,7 +6,7 @@ Implementace využívá \texttt{Rigidbody2D} pro aplikaci síly metodou \texttt{
 
 Tento mechanismus umožňuje hráči systematicky se odrážet mezi dvěma stěnami a dosahovat vyšších částí úrovně, kam by se normálním skokem nedostal. Wall jump je základní technikou v mnoha platformovkách a přidává hloubku do navigace herním světem.
 
-\begin{lstlisting}[style=csharp]
+\begin{lstlisting}[language=csharp]
 void HandleWallJump()
 {
     if (!pc.jumpPressedThisFrame) return;
@@ -38,4 +38,3 @@ void HandleWallJump()
     isWallSliding = false;
 }
 \end{lstlisting}
-\lstcaption{Listing 11: Metoda HandleWallJump}

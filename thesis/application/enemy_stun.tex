@@ -6,7 +6,7 @@ Více stunů současně způsobuje, že rychlost zůstává na minimální hodno
 
 Tento systém umožňuje hráči střílet více projektilů za sebou pro delší zpomalení, ale vzhledem k omezené munici (2 náboje) je toto omezeno. Navíc po každém stunu se základní rychlost zvýší, takže koule je postupně rychlejší.
 
-\begin{lstlisting}[style=csharp]
+\begin{lstlisting}[language=csharp]
 public void Stun(bool stun)
 {
     if (!stun) return;
@@ -42,4 +42,3 @@ private IEnumerator StunCooldown()
     }
 }
 \end{lstlisting}
-\lstcaption{Listing 14: Metoda Stun a StunCooldown}

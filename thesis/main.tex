@@ -9,7 +9,7 @@
 \setstretch{1.15}
 \usepackage{geometry}
 
-\usepackage{fontspec}
+\usepackage[no-math]{fontspec}
 \setmainfont{Times New Roman}
 \setsansfont{Arial}
 
@@ -18,7 +18,11 @@
 \usepackage{listings}
 \usepackage{tocbibind}
 \usepackage{xcolor}
-\usepackage{hyperref}
+\usepackage[
+    bookmarks=false,
+    plainpages=false,
+    pdfpagelabels=false
+]{hyperref}
 \usepackage{url}
 
 \hypersetup{
@@ -26,7 +30,6 @@
     linkcolor=blue,
     filecolor=magenta,
     urlcolor=cyan,
-    pdftitle={\@title},
     pdfpagemode=UseNone,
 }
 
@@ -41,6 +44,21 @@
     language=C,
     captionpos=b,
 }
+\lstdefinelanguage{csharp}%
+  {morekeywords={abstract,as,base,bool,break,byte,case,catch,char,checked,%
+    class,const,continue,decimal,default,delegate,do,double,else,enum,%
+    event,explicit,extern,false,finally,fixed,float,for,foreach,goto,if,%
+    implicit,in,int,interface,internal,is,lock,long,namespace,new,null,%
+    object,operator,out,override,params,private,protected,public,readonly,%
+    ref,return,sbyte,sealed,short,sizeof,stackalloc,static,string,struct,%
+    switch,this,throw,true,try,typeof,uint,ulong,unchecked,unsafe,ushort,%
+    using,virtual,void,volatile,while,var,async,await,dynamic, nameof,%
+    null, conditional, let},
+   sensitive=false,
+   morecomment=[s]{/*}{*/},
+   morecomment=[l]{//},
+   morestring=[b]",
+  }
 \gappto\captionsczech{%
   \def\lstlistingname{Kód}%
   \def\lstlistlistingname{Seznam kódů}%
@@ -92,7 +110,7 @@
     \thispagestyle{empty}
     
     \begin{flushleft}
-        \includegraphics{img/0.png}
+        \includegraphics[width=0.8\textwidth]{img/0.png}
 
         \vspace{1.15in}
 
@@ -131,7 +149,7 @@ Rád bych poděkoval panu Bc. Adamu Tyroňovi za víceletou aktivitu na Discord 
 \chapter*{Prohlášení}
 Prohlašuji, že jsem svou maturitní práci vypracoval/a samostatně. K práci jsem použil/a literaturu a prameny, uvedené v seznamu. Souhlasím s tím, aby moje ročníková práce byla využívána na Střední průmyslové škole Karviná, příspěvkové organizaci.
 
-V Karviné dne: ………………………. 	Podpis: ………………………. 
+V Karviné dne: ……………………….\hspace{1.5cm}Podpis: ………………………. 
 
 \tableofcontents
 

@@ -6,7 +6,7 @@ Následně se kontroluje cooldown a stav dashe. Pokud běží cooldown \newline 
 
 Po úspěšné kontrole podmínek se určí směr dashe. Pokud hráč dává vstup pohybu (\texttt{moveInput} není nulový), použije se tento směr. V opačném případě se použije směr podle otočení postavy jako záloha, aby dash vždy fungoval i když hráč stojí na místě.
 
-\begin{lstlisting}[style=csharp]
+\begin{lstlisting}[language=csharp]
 public void TryDash()
 {
     if (!unlocked) return;
@@ -24,4 +24,3 @@ public void TryDash()
     rb.linearVelocity = dashDir * data.dashSpeed;
 }
 \end{lstlisting}
-\lstcaption{Listing 9: Metoda TryDash}

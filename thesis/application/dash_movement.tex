@@ -4,7 +4,7 @@ Po dobu trvání dashe se ve \texttt{FixedUpdate()} přepisuje rychlost \texttt{
 
 Po uplynutí \texttt{dashTime} se dash ukončí voláním \texttt{EndDash()}. Zároveň se nastaví cooldown timer na hodnotu \texttt{dashCooldown}. Po celou dobu trvání dashe se \texttt{Rigidbody} chová jako by měl nulovou hmotnost, protože rychlost je přepisována každý snímek. To znamená, že kolize během dashe fungují správně, ale hráč je řízen čistě logikou dashe.
 
-\begin{lstlisting}[style=csharp]
+\begin{lstlisting}[language=CSharp,caption={Listing 10: Metoda DashMovement}]
 private void FixedUpdate()
 {
     if (isDashing)
@@ -31,4 +31,3 @@ public bool IsDashing()
     return isDashing;
 }
 \end{lstlisting}
-\lstcaption{Listing 10: Metoda DashMovement}

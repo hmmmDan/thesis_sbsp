@@ -6,7 +6,7 @@ Při vstupu do trigger collideru bowlingové koule (která má tag \texttt{Ball}
 
 Při srážce s prostředím (Collider2D na ground vrstvě) se projektil okamžitě zničí voláním \texttt{Destroy(gameObject)}. Toto je implementováno pomocí layer comparison nebo tag checking, aby se rozlišilo mezi prostředím a jinými objekty.
 
-\begin{lstlisting}[style=csharp]
+\begin{lstlisting}[language=csharp]
 public class BulletStripeShot : MonoBehaviour
 {
     public bool stun = true;
@@ -31,4 +31,3 @@ public class BulletStripeShot : MonoBehaviour
     }
 }
 \end{lstlisting}
-\lstcaption{Listing 13: Skript BulletStripeShot}
