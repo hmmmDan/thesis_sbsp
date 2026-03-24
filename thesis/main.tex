@@ -2,6 +2,8 @@
 \usepackage{polyglossia}
 \setdefaultlanguage{czech}
 
+\sloppy
+
 
 \usepackage{graphicx}
 %\usepackage{hyperref}
@@ -17,23 +19,24 @@
 \usepackage{titlesec}
 
 \usepackage{listings}
-\usepackage{tocbibind}
+\usepackage[nottoc]{tocbibind}
 \usepackage{xcolor}
-%\usepackage[
-%    bookmarks=false,
-%    plainpages=false,
-%    pdfpagelabels=false,
-%    unicode
-%]{hyperref}
+\usepackage[
+    bookmarks=false,
+    plainpages=false,
+    pdfpagelabels=false
+]{hyperref}
 \usepackage{url}
 
-%\hypersetup{
-%    colorlinks=true,
-%    linkcolor=blue,
-%    filecolor=magenta,
-%    urlcolor=cyan,
-%    pdfpagemode=UseNone,
-%}
+\def\refname{Seznam použitých zdrojů}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=black,
+    urlcolor=black,
+    pdfpagemode=UseNone,
+}
 
 \lstset{
     basicstyle=\ttfamily\small,
@@ -162,13 +165,23 @@ V Karviné dne: ……………………….\hspace{1.5cm}Podpis: …………�
 \include{Popis aplikace}
 \include{Závěr}
 
-\listoffigures
-
+\chapter{Seznam použitých kódů}
+\makeatletter
+\def\lstlistoflistings{%
+    \@starttoc{lol}%
+}
+\makeatother
 \lstlistoflistings
 
 \chapter{Zdroje}
-\nocite{*}
-\bibliographystyle{plain}
-\bibliography{Zdroje}
+\begin{enumerate}
+\item[ {[1]}] Game Engines Definition. Online. In: G2. Dostupné z: https://www.g2.com/glossary/game-engines-definition. [cit. 2025-01-01].
+\item[ {[2]}] Tour of C\#. Online. In: Microsoft Learn. Dostupné z: https://learn.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/. [cit. 2025-01-01].
+\item[ {[3]}] Git. Online. In: Git. Dostupné z: https://git-scm.com/. [cit. 2025-01-01].
+\item[ {[4]}] PRZYLSKI, Andrew, Richard RIGBY a Richard RYAN. A Motivational Science Approach to the Analysis of Games. Online. Dostupné z: https://selfdeterminationtheory.org/SDT/documents/2010\_PrzybylskiRigbyRyan\_ROGP.pdf. [cit. 2025-01-01].
+\item[ {[5]}] Flow Theory in Game Design. Online. In: Void1Gaming. Dostupné z: https://www.void1gaming.com/post/flow-theory-in-game-design. [cit. 2025-01-01].
+\item[ {[6]}] Unity Documentation. Online. In: Unity. Dostupné z: https://docs.unity3d.com/. [cit. 2025-01-01].
+\item[ {[7]}] MARTIN, Robert C. Clean Code: A Handbook of Agile Software Craftsmanship. Prentice Hall, 2008.
+\end{enumerate}
 
 \end{document}

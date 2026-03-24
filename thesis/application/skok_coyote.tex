@@ -1,4 +1,4 @@
-\subsubsection{Coyote time a jeho implementace}
+\subsection{Coyote time a jeho implementace}
 
 Jak už bylo zmíněno v koncepci, coyote time dovolí hráči skočit i pár snímků poté, co opustil platformu. V \texttt{PlayerController} se to řeší pomocí proměnné \texttt{lastOnGroundTime}, která se při dopadu na zem nastaví na hodnotu \texttt{coyoteTime} z \texttt{PlayerControllerData}. Následně se v každém snímku v metodě \texttt{Update()} tato proměnná snižuje o \texttt{Time.deltaTime}.
 

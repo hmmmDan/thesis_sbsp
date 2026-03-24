@@ -1,22 +1,22 @@
 \subsection{Střelba}
 
-\subsubsection{Systém střelby}
+\subsection{Systém střelby}
 Systém střelby se skládá ze dvou částí -- skriptu na hráči \texttt{PlayerStripeShot.cs} a skriptu na projektilu \texttt{BulletStripeShot.cs}. Hráčský skript dědí z \texttt{PlayerAbility}, což umožňuje odemykat střelbu v průběhu hry. Instancování projektilu se provádí až při výstřelu, což šetří výkon.
 
-\subsubsection{Směr střelby}
+\subsection{Směr střelby}
 Střelba se automaticky zaměřuje na bowlingovou kouli ve scéně. Výpočet směru projektilu využívá normalizovaný vektor mezi pozicí hráče a koulí. Projektil se instancuje na pozici \texttt{firePoint}. Rotace projektilu se nastaví podle směru letu pomocí \texttt{Atan2} -- tento úhel se převede na stupně a nastaví se jako rotace kolem osy Z.
 
-\subsubsection{Vytvoření projektilu}
+\subsection{Vytvoření projektilu}
 Při výstřelu se volá \texttt{Instantiate()} s prefabem projektilu. Následně se získá Rigidbody2D a nastaví se rychlost podle vypočítaného směru. Projektil se nikdy nemaže manuálně po čase, vždy se zničí při kolizi s prostředím nebo koulí.
 
-\subsubsection{Omezený počet nábojů}
+\subsection{Omezený počet nábojů}
 Hráč má k dispozici pouze 2 náboje. Proměnná \texttt{maxShots} určuje kapacitu a \texttt{reloadTime} dobu přebíjení. Po vystřelení posledního náboje se spustí korutina \texttt{Reload()}, která čeká nastavenou dobu a následně obnoví počet nábojů na maximum. 
 
-\subsubsection{Výstřel}
+\subsection{Výstřel}
 Metoda \texttt{TryShoot()} se volá z \texttt{PlayerController} při inputu střelby. Kontroluje, zda je střelba odemčená, zda neprobíhá přebíjení a zda jsou k dispozici náboje. Pokud všechny podmínky platí, provede se výstřel a sníží se počet nábojů.
 
-\subsubsection{Respawn}
+\subsection{Respawn}
 Při respawnu hráče se volá metoda \texttt{OnRespawn()}. Ta zastaví všechny korutiny a obnoví plný počet nábojů. To zajišťuje, že hráč má po každém respawnu čerstvou zásobu střeliva a přebíjení se nepřenáší mezi respawny.
 
-\subsubsection{Chování projektilu}
+\subsection{Chování projektilu}
 Skript \texttt{BulletStripeShot.cs} se nachází na instanci projektilu a aktivuje se až po vystřelení. Při vstupu do trigger collideru se kontroluje tag \texttt{Ball} a volá \texttt{Stun()}. Při srážce s prostředím ( Collier2D na ground vrstvě) se projektil okamžitě zničí.

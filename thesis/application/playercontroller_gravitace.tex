@@ -1,4 +1,4 @@
-\subsubsection{Vlastní gravitace a její dynamické řízení}
+\subsection{Vlastní gravitace a její dynamické řízení}
 
 Jelikož je \texttt{gravityScale} na \texttt{Rigidbody} nastaven na 0, gravitace se kompletně řeší vlastním kódem v metodě \texttt{ApplyCustomGravity()}. Toto řešení poskytuje plnou kontrolu nad \newline chováním hráče ve vzduchu a umožňuje dynamické úpravy gravitace podle aktuálního stavu.
 
@@ -9,29 +9,17 @@ private void ApplyCustomGravity()
 {
     if (rb == null || data == null) return;
 
-    float gravity = data.gravity;
     Vector2 vel = rb.linearVelocity;
+    float g = Physics2D.gravity.y * data.gravity * Time.fixedDeltaTime;
 
     if (vel.y < 0)
-    {
-        vel.y += Physics2D.gravity.y * gravity * 
-            data.fallMultiplier * Time.fixedDeltaTime;
-    }
+        vel.y += g * data.fallMultiplier;
     else if (jumpCut)
-    {
-        vel.y += Physics2D.gravity.y * gravity * 
-            data.jumpCutMultiplier * Time.fixedDeltaTime;
-    }
+        vel.y += g * data.jumpCutMultiplier;
     else if (isJumping && Mathf.Abs(vel.y) < data.jumpHangTimeThreshold)
-    {
-        vel.y += Physics2D.gravity.y * gravity * 
-            data.jumpHangGravityMult * Time.fixedDeltaTime;
-    }
+        vel.y += g * data.jumpHangGravityMult;
     else
-    {
-        vel.y += Physics2D.gravity.y * gravity * 
-            Time.fixedDeltaTime;
-    }
+        vel.y += g;
 
     rb.linearVelocity = vel;
 }

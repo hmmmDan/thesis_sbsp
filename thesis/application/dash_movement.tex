@@ -1,4 +1,4 @@
-\subsubsection{DashMovement a aplikace rychlosti během dashe}
+\subsection{DashMovement a aplikace rychlosti během dashe}
 
 Po dobu trvání dashe se ve \texttt{FixedUpdate()} přepisuje rychlost \texttt{Rigidbody} na konstantní hodnotu \texttt{dashDir * dashSpeed}. Toto zajišťuje, že hráč se pohybuje konstantní rychlostí bez ohledu na vstup nebo gravitaci. Vzorec je \texttt{rb.linearVelocity = \newline new Vector2(dashDir.x * dashSpeed, dashDir.y * dashSpeed)}.
 

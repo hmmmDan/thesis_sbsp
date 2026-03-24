@@ -1,19 +1,19 @@
 \subsection{Skok}
 
-\subsubsection{Coyote time}
+\subsection{Coyote time}
 Jak už bylo zmíněno v koncepci, coyote time dovolí hráči skočit i pár snímků poté, co opustil platformu. V \texttt{PlayerController} se to řeší tak, že proměnná \texttt{lastOnGroundTime} se při dopadu na zem nastaví na \texttt{coyoteTime} a následně se každý snímek snižuje o \texttt{Time.deltaTime}. V momentě, kdy hráč stiskne skok, se kontroluje, zda je \texttt{lastOnGroundTime} větší než 0. Pokud ano, skok se provede i když hráč technicky už není na zemi.
 
-\subsubsection{Jump buffer}
+\subsection{Jump buffer}
 Jump buffer funguje obdobně, akorát na druhou stranu. Proměnná \texttt{lastPressedJumpTime} se nastaví při stisknutí skoku na \texttt{jumpBufferTime} a každý snímek se snižuje. V \texttt{Update()} se pak kontroluje, zda je \texttt{lastPressedJumpTime > 0} a současně \texttt{lastOnGroundTime > 0}. Pokud obě podmínky platí, provede se skok. Tím se vyřeší situace, kdy hráč stiskne skok těsně před dopadem.
 
-\subsubsection{Provádění skoku}
+\subsection{Provádění skoku}
 Metoda \texttt{Jump()} se volá, když jsou splněny podmínky pro skok. Nejprve se nastaví \texttt{isJumping} na true a \texttt{jumpCut} na false. Vertikální rychlost se vynuluje a následně se nastaví na \texttt{jumpForce}. Zároveň se vynulují časové proměnné, aby se skok neopakoval.
 
-\subsubsection{Jump cut}
+\subsection{Jump cut}
 Při puštění tlačítka skoku se aktivuje \texttt{jumpCut}. Metoda \texttt{OnJumpRelease()} zkontroluje, zda je hráčova vertikální rychlost kladná, a pokud ano, vynásobí ji \texttt{jumpCutVelocityMultiplier}. Tím se skok předčasně ukončí a hráč rychleji spadne. V \texttt{ApplyCustomGravity()} se pak při aktivním \texttt{jumpCut} aplikuje ještě vyšší gravitace.
 
-\subsubsection{Jump hang}
+\subsection{Jump hang}
 Po dosažení vrcholu skoku, kdy je vertikální rychlost nižší než \texttt{jumpHangTimeThreshold}, se dočasně sníží gravitace. Tím vzniká krátký moment vznášení, který výrazně zlepšuje herní pocit. Zároveň se mírně zvýší akcelerace a maximální rychlost, což hráči dává lepší kontrolu nad pohybem ve vzduchu. Toto je implementováno přímo v metodě \texttt{Run()}, kde se detekuje \texttt{isJumping} a nízká vertikální rychlost.
 
-\subsubsection{Vstup skoku}
+\subsection{Vstup skoku}
 Skok se registruje jako input callback. V \texttt{OnJumpInput()} se nastaví \texttt{lastPressedJumpTime} a \texttt{jumpPressedThisFrame}. V \texttt{OnJumpRelease()} se aktivuje \texttt{jumpCut}. Proměnná \texttt{jumpPressedThisFrame} se vynuluje na konci \texttt{Update()}, aby se zabránilo opakovanému skoku v dalších snímcích.

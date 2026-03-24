@@ -1,4 +1,4 @@
-\subsubsection{Účel a využití ScriptableObject}
+\subsection{Účel a využití ScriptableObject}
 
 V Unity je možné vytvořit více druhů skriptů. Nejčastěji používaným je \texttt{MonoBehaviour}, který je určen především pro skripty přidělované na herní objekty v scéně. Pro ukládání dat a konfigurační parametry však není \texttt{MonoBehaviour} ideální volbou, protože vyžaduje přítomnost herního objektu a není možné jej snadno sdílet mezi více scénami.
 
@@ -13,25 +13,19 @@ public class PlayerControllerData : ScriptableObject
     [Header("Run")]
     public float runMaxSpeed = 8f;
     public float runAcceleration = 20f;
-    [HideInInspector] public float runAccelAmount;
     
     [Header("Jump")]
     public float jumpForce = 15f;
     public float coyoteTime = 0.1f;
-    public float jumpBufferTime = 0.1f;
     
     [Header("Gravity")]
-    public float gravity = 9.8f;
     public float fallMultiplier = 2.5f;
     
     [Header("Dash")]
     public float dashSpeed = 20f;
     public float dashTime = 0.15f;
-    public float dashCooldown = 0.3f;
     
-    [Header("Wall Slide / Jump")]
-    public float wallSlideSpeed = 2f;
-    public float wallJumpDuration = 0.4f;
+    [Header("Wall")]
     public float wallJumpPowerY = 16f;
 }
 \end{lstlisting}

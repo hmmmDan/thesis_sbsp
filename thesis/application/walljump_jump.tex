@@ -1,4 +1,4 @@
-\subsubsection{Wall jump a odraz od stěny}
+\subsection{Wall jump a odraz od stěny}
 
 Wall jump se provádí pouze když hráč stiskne skok, nachází se na stěně a není na zemi. Skript detekuje směr stěny pomocí \texttt{DetectWallDirection()} a aplikuje sílu opačným směrem. Vertikální složka skoku je pevně nastavena na \texttt{wallJumpPowerY}, zatímco horizontální složka závisí na typu skoku.
 
@@ -9,32 +9,20 @@ Tento mechanismus umožňuje hráči systematicky se odrážet mezi dvěma stěn
 \begin{lstlisting}[language=csharp,caption={Listing 11: Metoda HandleWallJump}]
 void HandleWallJump()
 {
-    if (!pc.jumpPressedThisFrame) return;
-    if (lastOnWallTime <= 0) return;
-    if (pc.grounded) return;
+    if (!pc.jumpPressedThisFrame || lastOnWallTime <= 0 || pc.grounded) return;
 
     isWallJumping = true;
-    wallJumpTimer = data.wallJumpDuration;
-
     int jumpDir = -wallDir;
 
-    bool isWallToWall = true;
-    RaycastHit2D hit = Physics2D.Raycast(wallCheck.position, 
-        Vector2.right * jumpDir, 1f, wallLayer);
-    if (hit.collider != null)
-        isWallToWall = false;
+    bool isWallToWall = Physics2D.Raycast(wallCheck.position, 
+        Vector2.right * jumpDir, 1f, wallLayer).collider == null;
 
-    float xForce = isWallToWall ? 
-        data.wallToWallJumpForceX : 
-        data.singleWallJumpForceX;
-    float yForce = data.wallJumpPowerY;
-
-    rb.linearVelocity = new Vector2(jumpDir * xForce, yForce);
+    float xForce = isWallToWall ? data.wallToWallJumpForceX : data.singleWallJumpForceX;
+    rb.linearVelocity = new Vector2(jumpDir * xForce, data.wallJumpPowerY);
 
     if (pc.isFacingRight != (jumpDir > 0))
         pc.CheckDirectionToFace(jumpDir > 0);
 
     lastOnWallTime = 0;
-    isWallSliding = false;
 }
 \end{lstlisting}

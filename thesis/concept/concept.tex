@@ -6,11 +6,11 @@ S ohledem na časové omezení soutěže jsme zvolili druhé řešení, což ná
 
 Následovala implementace mechanik hráče, které lze rozdělit do tří hlavních oblastí: základní pohyb, rozšiřující prvky zlepšující ovladatelnost a systém střelby.
 
-\subsection{Základní pohyb}
+\section{Základní pohyb}
 
 Prvním krokem bylo vytvoření základního pohybu, na který bylo možné později navázat pokročilejší funkce. Tento základ zahrnuje horizontální pohyb (vlevo a vpravo) a základní logiku skoku, tedy vertikální pohyb. V této fázi bylo nutné implementovat zpracování vstupu (inputu) hráče s následnou reakcí herního objektu ve scéně. Základní část tedy spočívá v jednoduchém pohybu podmíněném inputem uživatele.
 
-\subsection{Rozšiřující funkce}
+\section{Rozšiřující funkce}
 
 Druhým krokem bylo rozšíření základních mechanik o prvky zvyšující plynulost a komfort ovládání. Klíčovou oblastí této fáze byl systém skoku. V základní implementaci může hráč vyskočit pouze v okamžiku, kdy se dotýká země, což je řešeno pomocí vrstev (layers) a kolizemi (collisions). V praxi však hráč často dává input ke skoku s mírným zpožděním, například v momentě, kdy již technicky opustil platformu. Bez dodatečných úprav by v takové situaci ke skoku nedošlo, což by vedlo k nepřesnému a frustrujícímu ovládání. Z tohoto důvodu jsem implementoval mechanismy označované jako \textit{Coyote time} a \textit{Jump buffer}.
 
@@ -20,7 +20,7 @@ Druhým krokem bylo rozšíření základních mechanik o prvky zvyšující ply
 \input{concept/variablejumpheight.tex}
 \input{concept/dash.tex}
 
-\subsection{Systém střelby}
+\section{Systém střelby}
 
 Systém střelby se dá rozdělit na 3 hlavní části. Jsou jimi míření (aim), vystřelení a chování samotného projektilu.
 

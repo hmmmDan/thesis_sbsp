@@ -1,59 +1,59 @@
-\subsection{Collider}
+\section{Collider}
 
 Collider je komponenta v Unity, která umožňuje přidat kolize na objekty uvnitř hry. Díky colliderům se dá poté například určovat ničení herních objektů nebo zabíjení nepřátel. Také lze colliderům nastavit funkci \textit{Trigger}, která se používá například při aktivování jiných scén ve hře nebo při aktivaci interakcí. \textit{Trigger collider} nezastaví hráče při kolizi, ale detekuje průchod a následně spustí požadovanou akci nebo kód.
 
-\subsection{Rigidbody}
+\section{Rigidbody}
 
 Rigidbody je komponenta v Unity, která umožňuje herním objektům používat fyzikální engine hry. Díky manipulaci herních objektů upravováním parametrů v Rigidbody je možné dělat realistické kolize, upravovat gravitaci nebo celkově nastavit chování herních objektů.
 
-\subsection{Player controller}
+\section{Player controller}
 
 Označení \textit{Player controller} se nejčastěji používá pro hlavní skript, který se stará o ovládání hráče. Do tohoto skriptu se nejčastěji přidávají funkce pro chůzi, skákání nebo jiné pokročilejší mechaniky, které jsou specifické pro danou hru.
 
-\subsection{Input action}
+\section{Input action}
 
 Input action je speciální komponent v Unity, který řeší input z klávesnice, myši nebo třeba controlleru pro konzole. Dříve se programoval input za pomoci \texttt{Input.GetKey(KeyCode.\_)}, což nebylo vyloženě špatné, ovšem input action je funkční zjednodušení tohoto systému.
 
-\subsection{Sprite}
+\section{Sprite}
 
 Sprite je grafický asset vytvořený ve specializovaném programu. Jedná se o komponenty, které člověk uvidí ve výsledném produktu.
 
-\subsection{Animace}
+\section{Animace}
 
 Animace je složení několika spritů za sebe, které po aktivaci navozují pocit pohybu. Lze u nich upravovat rychlost a délku.
 
-\subsection{Animator controller}
+\section{Animator controller}
 
 Animator controller neboli zkráceně \textit{Animator} se využívá ke spojování animací ve hře a vytváření hierarchie mezi nimi. Ve spolupráci s kódem lze nastavovat spouštění specifických animací při specifických příležitostech.
 
-\subsection{Tilemap}
+\section{Tilemap}
 
 Tilemap je metoda tvorby herního prostředí pomocí pravidelné mřížky složené z grafických dlaždic (tiles). Každá dlaždice představuje samostatný grafický prvek, který je umístěn do určité buňky mřížky. Tento systém se používá především ve 2D hrách, kde umožňuje efektivní a přehlednou tvorbu rozsáhlých herních map. Výhodou tilemap systému je možnost opakovaného použití grafických prvků, snížení paměťové náročnosti a snadná úprava úrovní.
 
-\subsection{Tileset}
+\section{Tileset}
 
 Tileset je soubor grafických dlaždic určených k sestavení herního prostředí. Obvykle je tvořen jedním obrázkem (sprite sheet), který obsahuje více dlaždic stejné velikosti uspořádaných vedle sebe. Použití tilesetu umožňuje efektivní práci s grafikou, protože jednotlivé prvky lze opakovaně využívat při tvorbě mapy.
 
-\subsection{Game feel}
+\section{Game feel}
 
 \textit{Game feel} neboli herní pocit je termín, který popisuje, jak hra působí na hráče z hlediska ovládání a reakcí. Zahrnuje faktory jako je responsivita ovládání, plynulost animací, zpětná vazba od hry a celkový dojem z interakce s herním světem. Kvalitní herní pocit je to, co odlišuje průměrné hry od těch výborných.
 
-\subsection{Frame}
+\section{Frame}
 
 Frame neboli snímek je jednotka času v herním cyklu. Hry typicky běží při 30 až 60 snímcích za sekundu, což znamená, že každou sekundu se herní logika a grafika aktualizují 30 až 60 krát. Pochopení framu je důležité pro implementaci herních mechanik, protože mnoho systémů (jako coyote time nebo jump buffer) pracuje právě s časovým intervalem měřeným ve snímcích.
 
-\subsection{Layer}
+\section{Layer}
 
 Layer neboli vrstva je systém v Unity pro organizaci a filtrování objektů ve scéně. Umožňuje například určit, které objekty mají detekovat kolize s jinými objekty. V kontextu platformovek se často hovoří o \textit{ground layer}, což je vrstva obsahující všechny platformy a zem, na které může hráč stát.
 
-\subsection{Prefab}
+\section{Prefab}
 
 Prefab (prefabricated object) je předem vytvořený herní objekt uložený jako asset v projektu. Umožňuje vytvořit instanci (kopii) objektu přímo v kódu pomocí metody \newline \texttt{Instantiate}. Prefaby se často používají pro projektil, nepřátele nebo jiné opakovaně vytvářené objekty ve hře.
 
-\subsection{ScriptableObject}
+\section{ScriptableObject}
 
 ScriptableObject je speciální datový typ v Unity určený pro ukládání konfiguračních dat a parametrů. Na rozdíl od \texttt{MonoBehaviour} není přidělen k žádnému hernímu objektu ve scéně a může existovat jako samostatný asset. Používá se typicky pro nastavení herních parametrů, které je možné měnit v editoru bez nutnosti upravovat kód.
 
-\subsection{Callback}
+\section{Callback}
 
 Callback je mechanismus v programování, kdy se jako parametr předá jiná funkce, která se má zavolat po dokončení určité operace. V kontextu Unity input systému se callbacky používají k reagování na události, jako je stisknutí nebo uvolnění klávesy. Když hráč stiskne tlačítko, systém automaticky zavolá předem definovanou metodu (callback).

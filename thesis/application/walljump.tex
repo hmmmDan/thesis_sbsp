@@ -1,19 +1,19 @@
 \subsection{Wall jump a wall slide}
 
-\subsubsection{Základ skriptu}
+\subsection{Základ skriptu}
 Skript \texttt{PlayerWall.cs} dědí z \texttt{PlayerAbility} stejně jako dash. Kontrola stěny se provádí pomocí \texttt{Physics2D.OverlapCircle} s bodem \texttt{wallCheck} a poloměrem \texttt{wallCheckRadius} na příslušné vrstvě. Podobně jako u \textit{coyote time} se používá \texttt{lastOnWallTime}, který udržuje krátký časový window po opuštění stěny.
 
-\subsubsection{Detekce stěny}
+\subsection{Detekce stěny}
 V \texttt{Update()} se detekuje, zda se hráč dotýká stěny. Pokud ano a hráč není na zemi, nastaví se \texttt{lastOnWallTime} na \texttt{wallCoyoteTime}. Pokud ne, timer se snižuje. Metoda \texttt{DetectWallDirection()} určuje, na které straně stěna je -- buď podle vstupu hráče, nebo podle otočení postavy jako záloha.
 
-\subsubsection{Wall slide}
+\subsection{Wall slide}
 V metodě \texttt{HandleWallSlide()} se kontroluje několik podmínek současně: hráč nesmí být na zemi, musí být na stěně a padat dolů, a musí držet pohyb směrem ke stěně. Pokud všechny podmínky platí, vertikální rychlost se ořízne na maximální hodnotu \texttt{wallSlideSpeed}. Tím vzniká efekt zpomaleného klouzání dolů. Důležité je, že klouzání se deaktivuje během wall jump.
 
-\subsubsection{Wall jump}
+\subsection{Wall jump}
 Wall jump se provádí pouze když hráč stiskne skok, nachází se na stěně a není na zemi. Skript detekuje směr stěny a aplikuje sílu opačným směrem. Vertikální složka skoku je pevně nastavena na \texttt{wallJumpPowerY}, zatímco horizontální složka závisí na typu skoku.
 
-\subsubsection{Wall-to-wall jump}
+\subsection{Wall-to-wall jump}
 Zajímavou funkcí je rozpoznání \textit{wall-to-wall} skoku. Pomocí \texttt{Raycast} se detekuje, zda je na druhé straně hráče další stěna. Pokud ano, použije se vyšší horizontální síla \texttt{wallToWallJumpForceX}, což umožňuje rychlejší přeskok mezi dvěma stěnami. Pokud ne, použije se nižší \texttt{singleWallJumpForceX}.
 
-\subsubsection{Propojení s PlayerController}
+\subsection{Propojení s PlayerController}
 Po provedení wall jump se nastaví \texttt{isWallJumping} na true a odpočítává se timer. Dokud \texttt{isWallJumping} trvá, metoda \texttt{Run()} v \texttt{PlayerController} ignoruje horizontální vstup, takže hráč nemůže během wall jump reagovat na směrové tlačítko. Po uplynutí timeru se \texttt{isWallJumping} vynuluje ve \texttt{FixedUpdate()}.

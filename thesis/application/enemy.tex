@@ -1,22 +1,22 @@
 \subsection{Bowlingová koule}
 
-\subsubsection{Přehled}
+\subsection{Přehled}
 Hlavní nepřátelský objekt ve hře, bowlingová koule, je řízen skriptem \texttt{BallMovement.cs}. Ten je přidělen na herní objekt koule a stará se o její konstantní pohyb doprava, detekci stunu a růst rychlosti. Skript vyžaduje \texttt{Rigidbody2D} a \texttt{CircleCollider2D} přes atribut \texttt{RequireComponent}.
 
-\subsubsection{Pohyb}
+\subsection{Pohyb}
 Koule se pohybuje konstantní rychlostí na ose X pomocí \texttt{Rigidbody2D}. V každém snímku se nastavuje \texttt{velocity.x = moveSpeed}, což zajišťuje konstantní pohyb doprava. Rigidbody je nastaven na \texttt{freezeRotation}, takže se koule neotáčí vlivem fyziky.
 
-\subsubsection{Startovní prodleva}
+\subsection{Startovní prodleva}
 Před samotným pohybem běží coroutine \texttt{StartMovingAfterDelay()}, která čeká \texttt{startDelay} vteřin. Během této doby se \texttt{\_canMove} nastaví na false a pohyb se neprovádí. To dává hráči čas na rozběhání před tím, než začne nebezpečí. Stejná prodleva se restartuje při respawnu.
 
-\subsubsection{Stun systém}
+\subsection{Stun systém}
 Když projektil zasáhne kouli, volá se metoda \texttt{Stun()}. Ta inkrementuje counter \texttt{\_activeStuns} a spustí coroutine \texttt{StunCooldown()}. Ten rozlišuje první stun a další stuny -- u prvního se uloží aktuální rychlost jako základ, u dalších se jen nastaví nízká rychlost. Po uplynutí \texttt{stunDuration} se counter sníží a rychlost se obnoví.
 
-\subsubsection{Růst rychlosti}
+\subsection{Růst rychlosti}
 Důležité je, že \texttt{\_baseMoveSpeed} se ukládá a dále zvyšuje s každým dalším stunem. Proměnná \texttt{\_baseMoveSpeed} se po každém stunu zvýší o \texttt{speedIncreasePerStun}, ale nikdy nepřesáhne \texttt{maxSpeed}. Pokud je více stunů aktivních současně, rychlost zůstává na minimu, dokud se všechny nestihnou vypořádat.
 
-\subsubsection{Reset při smrti}
+\subsection{Reset při smrti}
 Při smrti hráče se volá metoda \texttt{ResetStunAndSpeed()}. Ta zastaví všechny corutiny, vynuluje počet stunů a nastaví rychlost na předanou výchozí hodnotu. Zároveň restartuje startovací delay přes \texttt{StartMovingAfterDelay()}.
 
-\subsubsection{Animace rotace}
+\subsection{Animace rotace}
 Rychlost rotace animace koule se dynamicky mění podle aktuální rychlosti pohybu. Metoda \texttt{UpdateAnimatorSpeed()} počítá podíl aktuální rychlosti a základní rychlosti. Výsledek se nastaví jako \texttt{animator.speed}, takže animace rotace odpovídá skutečné rychlosti koule.

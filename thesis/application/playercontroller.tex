@@ -1,31 +1,31 @@
 \subsection{PlayerController}
 
-\subsubsection{Hlavní skript}
+\subsection{Hlavní skript}
 Třída \texttt{PlayerController} je hlavním skriptem propojujícím všechny systémy. Dědí z \texttt{MonoBehaviour} a přidává se na herní objekt hráče. V metodě \texttt{Awake()} získává reference na Rigidbody a ostatní skripty jako \texttt{PlayerDash}, \texttt{PlayerStripeShot} a \texttt{PlayerWall}. Důležité je, že \texttt{gravityScale} na Rigidbody se nastavuje na 0, protože gravitace se kompletně řeší vlastním kódem.
 
-\subsubsection{Input systém}
+\subsection{Input systém}
 Vstupy od uživatele se zpracovávají přes Unity Input System. Pomocí \texttt{[SerializeField] private InputActionReference} se přiřazují akce v editoru. K registraci inputu dochází v metodě \texttt{OnEnable()}, kde se připojují callbacky na jednotlivé akce. Při uvolnění skriptu se v \texttt{OnDisable()} tyto callbacky odpojují.
 
-\subsubsection{Zpracování vstupu}
+\subsection{Zpracování vstupu}
 V \texttt{Update()} se čte vstup z akce a filtruje se pomocí prahu 0.1, aby se ignoroval nechtěný input z joysticku. Hodnota \texttt{moveInput} se ukládá jako \texttt{Vector2}. Podle vstupu se volá \texttt{CheckDirectionToFace()} pro otočení postavy.
 
-\subsubsection{Horizontální pohyb}
+\subsection{Horizontální pohyb}
 Metoda \texttt{Run()} aplikuje horizontální pohyb pomocí \texttt{Lerp} interpolace. Zrychlení se liší podle toho, zda je hráč na zemi nebo ve vzduchu. Parametr \texttt{accelInAir} určuje, kolik procent pozemního zrychlení se použije ve vzduchu. Tím se docílí toho, že hráč nemůže ve vzduchu měnit směr tak rychle jako na zemi. Během wall jump se \texttt{Run()} nepoužívá.
 
-\subsubsection{Vlastní gravitace}
+\subsection{Vlastní gravitace}
 Jelikož \texttt{gravityScale} na Rigidbody je vynulovaný, gravitace se aplikuje ručně v metodě \texttt{ApplyCustomGravity()}. Ta rozlišuje čtyři stavy: při pádu dolů se použije \texttt{fallMultiplier} pro rychlejší pád, při přerušení skoku (\texttt{jumpCut}) se použije ještě vyšší multiplikátor, při dosažení vrcholu skoku se gravitace sníží, a v normálním stavu se použije základní gravitace.
 
-\subsubsection{Výpočet nové rychlosti}
+\subsection{Výpočet nové rychlosti}
 Při aplikaci pohybu se používá \texttt{Lerp} pro plynulé zrychlení a zpomalování. Vzorec \texttt{ Mathf.Lerp(rb.linearVelocity.x, targetSpeed, Time.fixedDeltaTime * accelRate)} zajišťuje, že hráč nedosáhne maximální rychlosti okamžitě, ale postupně.
 
-\subsubsection{Zemní kontrola}
+\subsection{Zemní kontrola}
 Kontrola, zda se hráč dotýká země, se provádí metodou \texttt{IsGrounded()}, která používá \texttt{Physics2D.OverlapBox} s bodem \texttt{groundCheckPoint} a rozměrem \texttt{groundCheckSize}. Výsledek se ukládá do proměnné \texttt{grounded} a používá se pro rozhodování, zda je možné skočit.
 
-\subsubsection{Animace}
+\subsection{Animace}
 V metodě \texttt{Update()} se předávají hodnoty do Animatoru. Předávají se rychlost na ose X pro animaci běhu (\texttt{speed}), \texttt{isGrounded} pro přepínání mezi animací stání a vzduchu a vertikální rychlost (\texttt{verticalVelocity}) pro detekci pádu.
 
-\subsubsection{Otočení postavy}
+\subsection{Otočení postavy}
 Metoda \texttt{CheckDirectionToFace()} kontroluje, zda se postava má otočit. Pokud ano, překlopí \texttt{localScale.x} na zápornou hodnotu. Tím se postava vizuálně otočí, aniž by se musel měnit směr fyziky.
 
-\subsubsection{Propojení s dash systémem}
+\subsection{Propojení s dash systémem}
 V metodě \texttt{FixedUpdate()} se kontroluje, zda je aktivní dash. Pokud ano, přeskočí se volání \texttt{Run()} a \texttt{ApplyCustomGravity()}, takže hráč během dashe nereaguje na gravitaci ani na vstup pohybu.

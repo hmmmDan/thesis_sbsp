@@ -1,6 +1,6 @@
 Tato sekce se podrobně zabývá implementací jednotlivých herních mechanik na úrovni kódu. Budou popsány klíčové třídy, jejich metody a algoritmy, které tvoří základ herního systému.
 
-\subsection{PlayerControllerData}
+\section{PlayerControllerData}
 
 Třída \texttt{PlayerControllerData} představuje klíčový prvek celého systému herních mechanik, neboť definuje veškeré parametry pohybu a chování hráče na jednom centrálním místě. V této sekci bude podrobně rozebrána struktura této třídy, její účel a způsob použití v rámci celého systému.
 \newpage
@@ -11,7 +11,7 @@ Třída \texttt{PlayerControllerData} představuje klíčový prvek celého syst
 \input{application/playercontrollerdata_vypocet.tex}
 \input{application/playercontrollerdata_pouziti.tex}
 
-\subsection{PlayerController}
+\section{PlayerController}
 
 Hlavním řídicím skriptem celého systému pohybu hráče je třída \texttt{PlayerController}. Tento skript funguje jako centrální uzel, který koordinuje všechny ostatní systémy a zajišťuje jejich vzájemnou spolupráci. V této sekci budou popsány jednotlivé aspekty implementace tohoto skriptu, včetně zpracování vstupu, aplikace pohybu a propojení s dalšími systémy.
 \newpage
@@ -30,7 +30,7 @@ Hlavním řídicím skriptem celého systému pohybu hráče je třída \texttt{
 \input{application/playercontroller_otoceni.tex}
 \input{application/playercontroller_dash.tex}
 
-\subsection{Skok}
+\section{Skok}
 
 Systém skoku představuje jednu z nejdůležitějších součástí každé 2D plošinovky a jeho správná implementace zásadně ovlivňuje celkový herní pocit. V této sekci budou podrobně rozebrány všechny implementované mechaniky související se skokem, včetně pokročilých technik jako je coyote time, jump buffer a proměnná výška skoku.
 
@@ -44,7 +44,7 @@ Systém skoku představuje jednu z nejdůležitějších součástí každé 2D 
 \newpage
 \input{application/skok_vstup.tex}
 
-\subsection{Dash}
+\section{Dash}
 
 Mechanika rychlého výpadu neboli dash představuje další důležitý prvek pohybového systému. Dash umožňuje hráči na krátký časový okamžik rapidní zrychlení a přesun do aktuálního směru pohybu. Tato mechanika při správném nastavení výrazně zvyšuje plynulost hry a celkově zpříjemňuje pocit z pohybu.
 
@@ -57,7 +57,7 @@ Mechanika rychlého výpadu neboli dash představuje další důležitý prvek p
 \input{application/dash_cooldown.tex}
 \input{application/dash_propojeni.tex}
 
-\subsection{Wall jump a wall slide}
+\section{Wall jump a wall slide}
 
 Další implementovanou mechanikou je skákání a klouzání po stěnách, tedy wall jump a wall slide. Tyto dvě funkce spolu úzce souvisejí a výrazně rozšiřují možnosti navigace v herním světě. Wall jump umožňuje hráči opětovně vyskočit při kontaktu se stěnou ze strany, čímž se otevírá možnost postupného pohybu mezi dvěma vertikálními plochami a dosažení vyšších částí úrovně.
 
@@ -70,7 +70,7 @@ Další implementovanou mechanikou je skákání a klouzání po stěnách, tedy
 \input{application/walljump_walltowall.tex}
 \input{application/walljump_propojeni.tex}
 
-\subsection{Střelba}
+\section{Střelba}
 
 Systém střelby přidává do hry další rozměr interaktivity a strategie. Na rozdíl od tradičních stříleček, kde je střelba primárním prostředkem eliminace nepřátel, v této hře slouží střelba jako záchranný mechanismus. Hráč má k dispozici pouze dva náboje, které se přebíjejí až po vystřelení obou a po krátkém časovém intervalu. Tímto designem podporujeme myšlenku, aby střelba byla pouze poslední možností záchrany a hráč se musel především soustředit na zlepšování svých dovedností v pohybu.
 
@@ -84,7 +84,7 @@ Systém střelby přidává do hry další rozměr interaktivity a strategie. Na
 \newpage
 \input{application/strelba_chovani.tex}
 
-\subsection{Bowlingová koule}
+\section{Bowlingová koule}
 
 Hlavním nepřátelským objektem ve hře je bowlingová koule, která představuje konstantní hrozbu pro hráče. Koule se neustále pohybuje směrem dopředu a jejím úkolem je donutit hráče neustále se pohybovat vpřed. V této sekci bude podrobně popsána implementace chování bowlingové koule, včetně systému stunu a dynamické změny rychlosti.
 
@@ -99,7 +99,7 @@ Hlavním nepřátelským objektem ve hře je bowlingová koule, která představ
 \input{application/enemy_reset.tex}
 \input{application/enemy_animace.tex}
 
-\subsection{Další skripty nepřítele}
+\section{Další skripty nepřítele}
 
 Kromě základního pohybu bowlingové koule obsahuje nepřítel také další skripty, které rozšiřují jeho interakci s herním světem. Tyto skripty umožňují kouli ničit prostředí a reagovat na různé herní situace.
 \newpage
