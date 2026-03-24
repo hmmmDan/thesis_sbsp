@@ -1,6 +1,6 @@
 \subsection{Chování projektilu po vystřelení}
 
-Skript \texttt{BulletStripeShot.cs} se nachází na instanci projektilu a aktivuje se až po \newline vystřelení. V \texttt{OnTriggerEnter2D()} se kontroluje, s jakým objektem projektil kolidoval.
+Skript \texttt{BulletStripeShot.cs} se nachází na instanci projektilu a aktivuje se až po vystřelení. V \texttt{OnTriggerEnter2D()} se kontroluje, s jakým objektem projektil kolidoval.
 
 Při vstupu do trigger collideru bowlingové koule (která má tag \texttt{Ball}) se volá metoda \texttt{Stun()} na kouli. To způsobí, že koule se zpomalí a poskytne hráči čas na únik. Na rozdíl od tradičních her, kde střelba eliminuje nepřítele, v naší hře střelba pouze dočasně neutralizuje hrozbu.
 

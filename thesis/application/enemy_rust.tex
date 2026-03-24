@@ -1,6 +1,6 @@
 \subsection{Růst rychlosti a progresivní obtížnost}
 
-Důležité je, že \texttt{\_baseMoveSpeed} se ukládá a dále zvyšuje s každým dalším stunem. \newline Proměnná \texttt{\_baseMoveSpeed} se po každém stunu zvýší o \texttt{speedIncreasePerStun}, ale nikdy nepřesáhne \texttt{maxSpeed}. Pokud je více stunů aktivních současně, rychlost zůstává na minimu, dokud se všechny nestihnou vypořádat.
+Důležité je, že \texttt{\_baseMoveSpeed} se ukládá a dále zvyšuje s každým dalším stunem. Proměnná \texttt{\_baseMoveSpeed} se po každém stunu zvýší o \texttt{speedIncreasePerStun}, ale nikdy nepřesáhne \texttt{maxSpeed}. Pokud je více stunů aktivních současně, rychlost zůstává na minimu, dokud se všechny nestihnou vypořádat.
 
 Tento systém vytváří progresivní obtížnost v průběhu úrovně. Každý úspěšný stun zpomalí kouli, ale po obnovení bude koule rychlejší než předtím. To nutí hráče vyhýbat se stunu, pokud není absolutně nutný, a soustředit se spíše na pohyb než na střelbu.
 

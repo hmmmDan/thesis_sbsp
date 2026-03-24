@@ -1,6 +1,6 @@
 \subsection{Horizontální pohyb a akcelerace}
 
-Metoda \texttt{Run()} aplikuje horizontální pohyb pomocí \texttt{Lerp} interpolace, která zajišťuje plynulé zrychlení a zpomalování namísto okamžité změny rychlosti. Vzorec \newline \texttt{Mathf.Lerp(rb.linearVelocity.x, targetSpeed, Time.fixedDeltaTime * \newline accelRate)} postupně přesouvá aktuální rychlost k cílové rychlosti.
+Metoda \texttt{Run()} aplikuje horizontální pohyb pomocí \texttt{Lerp} interpolace, která zajišťuje plynulé zrychlení a zpomalování namísto okamžité změny rychlosti. Vzorec \texttt{Mathf.Lerp(rb.linearVelocity.x, targetSpeed, Time.fixedDeltaTime * accelRate)} postupně přesouvá aktuální rychlost k cílové rychlosti.
 
 Zrychlení se liší podle toho, zda je hráč na zemi nebo ve vzduchu. Parametr \texttt{accelInAir} určuje, kolik procent pozemního zrychlení se použije ve vzduchu. Typicky se používá nižší hodnota (například 50-70 procent), což zajišťuje, že hráč nemůže ve vzduchu měnit směr tak rychle jako na zemi. Toto omezení přidává hloubku do herní mechaniky a odměňuje hráče za správné načasování pohybu.
 

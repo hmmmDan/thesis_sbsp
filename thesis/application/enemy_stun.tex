@@ -1,6 +1,6 @@
 \subsection{Stun systém a dočasné zpomalení}
 
-Když projektil zasáhne kouli, volá se metoda \texttt{Stun()}. Ta inkrementuje counter \newline \texttt{\_activeStuns} a spustí korutinu \texttt{StunCooldown()}. Systém rozlišuje první stun a další stuny -- u prvního se uloží aktuální rychlost jako základ, u dalších se jen nastaví nízká rychlost.
+Když projektil zasáhne kouli, volá se metoda \texttt{Stun()}. Ta inkrementuje counter \texttt{\_activeStuns} a spustí korutinu \texttt{StunCooldown()}. Systém rozlišuje první stun a další stuny -- u prvního se uloží aktuální rychlost jako základ, u dalších se jen nastaví nízká rychlost.
 
 Více stunů současně způsobuje, že rychlost zůstává na minimální hodnotě, dokud se všechny nestihnou vypořádat. Po uplynutí \texttt{stunDuration} se counter sníží a rychlost se obnoví na základní úroveň. Pokud je více stunů aktivních, rychlost zůstává na minimu.
 
@@ -13,14 +13,11 @@ public void Stun(bool stun)
     _activeStuns++;
     StartCoroutine(StunCooldown());
 }
-
 private IEnumerator StunCooldown()
 {
     if (_activeStuns == 1) _baseMoveSpeed = moveSpeed;
     moveSpeed = 5f;
-
     yield return new WaitForSeconds(stunDuration);
-
     _activeStuns = Mathf.Max(0, _activeStuns - 1);
     _baseMoveSpeed = Mathf.Min(_baseMoveSpeed + speedIncreasePerStun, maxSpeed);
     moveSpeed = _activeStuns == 0 ? _baseMoveSpeed : 5f;

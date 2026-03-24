@@ -1,7 +1,7 @@
 \subsection{Cooldown systém a omezení frekvence dashe}
 
-Po dokončení dashe se nastaví \texttt{dashCooldownTimer} na hodnotu \texttt{dashCooldown} z \newline \texttt{PlayerControllerData}. V \texttt{Update()} se tento timer snižuje o \texttt{Time.deltaTime}. Dash lze provést pouze když je timer menší nebo roven nule.
+Po dokončení dashe se nastaví \texttt{dashCooldownTimer} na hodnotu \texttt{dashCooldown} z \texttt{PlayerControllerData}. V \texttt{Update()} se tento timer snižuje o \texttt{Time.deltaTime}. Dash lze provést pouze když je timer menší nebo roven nule.
 
 Tento cooldown systém zabraňuje spamování dashe a vyvažuje herní mechaniku. Bez cooldownu by hráč mohl dash používat téměř neustále, což by změnilo charakter hry. Správně nastavený cooldown nutí hráče strategicky využívat dash a rozhodovat se, kdy je nejvhodnější ho použít.
 
-Hodnota \texttt{dashCooldown} se typicky nastavuje na 0.5-2 sekundy v závislosti na \newline požadované obtížnosti a délce úrovní. Kratší cooldown umožňuje agresivnější hru, zatímco delší cooldown vyžaduje opatrnější přístup.
+Hodnota \texttt{dashCooldown} se typicky nastavuje na 0.5-2 sekundy v závislosti na požadované obtížnosti a délce úrovní. Kratší cooldown umožňuje agresivnější hru, zatímco delší cooldown vyžaduje opatrnější přístup.

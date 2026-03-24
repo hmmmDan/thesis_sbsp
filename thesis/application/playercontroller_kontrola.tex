@@ -2,6 +2,6 @@
 
 Kontrola, zda se hráč dotýká země, je fundamentální pro správné fungování skoku a dalších mechanik. V \texttt{PlayerController} se tato kontrola provádí metodou \texttt{IsGrounded()}, která využívá \texttt{Physics2D.OverlapBox}.
 
-Metoda \texttt{Physics2D.OverlapBox} vytváří virtuální box na specifikované pozici a kontroluje, zda se v tomto prostoru nachází nějaký collider. Parametry zahrnují \newline \texttt{groundCheckPoint} udávající střed boxu a \texttt{groundCheckSize} udávající rozměry boxu. Box je typicky malý a umístěný na spodní část nohou hráče.
+Metoda \texttt{Physics2D.OverlapBox} vytváří virtuální box na specifikované pozici a kontroluje, zda se v tomto prostoru nachází nějaký collider. Parametry zahrnují \texttt{groundCheckPoint} udávající střed boxu a \texttt{groundCheckSize} udávající rozměry boxu. Box je typicky malý a umístěný na spodní část nohou hráče.
 
 Výsledek detekce se ukládá do proměnné \texttt{grounded}, která se následně používá pro rozhodování, zda je možné provést skok, jakou akceleraci použít a další logické operace. Detekce probíhá v každém snímku, což zajišťuje aktuální stav bez zpoždění.

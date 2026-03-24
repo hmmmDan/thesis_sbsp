@@ -2,7 +2,7 @@ Nejprve bylo nutné stanovit základní koncept videohry. Bez něj není možné
 
 Na základě tohoto konceptu bylo možné navrhnout základní funkčnost hlavních herních prvků, neboli kuželky jako hráčem ovládané postavy a bowlingové koule jako hrozby. U bowlingové koule jsme zvažovali dvě varianty řešení. První možností bylo implementovat naváděcí mechanismus, který by sledoval aktuální polohu hráče a dynamicky upravoval trajektorii pohybu. Druhou možností bylo ponechat kouli v předem definovaném směru pohybu, avšak přizpůsobit její velikost a návrh úrovně tak, aby i bez aktivního navádění představovala dostatečné nebezpečí.
 
-S ohledem na časové omezení soutěže jsme zvolili druhé řešení, což nám umožnilo věnovat více prostoru implementaci klíčových mechanik hráče. Po skončení soutěže jsme toto rozhodnutí zachovali, jelikož masivní nenaváděná koule působí herně i vizuálně \newline výrazněji a přirozeněji než přesně naváděný objekt.
+S ohledem na časové omezení soutěže jsme zvolili druhé řešení, což nám umožnilo věnovat více prostoru implementaci klíčových mechanik hráče. Po skončení soutěže jsme toto rozhodnutí zachovali, jelikož masivní nenaváděná koule působí herně i vizuálně výrazněji a přirozeněji než přesně naváděný objekt.
 
 Následovala implementace mechanik hráče, které lze rozdělit do tří hlavních oblastí: základní pohyb, rozšiřující prvky zlepšující ovladatelnost a systém střelby.
 
@@ -18,6 +18,7 @@ Druhým krokem bylo rozšíření základních mechanik o prvky zvyšující ply
 \input{concept/jumpbuffer.tex}
 \input{concept/walljump.tex}
 \input{concept/variablejumpheight.tex}
+\newpage
 \input{concept/dash.tex}
 
 \section{Systém střelby}
@@ -26,6 +27,7 @@ Systém střelby se dá rozdělit na 3 hlavní části. Jsou jimi míření (aim
 
 \input{concept/aim.tex}
 \input{concept/vystrel.tex}
+\newpage
 \input{concept/projektil.tex}
 
 \input{concept/animace.tex}

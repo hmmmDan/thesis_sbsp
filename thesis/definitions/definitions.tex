@@ -16,7 +16,7 @@ Input action je speciální komponent v Unity, který řeší input z klávesnic
 
 \section{Sprite}
 
-Sprite je grafický asset vytvořený ve specializovaném programu. Jedná se o komponenty, které člověk uvidí ve výsledném produktu.
+Sprite je grafický asset vytvořený ve specializovaném programu. Jedná se o komponenty, které uživatel uvidí ve výsledném produktu.
 
 \section{Animace}
 
@@ -42,13 +42,14 @@ Tileset je soubor grafických dlaždic určených k sestavení herního prostře
 
 Frame neboli snímek je jednotka času v herním cyklu. Hry typicky běží při 30 až 60 snímcích za sekundu, což znamená, že každou sekundu se herní logika a grafika aktualizují 30 až 60 krát. Pochopení framu je důležité pro implementaci herních mechanik, protože mnoho systémů (jako coyote time nebo jump buffer) pracuje právě s časovým intervalem měřeným ve snímcích.
 
+\newpage
 \section{Layer}
 
 Layer neboli vrstva je systém v Unity pro organizaci a filtrování objektů ve scéně. Umožňuje například určit, které objekty mají detekovat kolize s jinými objekty. V kontextu platformovek se často hovoří o \textit{ground layer}, což je vrstva obsahující všechny platformy a zem, na které může hráč stát.
 
 \section{Prefab}
 
-Prefab (prefabricated object) je předem vytvořený herní objekt uložený jako asset v projektu. Umožňuje vytvořit instanci (kopii) objektu přímo v kódu pomocí metody \newline \texttt{Instantiate}. Prefaby se často používají pro projektil, nepřátele nebo jiné opakovaně vytvářené objekty ve hře.
+Prefab (prefabricated object) je předem vytvořený herní objekt uložený jako asset v projektu. Umožňuje vytvořit instanci (kopii) objektu přímo v kódu pomocí metody \texttt{Instantiate}. Prefaby se často používají pro projektil, nepřátele nebo jiné opakovaně vytvářené objekty ve hře.
 
 \section{ScriptableObject}
 

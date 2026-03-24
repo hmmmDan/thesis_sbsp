@@ -20,7 +20,7 @@
 
 \usepackage{listings}
 \usepackage[nottoc]{tocbibind}
-\usepackage{xcolor}
+\usepackage[x11names,usenames,dvipsnames]{xcolor}
 \usepackage[
     bookmarks=false,
     plainpages=false,
@@ -39,7 +39,7 @@
 }
 
 \lstset{
-    basicstyle=\ttfamily\small,
+    basicstyle=\ttfamily\small\color{black},
     numbers=left,
     numberstyle=\tiny,
     numbersep=5pt,
@@ -48,6 +48,10 @@
     breaklines=true,
     language=C,
     captionpos=b,
+    keywordstyle=\color{blue},
+    stringstyle=\color{orange},
+    commentstyle=\color{green},
+    numberstyle=\color{gray},
 }
 \lstdefinelanguage{csharp}%
   {morekeywords={abstract,as,base,bool,break,byte,case,catch,char,checked,%
@@ -63,7 +67,7 @@
    morecomment=[s]{/*}{*/},
    morecomment=[l]{//},
    morestring=[b]",
-  }
+   }
 \gappto\captionsczech{%
   \def\lstlistingname{Kód}%
   \def\lstlistlistingname{Seznam použitých kódů}%
@@ -115,9 +119,9 @@
     \thispagestyle{empty}
     
     \begin{flushleft}
-        \includegraphics[width=0.8\textwidth]{img/0.png}
+        \includegraphics[width=0.4\textwidth]{img/0.png}
 
-        \vspace{1.15in}
+        \vspace{1in}
 
         {\sffamily \texttwenty \textbf{2D Videohra Salvation Path: Herní mechaniky}\\}
 
@@ -127,10 +131,13 @@
 
         \vspace{40pt}
         
-        {\sffamily \textsixteen Maturitní práce\\}
-        {\sffamily \textsixteen Vedoucí práce: Bc. Adam Tyroň\\}
-        {\sffamily \textsixteen 2025/26\\}
         {\sffamily \textsixteen Daniel Baier, 4.D\\}
+
+        \vspace{\fill}
+        
+        {\sffamily \textfourteen Maturitní práce\\}
+        {\sffamily \textfourteen Vedoucí práce: Bc. Adam Tyroň\\}
+        {\sffamily \textfourteen 2025/26\\}
     \end{flushleft}
 
 \end{titlepage}
@@ -154,7 +161,9 @@ Rád bych poděkoval panu Bc. Adamu Tyroňovi za víceletou aktivitu na Discord 
 \chapter*{Prohlášení}
 Prohlašuji, že jsem svou maturitní práci vypracoval/a samostatně. K práci jsem použil/a literaturu a prameny, uvedené v seznamu. Souhlasím s tím, aby moje ročníková práce byla využívána na Střední průmyslové škole Karviná, příspěvkové organizaci.
 
-V Karviné dne: ……………………….\hspace{1.5cm}Podpis: ………………………. 
+\vspace{20pt}
+
+\noindent V Karviné dne: ……………………….\hspace{\fill}Podpis: ………………………. 
 
 \tableofcontents
 

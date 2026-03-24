@@ -2,7 +2,7 @@
 
 Metoda \texttt{TryDash()} je veřejná metoda volaná z \texttt{PlayerController} při inputu dashe. Nejprve kontroluje, zda je schopnost odemčená voláním \texttt{IsUnlocked()}. Pokud není, metoda se ukončí a dash se neprovede.
 
-Následně se kontroluje cooldown a stav dashe. Pokud běží cooldown \newline (\texttt{dashCooldownTimer > 0}) nebo pokud je dash aktuálně aktivní, metoda se ukončí. Teprve pokud všechny tyto podmínky jsou splněny, pokračuje se k samotnému provedení dashe.
+Následně se kontroluje cooldown a stav dashe. Pokud běží cooldown (\texttt{dashCooldownTimer > 0}) nebo pokud je dash aktuálně aktivní, metoda se ukončí. Teprve pokud všechny tyto podmínky jsou splněny, pokračuje se k samotnému provedení dashe.
 
 Po úspěšné kontrole podmínek se určí směr dashe. Pokud hráč dává vstup pohybu (\texttt{moveInput} není nulový), použije se tento směr. V opačném případě se použije směr podle otočení postavy jako záloha, aby dash vždy fungoval i když hráč stojí na místě.
 

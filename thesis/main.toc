@@ -12,7 +12,7 @@
 \contentsline {section}{\numberline {2.9}Tileset}{9}{section.2.9}%
 \contentsline {section}{\numberline {2.10}Game feel}{9}{section.2.10}%
 \contentsline {section}{\numberline {2.11}Frame}{9}{section.2.11}%
-\contentsline {section}{\numberline {2.12}Layer}{9}{section.2.12}%
+\contentsline {section}{\numberline {2.12}Layer}{10}{section.2.12}%
 \contentsline {section}{\numberline {2.13}Prefab}{10}{section.2.13}%
 \contentsline {section}{\numberline {2.14}ScriptableObject}{10}{section.2.14}%
 \contentsline {section}{\numberline {2.15}Callback}{10}{section.2.15}%
@@ -29,11 +29,11 @@
 \contentsline {subsection}{\numberline {4.2.2}Jump buffer}{14}{subsection.4.2.2}%
 \contentsline {subsection}{\numberline {4.2.3}Wall jump a wall slide}{14}{subsection.4.2.3}%
 \contentsline {subsection}{\numberline {4.2.4}Variable jump height}{14}{subsection.4.2.4}%
-\contentsline {subsection}{\numberline {4.2.5}Dash}{14}{subsection.4.2.5}%
+\contentsline {subsection}{\numberline {4.2.5}Dash}{15}{subsection.4.2.5}%
 \contentsline {section}{\numberline {4.3}Systém střelby}{15}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}Míření (aim)}{15}{subsection.4.3.1}%
 \contentsline {subsection}{\numberline {4.3.2}Výstřel}{15}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Chování projektilu}{15}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.3}Chování projektilu}{16}{subsection.4.3.3}%
 \contentsline {subsection}{\numberline {4.3.4}Animace}{16}{subsection.4.3.4}%
 \contentsline {subsection}{\numberline {4.3.5}Fyzika a gravitace}{16}{subsection.4.3.5}%
 \contentsline {chapter}{\numberline {5}Popis aplikace}{17}{chapter.5}%
@@ -49,14 +49,14 @@
 \contentsline {subsection}{\numberline {5.2.3}Zpracování vstupu a filtrování hodnot}{23}{subsection.5.2.3}%
 \contentsline {subsection}{\numberline {5.2.4}Horizontální pohyb a akcelerace}{24}{subsection.5.2.4}%
 \contentsline {subsection}{\numberline {5.2.5}Vlastní gravitace a její dynamické řízení}{25}{subsection.5.2.5}%
-\contentsline {subsection}{\numberline {5.2.6}Výpočet nové rychlosti a použití Lerp}{25}{subsection.5.2.6}%
+\contentsline {subsection}{\numberline {5.2.6}Výpočet nové rychlosti a použití Lerp}{26}{subsection.5.2.6}%
 \contentsline {subsection}{\numberline {5.2.7}Zemní kontrola a detekce dotyku se zemí}{26}{subsection.5.2.7}%
-\contentsline {subsection}{\numberline {5.2.8}Propojení s Animatorem a předávání parametrů}{26}{subsection.5.2.8}%
+\contentsline {subsection}{\numberline {5.2.8}Propojení s Animatorem a předávání parametrů}{27}{subsection.5.2.8}%
 \contentsline {subsection}{\numberline {5.2.9}Otočení postavy a vizuální změna směru}{27}{subsection.5.2.9}%
 \contentsline {subsection}{\numberline {5.2.10}Propojení s dash systémem a deaktivace pohybu}{27}{subsection.5.2.10}%
-\contentsline {section}{\numberline {5.3}Skok}{27}{section.5.3}%
+\contentsline {section}{\numberline {5.3}Skok}{28}{section.5.3}%
 \contentsline {subsection}{\numberline {5.3.1}Coyote time a jeho implementace}{28}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Jump buffer a registrace skoku před dopadem}{28}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.2}Jump buffer a registrace skoku před dopadem}{29}{subsection.5.3.2}%
 \contentsline {subsection}{\numberline {5.3.3}Provádění skoku a nastavení fyzikálních parametrů}{29}{subsection.5.3.3}%
 \contentsline {subsection}{\numberline {5.3.4}Jump cut a předčasné ukončení skoku}{30}{subsection.5.3.4}%
 \contentsline {subsection}{\numberline {5.3.5}Jump hang a efekt vznášení na vrcholu skoku}{30}{subsection.5.3.5}%
@@ -64,39 +64,39 @@
 \contentsline {section}{\numberline {5.4}Dash}{31}{section.5.4}%
 \contentsline {subsection}{\numberline {5.4.1}Základní princip a dědění z PlayerAbility}{31}{subsection.5.4.1}%
 \contentsline {subsection}{\numberline {5.4.2}Metoda TryDash a kontrola podmínek}{32}{subsection.5.4.2}%
-\contentsline {subsection}{\numberline {5.4.3}Směr dashe a normalizace vektoru}{32}{subsection.5.4.3}%
-\contentsline {subsection}{\numberline {5.4.4}DashMovement a aplikace rychlosti během dashe}{33}{subsection.5.4.4}%
-\contentsline {subsection}{\numberline {5.4.5}Cooldown systém a omezení frekvence dashe}{34}{subsection.5.4.5}%
-\contentsline {subsection}{\numberline {5.4.6}Propojení s PlayerController a registrace inputu}{34}{subsection.5.4.6}%
-\contentsline {section}{\numberline {5.5}Wall jump a wall slide}{34}{section.5.5}%
-\contentsline {subsection}{\numberline {5.5.1}Základ skriptu a dědění z PlayerAbility}{34}{subsection.5.5.1}%
-\contentsline {subsection}{\numberline {5.5.2}Detekce stěny a určení jejího směru}{35}{subsection.5.5.2}%
-\contentsline {subsection}{\numberline {5.5.3}Wall slide a zpomalený pád podél stěny}{35}{subsection.5.5.3}%
-\contentsline {subsection}{\numberline {5.5.4}Wall jump a odraz od stěny}{36}{subsection.5.5.4}%
-\contentsline {subsection}{\numberline {5.5.5}Wall-to-wall jump a rychlý přeskok mezi stěnami}{37}{subsection.5.5.5}%
-\contentsline {subsection}{\numberline {5.5.6}Propojení s PlayerController a deaktivace vstupu}{37}{subsection.5.5.6}%
-\contentsline {section}{\numberline {5.6}Střelba}{37}{section.5.6}%
-\contentsline {subsection}{\numberline {5.6.1}Systém střelby a architektura skriptů}{37}{subsection.5.6.1}%
-\contentsline {subsection}{\numberline {5.6.2}Směr střelby a automatické zaměření na cíl}{38}{subsection.5.6.2}%
-\contentsline {subsection}{\numberline {5.6.3}Vytvoření projektilu a nastavení fyzikálních parametrů}{38}{subsection.5.6.3}%
+\contentsline {subsection}{\numberline {5.4.3}Směr dashe a normalizace vektoru}{33}{subsection.5.4.3}%
+\contentsline {subsection}{\numberline {5.4.4}DashMovement a aplikace rychlosti během dashe}{34}{subsection.5.4.4}%
+\contentsline {subsection}{\numberline {5.4.5}Cooldown systém a omezení frekvence dashe}{35}{subsection.5.4.5}%
+\contentsline {subsection}{\numberline {5.4.6}Propojení s PlayerController a registrace inputu}{35}{subsection.5.4.6}%
+\contentsline {section}{\numberline {5.5}Wall jump a wall slide}{35}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Základ skriptu a dědění z PlayerAbility}{36}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Detekce stěny a určení jejího směru}{36}{subsection.5.5.2}%
+\contentsline {subsection}{\numberline {5.5.3}Wall slide a zpomalený pád podél stěny}{36}{subsection.5.5.3}%
+\contentsline {subsection}{\numberline {5.5.4}Wall jump a odraz od stěny}{37}{subsection.5.5.4}%
+\contentsline {subsection}{\numberline {5.5.5}Wall-to-wall jump a rychlý přeskok mezi stěnami}{38}{subsection.5.5.5}%
+\contentsline {subsection}{\numberline {5.5.6}Propojení s PlayerController a deaktivace vstupu}{38}{subsection.5.5.6}%
+\contentsline {section}{\numberline {5.6}Střelba}{38}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Systém střelby a architektura skriptů}{39}{subsection.5.6.1}%
+\contentsline {subsection}{\numberline {5.6.2}Směr střelby a automatické zaměření na cíl}{39}{subsection.5.6.2}%
+\contentsline {subsection}{\numberline {5.6.3}Vytvoření projektilu a nastavení fyzikálních parametrů}{40}{subsection.5.6.3}%
 \contentsline {subsection}{\numberline {5.6.4}Omezený počet nábojů a systém přebíjení}{40}{subsection.5.6.4}%
 \contentsline {subsection}{\numberline {5.6.5}Výstřel a kontrola podmínek}{40}{subsection.5.6.5}%
-\contentsline {subsection}{\numberline {5.6.6}Respawn a obnovení stavu střelby}{40}{subsection.5.6.6}%
-\contentsline {subsection}{\numberline {5.6.7}Chování projektilu po vystřelení}{41}{subsection.5.6.7}%
-\contentsline {section}{\numberline {5.7}Bowlingová koule}{41}{section.5.7}%
-\contentsline {subsection}{\numberline {5.7.1}Přehled a základní struktura}{42}{subsection.5.7.1}%
+\contentsline {subsection}{\numberline {5.6.6}Respawn a obnovení stavu střelby}{41}{subsection.5.6.6}%
+\contentsline {subsection}{\numberline {5.6.7}Chování projektilu po vystřelení}{42}{subsection.5.6.7}%
+\contentsline {section}{\numberline {5.7}Bowlingová koule}{43}{section.5.7}%
+\contentsline {subsection}{\numberline {5.7.1}Přehled a základní struktura}{43}{subsection.5.7.1}%
 \contentsline {subsection}{\numberline {5.7.2}Pohyb a konstantní rychlost}{43}{subsection.5.7.2}%
 \contentsline {subsection}{\numberline {5.7.3}Startovní prodleva a synchronizace s hráčem}{44}{subsection.5.7.3}%
-\contentsline {subsection}{\numberline {5.7.4}Stun systém a dočasné zpomalení}{45}{subsection.5.7.4}%
+\contentsline {subsection}{\numberline {5.7.4}Stun systém a dočasné zpomalení}{44}{subsection.5.7.4}%
 \contentsline {subsection}{\numberline {5.7.5}Růst rychlosti a progresivní obtížnost}{45}{subsection.5.7.5}%
-\contentsline {subsection}{\numberline {5.7.6}Reset při smrti hráče}{46}{subsection.5.7.6}%
-\contentsline {subsection}{\numberline {5.7.7}Animace rotace a dynamická rychlost}{46}{subsection.5.7.7}%
+\contentsline {subsection}{\numberline {5.7.6}Reset při smrti hráče}{45}{subsection.5.7.6}%
+\contentsline {subsection}{\numberline {5.7.7}Animace rotace a dynamická rychlost}{45}{subsection.5.7.7}%
 \contentsline {section}{\numberline {5.8}Další skripty nepřítele}{46}{section.5.8}%
-\contentsline {subsection}{\numberline {5.8.1}TileDestroy -- přehled a účel}{47}{subsection.5.8.1}%
-\contentsline {subsection}{\numberline {5.8.2}Tick-based ničení dlaždic a optimalizace}{47}{subsection.5.8.2}%
+\contentsline {subsection}{\numberline {5.8.1}TileDestroy -- přehled a účel}{46}{subsection.5.8.1}%
+\contentsline {subsection}{\numberline {5.8.2}Tick-based ničení dlaždic a optimalizace}{46}{subsection.5.8.2}%
 \contentsline {subsection}{\numberline {5.8.3}Limit dlaždic na tick a výkonová ochrana}{47}{subsection.5.8.3}%
-\contentsline {subsection}{\numberline {5.8.4}Bounds a WorldToCell -- převod souřadnic}{48}{subsection.5.8.4}%
-\contentsline {subsection}{\numberline {5.8.5}DestroyOnTouch -- přehled a funkčnost}{48}{subsection.5.8.5}%
-\contentsline {chapter}{\numberline {6}Závěr}{49}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Seznam použitých kódů}{50}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Zdroje}{51}{chapter.8}%
+\contentsline {subsection}{\numberline {5.8.4}Bounds a WorldToCell -- převod souřadnic}{47}{subsection.5.8.4}%
+\contentsline {subsection}{\numberline {5.8.5}DestroyOnTouch -- přehled a funkčnost}{47}{subsection.5.8.5}%
+\contentsline {chapter}{\numberline {6}Závěr}{48}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Seznam použitých kódů}{49}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Zdroje}{50}{chapter.8}%

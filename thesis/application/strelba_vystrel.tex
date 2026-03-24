@@ -1,6 +1,6 @@
 \subsection{Výstřel a kontrola podmínek}
 
-Metoda \texttt{TryShoot()} se volá z \texttt{PlayerController} při inputu střelby. Kontroluje se několik podmínek: zda je střelba odemčená (volání \texttt{IsUnlocked()}), zda neprobíhá přebíjení \newline (proměnná \texttt{isReloading}) a zda jsou k dispozici náboje (\texttt{currentShots > 0}).
+Metoda \texttt{TryShoot()} se volá z \texttt{PlayerController} při inputu střelby. Kontroluje se několik podmínek: zda je střelba odemčená (volání \texttt{IsUnlocked()}), zda neprobíhá přebíjení (proměnná \texttt{isReloading}) a zda jsou k dispozici náboje (\texttt{currentShots > 0}).
 
 Pokud všechny podmínky platí, provede se výstřel voláním \texttt{Shoot()} a sníží se počet nábojů o jeden. Pokud byl vystřelen poslední náboj, spustí se přebíjení. Pokud některá z podmínek není splněna, metoda se ukončí bez akce.
 
