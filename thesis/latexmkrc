@@ -1,0 +1,2 @@
+$latex = 'xelatex --interaction=nonstopmode %S';
+$pdflatex = 'xelatex --interaction=nonstopmode %S';

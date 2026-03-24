@@ -1,150 +1,150 @@
-\documentclass[12pt]{article}
-\usepackage[utf8]{inputenc}
-\usepackage[czech]{babel}
+\documentclass[12pt]{report}
+\usepackage{polyglossia}
+\setdefaultlanguage{czech}
+
+
 \usepackage{graphicx}
-\usepackage{hyperref}
+
+\usepackage{setspace}
+\setstretch{1.15}
+\usepackage{geometry}
+
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+
+\usepackage{titlesec}
+
 \usepackage{listings}
-\usepackage{caption}
+\usepackage{tocbibind}
 \usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{url}
 
-\RequirePackage{geometry}
-\geometry{a4paper, left=25mm, right=25mm, top=30mm, bottom=30mm}
-
-\lstdefinelanguage{CSharp}{
-  morekeywords={public, private, protected, class, struct, void, int, float, bool, string, return, if, else, for, while, foreach, new, null, true, false, this, base, using, namespace, get, set, private, public, protected, static, readonly, override, virtual, abstract, sealed, partial, yield, async, await, var, dynamic, const, enum, interface},
-  sensitive=false,
-  morecomment=[l]{//},
-  morecomment=[s]{/*}{*/},
-  morestring=[b]"
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+    pdftitle={\@title},
+    pdfpagemode=UseNone,
 }
 
-\lstdefinestyle{csharp}{
-  language=CSharp,
-  basicstyle=\ttfamily\small,
-  numbers=left,
-  numberstyle=\tiny,
-  stepnumber=1,
-  numbersep=5pt,
-  backgroundcolor=\color{white},
-  showspaces=false,
-  showstringspaces=false,
-  breaklines=true,
-  frame=single,
-  keywordstyle=\color{blue},
-  commentstyle=\color{green},
-  stringstyle=\color{red}
+\lstset{
+    basicstyle=\ttfamily\small,
+    numbers=left,
+    numberstyle=\tiny,
+    numbersep=5pt,
+    tabsize=4,
+    frame=none,
+    breaklines=true,
+    language=C,
+    captionpos=b,
+}
+\gappto\captionsczech{%
+  \def\lstlistingname{Kód}%
+  \def\lstlistlistingname{Seznam kódů}%
 }
 
-\captionsetup[lstlisting]{%
-  format=plain,
-  labelsep=space,
-  textfont={sf,small},
-  justification=centering
+\titleformat{\chapter}
+  {\sffamily\textsixteen\bfseries}
+  {\thechapter}
+  {1em}
+  {}
+  
+\titleformat{\section}
+  {\sffamily\textfourteen\bfseries}
+  {\thesection}
+  {1em}
+  {}
+
+\titleformat{\subsection}
+  {\sffamily\textthirteen\bfseries}
+  {\thesubsection}
+  {1em}
+  {}
+  
+\titlespacing*{\chapter}
+  {0pt}
+  {0pt}
+  {20pt}
+
+\newcommand{\texttwenty}{\fontsize{20pt}{24pt}\selectfont}
+\newcommand{\textsixteen}{\fontsize{16pt}{20pt}\selectfont}
+\newcommand{\textfourteen}{\fontsize{14pt}{18pt}\selectfont}
+\newcommand{\textthirteen}{\fontsize{13pt}{17pt}\selectfont}
+
+
+\newgeometry{
+    top=0.98in,
+    bottom=0.98in,
+    outer=0.98in,
+    inner=0.98in,
 }
 
-\newcommand{\lstcaption}[1]{\begin{center}#1\end{center}}
 
-\title{Herní mechaniky pro 2D plošinovku}
-\author{Dan}
-\date{2025/26}
+
+
 
 \begin{document}
 
 \begin{titlepage}
-\thispagestyle{empty}
-\vspace*{0.3\textheight}
-\begin{center}
-\textbf{\Large HERNÍ MECHANIKY PRO 2D PLOŠINOVKU} \\[2cm]
+    \thispagestyle{empty}
+    
+    \begin{flushleft}
+        \includegraphics{img/0.png}
 
-\textbf{Maturitní práce} \\[1cm]
+        \vspace{1.15in}
 
-Vedoucí práce: Ing. František Vopršálek \\[1cm]
+        {\sffamily \texttwenty \textbf{2D Videohra Salvation Path: Herní mechaniky}\\}
 
-\textbf{Dan}, 4. D \\[3cm]
+        \vspace{10pt}
+        
+        {\sffamily \textfourteen 2D Video game Salvation Path: Game mechanics\\}
 
-2025/26
-\end{center}
+        \vspace{40pt}
+        
+        {\sffamily \textsixteen Maturitní práce\\}
+        {\sffamily \textsixteen Vedoucí práce: Bc. Adam Tyroň\\}
+        {\sffamily \textsixteen 2025/26\\}
+        {\sffamily \textsixteen Daniel Baier, 4.D\\}
+    \end{flushleft}
+
 \end{titlepage}
 
-\thispagestyle{empty}
-\newpage
-
 \section*{Abstrakt}
-Cílem této práce je navrhnout a implementovat herní mechaniky pro postavy videohry žánru 2D plošinovky. Práce se zaměřuje na systémy ovládání hráče a návrh logiky nepřítele. Mechaniky hráče nezahrnují pouze pohyb do stran, ale také systém skoku a střelby. Zvláštní důraz je kladen na implementaci skoku, jehož správné nastavení zásadně ovlivňuje herní pocit a odlišuje kvalitní 2D plošinovky od méně povedených titulů.
+Tato práce se zabývá vývojem videohry Surreal Bowling: Salvation Path a patří do skupiny tří maturitních prací ve třídě 4.D, které jsou na tuto videohru zaměřeny. Náš nezávislý tým se jmenuje Still Thinking Studio. Všechny tři maturitní práce řeší z většiny programovací a logickou část toho, jak videohra funguje.  Moje práce se zaměřujě na programování mechanik pro pohyb. Součástí práce je také implementace fyzikálního systému nebo systému střelby. Dále se v této práci zaměřuji na programování logiky nepřítele a nastavení adekvátních animací pro postavy.
 
-Součástí práce je také implementace fyzikálního systému. Herní engine Unity sice nabízí vestavěné nástroje pro práci s fyzikou, ty však nemusí vždy poskytovat požadovanou míru kontroly nad chováním postavy. Z tohoto důvodu jsou tyto nástroje využity především jako základ, zatímco pokročilejší herní mechaniky jsou řešeny vlastním kódem.
-
-S programováním herních mechanik úzce souvisí také implementace animací. Po vytvoření grafických podkladů je nutné jednotlivé animace správně integrovat do enginu a propojit je s řídicí logikou tak, aby odpovídaly aktuálnímu stavu postavy.
-
-Významnou část projektu tvoří rovněž systém střelby založený na zaměřování pomocí kurzoru myši. Tento přístup přináší řadu technických výzev, například správné určení směru projektilu, úpravu jeho rychlosti nebo zajištění jeho odstranění po určité době z důvodu optimalizace výkonu hry.
-
-\textbf{Klíčová slova:} Unity, C\#, 2D plošinovka, herní mechaniky, fyzika, animace
+\section*{Klíčová slova}
+videohra, 2D plošinovka, Unity, C\#, fyzika, animace
 
 \section*{Abstract}
-The aim of this thesis is to design and implement game mechanics for a 2D platformer video game character. The work focuses on player control systems and enemy logic design. Player mechanics include not only lateral movement but also jumping and shooting systems. Special emphasis is placed on jump implementation, as its proper configuration significantly affects the game feel and distinguishes quality 2D platformers from lesser ones.
+This thesis examines the development of the video game Surreal Bowling: Salvation Path and is one of three graduation theses in class 4.D that focus on this particular video game. Our independent team is referred to as Still Thinking Studio. The three graduation projects primarily address the programming and logical components of the video game's functionality. My project focuses on programming movement mechanics. It also includes the implementation of a physics system and a shooting system. Additionally, this project focuses on programming enemy AI and setting up appropriate animations for the characters.
 
-The thesis also includes the implementation of a physics system. Although the Unity game engine offers built-in tools for physics, they may not always provide the desired level of control over character behavior. Therefore, these tools are used primarily as a foundation, while more advanced game mechanics are implemented through custom code.
+\section*{Key words}
+video game, 2D platformer, Unity, C\#, physics, animations
 
-Programming game mechanics is closely related to animation implementation. After creating graphical assets, individual animations must be properly integrated into the engine and connected to the control logic to match the current state of the character.
+\chapter*{Poděkování}
+Rád bych poděkoval panu Bc. Adamu Tyroňovi za víceletou aktivitu na Discord serveru našeho vývojářského týmu a ujmutí se nás jako mentor maturitní práce. Dále chci samozřejmě poděkovat svým spolupracovníkům a zároveň spolužákům, s kterými videohry vyvíjím - Simeonu Bednarzovi za vyvíjení kódu, Jonáši Kymlovi za zajištění audiovizuální stránky naší hry a Jakubu Wojtasovi za téměř veškeré grafické zpracování.
 
-A significant part of the project is also the shooting system based on aiming via mouse cursor. This approach brings several technical challenges, such as correctly determining projectile direction, adjusting its speed, or ensuring its removal after a certain time for game performance optimization.
 
-\textbf{Key words:} Unity, C\#, 2D platformer, game mechanics, physics, animations
-
-\thispagestyle{empty}
-\newpage
-
-\section*{Poděkování}
-podekovani
-
-\thispagestyle{empty}
-\newpage
-
-\section*{Prohlášení}
+\chapter*{Prohlášení}
 Prohlašuji, že jsem svou maturitní práci vypracoval/a samostatně. K práci jsem použil/a literaturu a prameny, uvedené v seznamu. Souhlasím s tím, aby moje ročníková práce byla využívána na Střední průmyslové škole Karviná, příspěvkové organizaci.
 
-V Karviné dne: \underline{\hspace{5cm}} \hspace{2cm} Podpis: \underline{\hspace{5cm}}
+V Karviné dne: ………………………. 	Podpis: ………………………. 
 
-\thispagestyle{empty}
-\newpage
+\tableofcontents
 
-\tableofcontents 
-\thispagestyle{empty}
-\newpage
+\include{Úvod}
+\include{Terminologie}
+\include{Použitý framework aplikace}
+\include{Celková koncepce řešení}
+\include{Popis aplikace}
+\include{Závěr}
 
-\thispagestyle{plain}
-\pagenumbering{arabic}
-\pagestyle{plain}
+\listoffigures
 
-\section{Úvod}
-Cílem této práce je navrhnout a implementovat herní mechaniky pro postavy videohry žánru 2D plošinovky. Práce se zaměřuje na systémy ovládání hráče a návrh logiky nepřítele. Mechaniky hráče nezahrnují pouze pohyb do stran, ale také systém skoku a střelby. Zvláštní důraz je kladen na implementaci skoku, jehož správné nastavení zásadně ovlivňuje herní pocit a odlišuje kvalitní 2D plošinovky od méně povedených titulů.
-
-Součástí práce je také implementace fyzikálního systému. Herní engine Unity sice nabízí vestavěné nástroje pro práci s fyzikou, ty však nemusí vždy poskytovat požadovanou míru kontroly nad chováním postavy. Z tohoto důvodu jsou tyto nástroje využity především jako základ, zatímco pokročilejší herní mechaniky jsou řešeny vlastním kódem.
-
-S programováním herních mechanik úzce souvisí také implementace animací. Po vytvoření grafických podkladů je nutné jednotlivé animace správně integrovat do enginu a propojit je s řídicí logikou tak, aby odpovídaly aktuálnímu stavu postavy.
-
-Významnou část projektu tvoří rovněž systém střelby založený na zaměřování pomocí kurzoru myši. Tento přístup přináší řadu technických výzev, například správné určení směru projektilu, úpravu jeho rychlosti nebo zajištění jeho odstranění po určité době z důvodu optimalizace výkonu hry.
-\newpage
-\input{definitions/definitions.tex}
-\newpage
-\input{framework/framework.tex}
-\newpage
-\input{concept/concept.tex}
-\newpage
-\input{application/application.tex}
-
-\newpage
-\section{Závěr}
-
-V této práci jsem navrhl a implementoval herní mechaniky pro 2D plošinovku v Unity. Klíčovým prvkem bylo vytvoření komplexního systému pohybu hráče zahrnujícího pohyb, pokročilé skokové mechaniky (coyote time, jump buffer, wall jump, variable jump height) a mechaniku dashe.
-
-Důležitým aspektem bylo také vytvoření vlastního fyzikálního systému namísto \newline spoléhání se na Unity vestavěné nástroje. Toto řešení umožňuje dynamickou úpravu gravitace podle aktuálního stavu hráče, což zásadně zlepšuje herní pocit.
-
-Systém střelby byl navržen jako záchranný mechanismus s omezenou municí, což podporuje herní filosofii zaměřenou na zlepšování pohybových dovedností.
-
-Bowlingová koule jako nepřítel poskytuje konstantní hrozbu s progresivní obtížností díky stun systému a růstu rychlosti.
-
-\newpage
-\input{odkazy/odkazy.tex}
+\bibliographystyle{plain}
+\bibliography{Zdroje}
 
 \end{document}
