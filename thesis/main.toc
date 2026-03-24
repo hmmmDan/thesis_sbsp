@@ -1,104 +1,104 @@
 \xpg@aux {}{czech}
-\contentsline {chapter}{Obsah}{4}{chapter*.3}%
-\contentsline {chapter}{\numberline {1}Terminologie}{7}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Definice pojmů}{7}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}Collider}{7}{subsection.1.1.1}%
-\contentsline {subsection}{\numberline {1.1.2}Rigidbody}{7}{subsection.1.1.2}%
-\contentsline {subsection}{\numberline {1.1.3}Player controller}{7}{subsection.1.1.3}%
-\contentsline {subsection}{\numberline {1.1.4}Input action}{7}{subsection.1.1.4}%
-\contentsline {subsection}{\numberline {1.1.5}Sprite}{7}{subsection.1.1.5}%
-\contentsline {subsection}{\numberline {1.1.6}Animace}{7}{subsection.1.1.6}%
-\contentsline {subsection}{\numberline {1.1.7}Animator controller}{8}{subsection.1.1.7}%
-\contentsline {subsection}{\numberline {1.1.8}Tilemap}{8}{subsection.1.1.8}%
-\contentsline {subsection}{\numberline {1.1.9}Tileset}{8}{subsection.1.1.9}%
-\contentsline {subsection}{\numberline {1.1.10}Game feel}{8}{subsection.1.1.10}%
-\contentsline {subsection}{\numberline {1.1.11}Frame}{8}{subsection.1.1.11}%
-\contentsline {subsection}{\numberline {1.1.12}Layer}{8}{subsection.1.1.12}%
-\contentsline {subsection}{\numberline {1.1.13}Prefab}{9}{subsection.1.1.13}%
-\contentsline {subsection}{\numberline {1.1.14}ScriptableObject}{9}{subsection.1.1.14}%
-\contentsline {subsection}{\numberline {1.1.15}Callback}{9}{subsection.1.1.15}%
-\contentsline {chapter}{\numberline {2}Použitý framework aplikace}{10}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Použitý framework aplikace}{10}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Operační systém}{10}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Herní engine}{10}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Programovací jazyk}{11}{subsection.2.1.3}%
-\contentsline {subsection}{\numberline {2.1.4}IDE / Code editor}{11}{subsection.2.1.4}%
-\contentsline {subsection}{\numberline {2.1.5}Kolaborace}{11}{subsection.2.1.5}%
-\contentsline {chapter}{\numberline {3}Celková koncepce řešení}{12}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Koncepce řešení}{12}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Základní pohyb}{12}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Rozšiřující funkce}{12}{subsection.3.1.2}%
-\contentsline {subsubsection}{Coyote time}{13}{subsubsection*.5}%
-\contentsline {subsubsection}{Jump buffer}{13}{subsubsection*.6}%
-\contentsline {subsubsection}{Wall jump a wall slide}{13}{subsubsection*.7}%
-\contentsline {subsubsection}{Variable jump height}{13}{subsubsection*.8}%
-\contentsline {subsubsection}{Dash}{14}{subsubsection*.9}%
-\contentsline {subsection}{\numberline {3.1.3}Systém střelby}{14}{subsection.3.1.3}%
-\contentsline {subsubsection}{Míření (aim)}{14}{subsubsection*.10}%
-\contentsline {subsubsection}{Výstřel}{14}{subsubsection*.11}%
-\contentsline {subsubsection}{Chování projektilu}{14}{subsubsection*.12}%
-\contentsline {subsection}{\numberline {3.1.4}Animace}{15}{subsection.3.1.4}%
-\contentsline {subsection}{\numberline {3.1.5}Fyzika a gravitace}{15}{subsection.3.1.5}%
-\contentsline {chapter}{\numberline {4}Popis aplikace}{16}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Aplikace}{16}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}PlayerControllerData}{16}{subsection.4.1.1}%
-\contentsline {subsubsection}{Účel a využití ScriptableObject}{17}{subsubsection*.13}%
-\contentsline {subsubsection}{Struktura dat a organizace}{18}{subsubsection*.14}%
-\contentsline {subsubsection}{Důležité parametry a jejich vliv na herní pocit}{18}{subsubsection*.15}%
-\contentsline {subsubsection}{Výpočet akcelerace a její automatizace}{19}{subsubsection*.16}%
-\contentsline {subsubsection}{Použití v PlayerController a propojení systémů}{19}{subsubsection*.17}%
-\contentsline {subsection}{\numberline {4.1.2}PlayerController}{19}{subsection.4.1.2}%
-\contentsline {subsubsection}{Hlavní skript a jeho role v systému}{20}{subsubsection*.18}%
-\contentsline {subsubsection}{Input systém a zpracování uživatelského vstupu}{21}{subsubsection*.19}%
-\contentsline {subsubsection}{Zpracování vstupu a filtrování hodnot}{22}{subsubsection*.20}%
-\contentsline {subsubsection}{Horizontální pohyb a akcelerace}{23}{subsubsection*.21}%
-\contentsline {subsubsection}{Vlastní gravitace a její dynamické řízení}{24}{subsubsection*.22}%
-\contentsline {subsubsection}{Výpočet nové rychlosti a použití Lerp}{25}{subsubsection*.23}%
-\contentsline {subsubsection}{Zemní kontrola a detekce dotyku se zemí}{25}{subsubsection*.24}%
-\contentsline {subsubsection}{Propojení s Animatorem a předávání parametrů}{25}{subsubsection*.25}%
-\contentsline {subsubsection}{Otočení postavy a vizuální změna směru}{26}{subsubsection*.26}%
-\contentsline {subsubsection}{Propojení s dash systémem a deaktivace pohybu}{26}{subsubsection*.27}%
-\contentsline {subsection}{\numberline {4.1.3}Skok}{26}{subsection.4.1.3}%
-\contentsline {subsubsection}{Coyote time a jeho implementace}{27}{subsubsection*.28}%
-\contentsline {subsubsection}{Jump buffer a registrace skoku před dopadem}{27}{subsubsection*.29}%
-\contentsline {subsubsection}{Provádění skoku a nastavení fyzikálních parametrů}{28}{subsubsection*.30}%
-\contentsline {subsubsection}{Jump cut a předčasné ukončení skoku}{29}{subsubsection*.31}%
-\contentsline {subsubsection}{Jump hang a efekt vznášení na vrcholu skoku}{29}{subsubsection*.32}%
-\contentsline {subsubsection}{Vstup skoku a registrace callbacků}{30}{subsubsection*.33}%
-\contentsline {subsection}{\numberline {4.1.4}Dash}{30}{subsection.4.1.4}%
-\contentsline {subsubsection}{Základní princip a dědění z PlayerAbility}{30}{subsubsection*.34}%
-\contentsline {subsubsection}{Metoda TryDash a kontrola podmínek}{31}{subsubsection*.35}%
-\contentsline {subsubsection}{Směr dashe a normalizace vektoru}{31}{subsubsection*.36}%
-\contentsline {subsubsection}{DashMovement a aplikace rychlosti během dashe}{32}{subsubsection*.37}%
-\contentsline {subsubsection}{Cooldown systém a omezení frekvence dashe}{33}{subsubsection*.38}%
-\contentsline {subsubsection}{Propojení s PlayerController a registrace inputu}{33}{subsubsection*.39}%
-\contentsline {subsection}{\numberline {4.1.5}Wall jump a wall slide}{33}{subsection.4.1.5}%
-\contentsline {subsubsection}{Základ skriptu a dědění z PlayerAbility}{33}{subsubsection*.40}%
-\contentsline {subsubsection}{Detekce stěny a určení jejího směru}{34}{subsubsection*.41}%
-\contentsline {subsubsection}{Wall slide a zpomalený pád podél stěny}{34}{subsubsection*.42}%
-\contentsline {subsubsection}{Wall jump a odraz od stěny}{35}{subsubsection*.43}%
-\contentsline {subsubsection}{Wall-to-wall jump a rychlý přeskok mezi stěnami}{37}{subsubsection*.44}%
-\contentsline {subsubsection}{Propojení s PlayerController a deaktivace vstupu}{37}{subsubsection*.45}%
-\contentsline {subsection}{\numberline {4.1.6}Střelba}{37}{subsection.4.1.6}%
-\contentsline {subsubsection}{Systém střelby a architektura skriptů}{37}{subsubsection*.46}%
-\contentsline {subsubsection}{Směr střelby a automatické zaměření na cíl}{38}{subsubsection*.47}%
-\contentsline {subsubsection}{Vytvoření projektilu a nastavení fyzikálních parametrů}{38}{subsubsection*.48}%
-\contentsline {subsubsection}{Omezený počet nábojů a systém přebíjení}{40}{subsubsection*.49}%
-\contentsline {subsubsection}{Výstřel a kontrola podmínek}{40}{subsubsection*.50}%
-\contentsline {subsubsection}{Respawn a obnovení stavu střelby}{40}{subsubsection*.51}%
-\contentsline {subsubsection}{Chování projektilu po vystřelení}{41}{subsubsection*.52}%
-\contentsline {subsection}{\numberline {4.1.7}Bowlingová koule}{41}{subsection.4.1.7}%
-\contentsline {subsubsection}{Přehled a základní struktura}{42}{subsubsection*.53}%
-\contentsline {subsubsection}{Pohyb a konstantní rychlost}{43}{subsubsection*.54}%
-\contentsline {subsubsection}{Startovní prodleva a synchronizace s hráčem}{44}{subsubsection*.55}%
-\contentsline {subsubsection}{Stun systém a dočasné zpomalení}{45}{subsubsection*.56}%
-\contentsline {subsubsection}{Růst rychlosti a progresivní obtížnost}{46}{subsubsection*.57}%
-\contentsline {subsubsection}{Reset při smrti hráče}{46}{subsubsection*.58}%
-\contentsline {subsubsection}{Animace rotace a dynamická rychlost}{46}{subsubsection*.59}%
-\contentsline {subsection}{\numberline {4.1.8}Další skripty nepřítele}{47}{subsection.4.1.8}%
-\contentsline {subsubsection}{TileDestroy -- přehled a účel}{48}{subsubsection*.60}%
-\contentsline {subsubsection}{Tick-based ničení dlaždic a optimalizace}{48}{subsubsection*.61}%
-\contentsline {subsubsection}{Limit dlaždic na tick a výkonová ochrana}{48}{subsubsection*.62}%
-\contentsline {subsubsection}{Bounds a WorldToCell -- převod souřadnic}{49}{subsubsection*.63}%
-\contentsline {subsubsection}{DestroyOnTouch -- přehled a funkčnost}{49}{subsubsection*.64}%
-\contentsline {chapter}{Seznam obrázků}{51}{chapter*.66}%
+\contentsline {chapter}{Obsah}{4}{}%
+\contentsline {chapter}{\numberline {1}Úvod}{6}{}%
+\contentsline {chapter}{\numberline {2}Terminologie}{7}{}%
+\contentsline {subsection}{\numberline {2.0.1}Collider}{7}{}%
+\contentsline {subsection}{\numberline {2.0.2}Rigidbody}{7}{}%
+\contentsline {subsection}{\numberline {2.0.3}Player controller}{7}{}%
+\contentsline {subsection}{\numberline {2.0.4}Input action}{7}{}%
+\contentsline {subsection}{\numberline {2.0.5}Sprite}{7}{}%
+\contentsline {subsection}{\numberline {2.0.6}Animace}{7}{}%
+\contentsline {subsection}{\numberline {2.0.7}Animator controller}{8}{}%
+\contentsline {subsection}{\numberline {2.0.8}Tilemap}{8}{}%
+\contentsline {subsection}{\numberline {2.0.9}Tileset}{8}{}%
+\contentsline {subsection}{\numberline {2.0.10}Game feel}{8}{}%
+\contentsline {subsection}{\numberline {2.0.11}Frame}{8}{}%
+\contentsline {subsection}{\numberline {2.0.12}Layer}{8}{}%
+\contentsline {subsection}{\numberline {2.0.13}Prefab}{9}{}%
+\contentsline {subsection}{\numberline {2.0.14}ScriptableObject}{9}{}%
+\contentsline {subsection}{\numberline {2.0.15}Callback}{9}{}%
+\contentsline {chapter}{\numberline {3}Použitý framework aplikace}{10}{}%
+\contentsline {subsection}{\numberline {3.0.1}Operační systém}{10}{}%
+\contentsline {subsection}{\numberline {3.0.2}Herní engine}{10}{}%
+\contentsline {subsection}{\numberline {3.0.3}Programovací jazyk}{11}{}%
+\contentsline {subsection}{\numberline {3.0.4}IDE / Code editor}{11}{}%
+\contentsline {subsection}{\numberline {3.0.5}Kolaborace}{11}{}%
+\contentsline {chapter}{\numberline {4}Celková koncepce řešení}{12}{}%
+\contentsline {subsection}{\numberline {4.0.1}Základní pohyb}{12}{}%
+\contentsline {subsection}{\numberline {4.0.2}Rozšiřující funkce}{12}{}%
+\contentsline {subsubsection}{Coyote time}{13}{}%
+\contentsline {subsubsection}{Jump buffer}{13}{}%
+\contentsline {subsubsection}{Wall jump a wall slide}{13}{}%
+\contentsline {subsubsection}{Variable jump height}{13}{}%
+\contentsline {subsubsection}{Dash}{14}{}%
+\contentsline {subsection}{\numberline {4.0.3}Systém střelby}{14}{}%
+\contentsline {subsubsection}{Míření (aim)}{14}{}%
+\contentsline {subsubsection}{Výstřel}{14}{}%
+\contentsline {subsubsection}{Chování projektilu}{14}{}%
+\contentsline {subsection}{\numberline {4.0.4}Animace}{15}{}%
+\contentsline {subsection}{\numberline {4.0.5}Fyzika a gravitace}{15}{}%
+\contentsline {chapter}{\numberline {5}Popis aplikace}{16}{}%
+\contentsline {subsection}{\numberline {5.0.1}PlayerControllerData}{16}{}%
+\contentsline {subsubsection}{Účel a využití ScriptableObject}{17}{}%
+\contentsline {subsubsection}{Struktura dat a organizace}{18}{}%
+\contentsline {subsubsection}{Důležité parametry a jejich vliv na herní pocit}{18}{}%
+\contentsline {subsubsection}{Výpočet akcelerace a její automatizace}{19}{}%
+\contentsline {subsubsection}{Použití v PlayerController a propojení systémů}{19}{}%
+\contentsline {subsection}{\numberline {5.0.2}PlayerController}{19}{}%
+\contentsline {subsubsection}{Hlavní skript a jeho role v systému}{20}{}%
+\contentsline {subsubsection}{Input systém a zpracování uživatelského vstupu}{21}{}%
+\contentsline {subsubsection}{Zpracování vstupu a filtrování hodnot}{22}{}%
+\contentsline {subsubsection}{Horizontální pohyb a akcelerace}{23}{}%
+\contentsline {subsubsection}{Vlastní gravitace a její dynamické řízení}{24}{}%
+\contentsline {subsubsection}{Výpočet nové rychlosti a použití Lerp}{25}{}%
+\contentsline {subsubsection}{Zemní kontrola a detekce dotyku se zemí}{25}{}%
+\contentsline {subsubsection}{Propojení s Animatorem a předávání parametrů}{25}{}%
+\contentsline {subsubsection}{Otočení postavy a vizuální změna směru}{26}{}%
+\contentsline {subsubsection}{Propojení s dash systémem a deaktivace pohybu}{26}{}%
+\contentsline {subsection}{\numberline {5.0.3}Skok}{26}{}%
+\contentsline {subsubsection}{Coyote time a jeho implementace}{27}{}%
+\contentsline {subsubsection}{Jump buffer a registrace skoku před dopadem}{27}{}%
+\contentsline {subsubsection}{Provádění skoku a nastavení fyzikálních parametrů}{28}{}%
+\contentsline {subsubsection}{Jump cut a předčasné ukončení skoku}{29}{}%
+\contentsline {subsubsection}{Jump hang a efekt vznášení na vrcholu skoku}{29}{}%
+\contentsline {subsubsection}{Vstup skoku a registrace callbacků}{30}{}%
+\contentsline {subsection}{\numberline {5.0.4}Dash}{30}{}%
+\contentsline {subsubsection}{Základní princip a dědění z PlayerAbility}{30}{}%
+\contentsline {subsubsection}{Metoda TryDash a kontrola podmínek}{31}{}%
+\contentsline {subsubsection}{Směr dashe a normalizace vektoru}{31}{}%
+\contentsline {subsubsection}{DashMovement a aplikace rychlosti během dashe}{32}{}%
+\contentsline {subsubsection}{Cooldown systém a omezení frekvence dashe}{33}{}%
+\contentsline {subsubsection}{Propojení s PlayerController a registrace inputu}{33}{}%
+\contentsline {subsection}{\numberline {5.0.5}Wall jump a wall slide}{33}{}%
+\contentsline {subsubsection}{Základ skriptu a dědění z PlayerAbility}{33}{}%
+\contentsline {subsubsection}{Detekce stěny a určení jejího směru}{34}{}%
+\contentsline {subsubsection}{Wall slide a zpomalený pád podél stěny}{34}{}%
+\contentsline {subsubsection}{Wall jump a odraz od stěny}{35}{}%
+\contentsline {subsubsection}{Wall-to-wall jump a rychlý přeskok mezi stěnami}{37}{}%
+\contentsline {subsubsection}{Propojení s PlayerController a deaktivace vstupu}{37}{}%
+\contentsline {subsection}{\numberline {5.0.6}Střelba}{37}{}%
+\contentsline {subsubsection}{Systém střelby a architektura skriptů}{37}{}%
+\contentsline {subsubsection}{Směr střelby a automatické zaměření na cíl}{38}{}%
+\contentsline {subsubsection}{Vytvoření projektilu a nastavení fyzikálních parametrů}{38}{}%
+\contentsline {subsubsection}{Omezený počet nábojů a systém přebíjení}{40}{}%
+\contentsline {subsubsection}{Výstřel a kontrola podmínek}{40}{}%
+\contentsline {subsubsection}{Respawn a obnovení stavu střelby}{40}{}%
+\contentsline {subsubsection}{Chování projektilu po vystřelení}{41}{}%
+\contentsline {subsection}{\numberline {5.0.7}Bowlingová koule}{41}{}%
+\contentsline {subsubsection}{Přehled a základní struktura}{42}{}%
+\contentsline {subsubsection}{Pohyb a konstantní rychlost}{43}{}%
+\contentsline {subsubsection}{Startovní prodleva a synchronizace s hráčem}{44}{}%
+\contentsline {subsubsection}{Stun systém a dočasné zpomalení}{45}{}%
+\contentsline {subsubsection}{Růst rychlosti a progresivní obtížnost}{46}{}%
+\contentsline {subsubsection}{Reset při smrti hráče}{46}{}%
+\contentsline {subsubsection}{Animace rotace a dynamická rychlost}{46}{}%
+\contentsline {subsection}{\numberline {5.0.8}Další skripty nepřítele}{47}{}%
+\contentsline {subsubsection}{TileDestroy -- přehled a účel}{48}{}%
+\contentsline {subsubsection}{Tick-based ničení dlaždic a optimalizace}{48}{}%
+\contentsline {subsubsection}{Limit dlaždic na tick a výkonová ochrana}{48}{}%
+\contentsline {subsubsection}{Bounds a WorldToCell -- převod souřadnic}{49}{}%
+\contentsline {subsubsection}{DestroyOnTouch -- přehled a funkčnost}{49}{}%
+\contentsline {chapter}{\numberline {6}Závěr}{50}{}%
+\contentsline {chapter}{Seznam obrázků}{51}{}%
+\contentsline {chapter}{Seznam použitých kódů}{52}{}%
+\contentsline {chapter}{\numberline {7}Zdroje}{53}{}%

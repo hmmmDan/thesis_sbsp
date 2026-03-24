@@ -4,6 +4,7 @@
 
 
 \usepackage{graphicx}
+%\usepackage{hyperref}
 
 \usepackage{setspace}
 \setstretch{1.15}
@@ -18,20 +19,21 @@
 \usepackage{listings}
 \usepackage{tocbibind}
 \usepackage{xcolor}
-\usepackage[
-    bookmarks=false,
-    plainpages=false,
-    pdfpagelabels=false
-]{hyperref}
+%\usepackage[
+%    bookmarks=false,
+%    plainpages=false,
+%    pdfpagelabels=false,
+%    unicode
+%]{hyperref}
 \usepackage{url}
 
-\hypersetup{
-    colorlinks=true,
-    linkcolor=blue,
-    filecolor=magenta,
-    urlcolor=cyan,
-    pdfpagemode=UseNone,
-}
+%\hypersetup{
+%    colorlinks=true,
+%    linkcolor=blue,
+%    filecolor=magenta,
+%    urlcolor=cyan,
+%    pdfpagemode=UseNone,
+%}
 
 \lstset{
     basicstyle=\ttfamily\small,
@@ -61,7 +63,7 @@
   }
 \gappto\captionsczech{%
   \def\lstlistingname{Kód}%
-  \def\lstlistlistingname{Seznam kódů}%
+  \def\lstlistlistingname{Seznam použitých kódů}%
 }
 
 \titleformat{\chapter}
@@ -162,6 +164,10 @@ V Karviné dne: ……………………….\hspace{1.5cm}Podpis: …………�
 
 \listoffigures
 
+\lstlistoflistings
+
+\chapter{Zdroje}
+\nocite{*}
 \bibliographystyle{plain}
 \bibliography{Zdroje}
 
