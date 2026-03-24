@@ -6,7 +6,7 @@ K registraci inputu dochází v metodě \texttt{OnEnable()}, kde se připojují 
 
 Tento přístup k input systému je výhodný, protože umožňuje snadnou rekonfiguraci vstupů bez nutnosti měnit kód. V editoru lze přiřadit libovolnou klávesu nebo tlačítko k akci a systém automaticky zpracuje změnu.
 
-\begin{lstlisting}[language=csharp]
+\begin{lstlisting}[language=csharp,caption={Listing 3: Deklarace vstupních akcí}]
 [Header("input")]
 public Vector2 moveInput { get; private set; }
 [SerializeField] private InputActionReference moveAction;

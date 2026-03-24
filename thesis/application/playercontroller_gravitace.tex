@@ -4,7 +4,7 @@ Jelikož je \texttt{gravityScale} na \texttt{Rigidbody} nastaven na 0, gravitace
 
 Metoda rozlišuje čtyři různé stavy, z nichž každý má specifickou gravitační sílu. Prvním stavem je normální pád dolů, při kterém se použije \texttt{fallMultiplier} pro rychlejší pád. To zajistí, že hráč padá rychleji, než stoupá, což je typické pro kvalitní platformovky. Druhým stavem je přerušení skoku (jump cut), kdy hráč pustí tlačítko skoku během vzestupu. V tomto případě se použije ještě vyšší multiplikátor gravitace pro okamžité ukončení vzestupu. Třetím stavem je dosažení vrcholu skoku, kdy vertikální rychlost klesne pod \newline \texttt{jumpHangTimeThreshold}. V tomto momentě se gravitace dočasně sníží, což vytváří efekt krátkého vznášení. Posledním stavem je normální stav bez jakékoli modifikace, kdy se použije základní gravitace.
 
-\begin{lstlisting}[language=csharp]
+\begin{lstlisting}[language=csharp,caption={Listing 5: Metoda ApplyCustomGravity}]
 private void ApplyCustomGravity()
 {
     if (rb == null || data == null) return;

@@ -6,7 +6,7 @@ Následně se vynuluje vertikální rychlost na \texttt{Rigidbody2D} a poté se 
 
 Hodnota \texttt{jumpForce} se typicky pohybuje v rozmezí 10-20 v závislosti na nastavení gravitace a požadované výšce skoku. Správné nastavení této hodnoty je klíčové pro celkový herní pocit.
 
-\begin{lstlisting}[language=csharp]
+\begin{lstlisting}[language=csharp,caption={Listing 7: Metoda Jump pro provedení skoku}]
 private void Jump()
 {
     if (rb == null || data == null) return;

@@ -6,7 +6,7 @@ Zrychlení se liší podle toho, zda je hráč na zemi nebo ve vzduchu. Parametr
 
 Během provádění wall jump je volání \texttt{Run()} dočasně deaktivováno, aby hráč nemohl během letu po stěně reagovat na směrové tlačítko. Toto zajišťuje, že wall jump má konzistentní trajektorii bez ohledu na input hráče během letu.
 
-\begin{lstlisting}[language=csharp]
+\begin{lstlisting}[language=csharp,caption={Listing 4: Metoda Run pro horizontální pohyb}]
 private void Run()
 {
     if (pw != null && pw.IsWallJumping)

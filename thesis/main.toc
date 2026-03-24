@@ -83,22 +83,22 @@
 \contentsline {subsubsection}{Systém střelby a architektura skriptů}{37}{subsubsection*.46}%
 \contentsline {subsubsection}{Směr střelby a automatické zaměření na cíl}{38}{subsubsection*.47}%
 \contentsline {subsubsection}{Vytvoření projektilu a nastavení fyzikálních parametrů}{38}{subsubsection*.48}%
-\contentsline {subsubsection}{Omezený počet nábojů a systém přebíjení}{39}{subsubsection*.49}%
-\contentsline {subsubsection}{Výstřel a kontrola podmínek}{39}{subsubsection*.50}%
-\contentsline {subsubsection}{Respawn a obnovení stavu střelby}{39}{subsubsection*.51}%
-\contentsline {subsubsection}{Chování projektilu po vystřelení}{40}{subsubsection*.52}%
-\contentsline {subsection}{\numberline {4.1.7}Bowlingová koule}{40}{subsection.4.1.7}%
-\contentsline {subsubsection}{Přehled a základní struktura}{41}{subsubsection*.53}%
-\contentsline {subsubsection}{Pohyb a konstantní rychlost}{42}{subsubsection*.54}%
-\contentsline {subsubsection}{Startovní prodleva a synchronizace s hráčem}{43}{subsubsection*.55}%
-\contentsline {subsubsection}{Stun systém a dočasné zpomalení}{44}{subsubsection*.56}%
-\contentsline {subsubsection}{Růst rychlosti a progresivní obtížnost}{45}{subsubsection*.57}%
-\contentsline {subsubsection}{Reset při smrti hráče}{45}{subsubsection*.58}%
-\contentsline {subsubsection}{Animace rotace a dynamická rychlost}{45}{subsubsection*.59}%
-\contentsline {subsection}{\numberline {4.1.8}Další skripty nepřítele}{46}{subsection.4.1.8}%
-\contentsline {subsubsection}{TileDestroy -- přehled a účel}{47}{subsubsection*.60}%
-\contentsline {subsubsection}{Tick-based ničení dlaždic a optimalizace}{47}{subsubsection*.61}%
-\contentsline {subsubsection}{Limit dlaždic na tick a výkonová ochrana}{47}{subsubsection*.62}%
-\contentsline {subsubsection}{Bounds a WorldToCell -- převod souřadnic}{48}{subsubsection*.63}%
-\contentsline {subsubsection}{DestroyOnTouch -- přehled a funkčnost}{48}{subsubsection*.64}%
-\contentsline {chapter}{Seznam obrázků}{50}{chapter*.66}%
+\contentsline {subsubsection}{Omezený počet nábojů a systém přebíjení}{40}{subsubsection*.49}%
+\contentsline {subsubsection}{Výstřel a kontrola podmínek}{40}{subsubsection*.50}%
+\contentsline {subsubsection}{Respawn a obnovení stavu střelby}{40}{subsubsection*.51}%
+\contentsline {subsubsection}{Chování projektilu po vystřelení}{41}{subsubsection*.52}%
+\contentsline {subsection}{\numberline {4.1.7}Bowlingová koule}{41}{subsection.4.1.7}%
+\contentsline {subsubsection}{Přehled a základní struktura}{42}{subsubsection*.53}%
+\contentsline {subsubsection}{Pohyb a konstantní rychlost}{43}{subsubsection*.54}%
+\contentsline {subsubsection}{Startovní prodleva a synchronizace s hráčem}{44}{subsubsection*.55}%
+\contentsline {subsubsection}{Stun systém a dočasné zpomalení}{45}{subsubsection*.56}%
+\contentsline {subsubsection}{Růst rychlosti a progresivní obtížnost}{46}{subsubsection*.57}%
+\contentsline {subsubsection}{Reset při smrti hráče}{46}{subsubsection*.58}%
+\contentsline {subsubsection}{Animace rotace a dynamická rychlost}{46}{subsubsection*.59}%
+\contentsline {subsection}{\numberline {4.1.8}Další skripty nepřítele}{47}{subsection.4.1.8}%
+\contentsline {subsubsection}{TileDestroy -- přehled a účel}{48}{subsubsection*.60}%
+\contentsline {subsubsection}{Tick-based ničení dlaždic a optimalizace}{48}{subsubsection*.61}%
+\contentsline {subsubsection}{Limit dlaždic na tick a výkonová ochrana}{48}{subsubsection*.62}%
+\contentsline {subsubsection}{Bounds a WorldToCell -- převod souřadnic}{49}{subsubsection*.63}%
+\contentsline {subsubsection}{DestroyOnTouch -- přehled a funkčnost}{49}{subsubsection*.64}%
+\contentsline {chapter}{Seznam obrázků}{51}{chapter*.66}%

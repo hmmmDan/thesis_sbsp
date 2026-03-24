@@ -6,7 +6,7 @@ Vzorec pro výpočet směru je \texttt{(ballPosition - playerPosition).normalize
 
 Projektil se instancuje na pozici \texttt{firePoint}, což je bod na hráči odkud vylétá projektil. Rotace projektilu se nastaví podle směru letu pomocí \texttt{Mathf.Atan2} -- tento úhel se převede na stupně a nastaví se jako rotace kolem osy Z. Toto zajišťuje, že projektil je vizuálně orientován ve směru pohybu.
 
-\begin{lstlisting}[language=csharp]
+\begin{lstlisting}[language=csharp,caption={Listing 12: Metoda Shoot pro vytvoření projektilu}]
 void Shoot()
 {
     Vector2 direction = (enemyTransform.position - firePoint.position).normalized;

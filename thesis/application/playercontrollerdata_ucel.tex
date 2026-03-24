@@ -6,7 +6,7 @@ Z tohoto důvodu existuje typ \texttt{ScriptableObject}, který je navržen spec
 
 Pro vytvoření \texttt{ScriptableObject} ve editoru se používá atribut \texttt{[CreateAssetMenu]}, který přidá položku do menu pro vytvoření nového assetu. Tím získá developer možnost tweakovat hodnoty bez nutnosti otevírat samotný skript a měnit v něm konstanty. Při změně hodnot v \texttt{ScriptableObject} assetu se tyto změny okamžitě projeví ve hře, což výrazně zrychluje proces ladění herního pocitu.
 
-\begin{lstlisting}[language=csharp]
+\begin{lstlisting}[language=csharp,caption={Listing 1: Definice třídy PlayerControllerData}]
 [CreateAssetMenu(menuName = "Player Movement Data")]
 public class PlayerControllerData : ScriptableObject
 {

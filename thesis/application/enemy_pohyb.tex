@@ -4,7 +4,7 @@ Koule se pohybuje konstantní rychlostí na ose X pomocí \texttt{Rigidbody2D}. 
 
 Rigidbody je nastaven na \texttt{freezeRotation}, takže se koule neotáčí vlivem fyziky. Rotace animace koule se řídí samostatně v závislosti na rychlosti pohybu. Toto oddělení fyzikální rotace od vizuální animace umožňuje přesnější kontrolu nad prezentací.
 
-\begin{lstlisting}[language=csharp]
+\begin{lstlisting}[language=csharp,caption={Listing 15: Pohyb bowlingové koule}]
 void Awake()
 {
     rb = GetComponent<Rigidbody2D>();

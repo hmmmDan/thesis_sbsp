@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026/Arch Linux) (preloaded format=xelatex 2026.3.24)  24 MAR 2026 12:16
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026/Arch Linux) (preloaded format=xelatex 2026.3.24)  24 MAR 2026 12:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -499,6 +499,7 @@ Overfull \hbox (30.38982pt too wide) in paragraph at lines 7--8
 \TU/TimesNewRoman(0)/m/n/12 noty bez nutnosti otevírat samotný skript a měnit v něm konstanty. Při změně hodnot v \TU/lmtt/m/n/12 ScriptableObject
  []
 
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 9.
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.95> not available
 (Font)              Font shape `TU/lmtt/b/n' tried instead on input line 11.
 [17]) (./application/playercontrollerdata_struktura.tex) (./application/playercontrollerdata_parametry.tex)
@@ -551,9 +552,7 @@ Overfull \hbox (30.0209pt too wide) in paragraph at lines 3--4
 \TU/TimesNewRoman(0)/m/n/12 Mechanika rychlého výpadu je implementována ve třídě \TU/lmtt/m/n/12 PlayerDash\TU/TimesNewRoman(0)/m/n/12 , která dědí ze třídy \TU/lmtt/m/n/12 PlayerAbility\TU/TimesNewRoman(0)/m/n/12 .
  []
 
-) [30] (./application/dash_try.tex) (./application/dash_smer.tex) (./application/dash_movement.tex [31]
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 7.
-) [32] (./application/dash_cooldown.tex) (./application/dash_propojeni.tex
+) [30] (./application/dash_try.tex) (./application/dash_smer.tex) (./application/dash_movement.tex [31]) [32] (./application/dash_cooldown.tex) (./application/dash_propojeni.tex
 Overfull \hbox (90.69075pt too wide) in paragraph at lines 3--4
 \TU/TimesNewRoman(0)/m/n/12 Ve \TU/lmtt/m/n/12 FixedUpdate() \TU/TimesNewRoman(0)/m/n/12 třídy \TU/lmtt/m/n/12 PlayerController \TU/TimesNewRoman(0)/m/n/12 se při aktivním dashi přeskočí volání \TU/lmtt/m/n/12 Run() \TU/TimesNewRoman(0)/m/n/12 a \TU/lmtt/m/n/12 ApplyCustomGravity()\TU/TimesNewRoman(0)/m/n/12 ,
  []
@@ -583,7 +582,7 @@ Overfull \hbox (45.7795pt too wide) in paragraph at lines 5--82
 \TU/TimesNewRoman(0)/m/n/12 to je implementováno v skriptu \TU/lmtt/m/n/12 BulletStripeShot.cs\TU/TimesNewRoman(0)/m/n/12 , který detekuje kolize a volá \TU/lmtt/m/n/12 Destroy(gameObject)
  []
 
-[38] (./application/strelba_naboje.tex) (./application/strelba_vystrel.tex) (./application/strelba_respawn.tex) [39] (./application/strelba_chovani.tex
+[38] [39] (./application/strelba_naboje.tex) (./application/strelba_vystrel.tex) (./application/strelba_respawn.tex) [40] (./application/strelba_chovani.tex
 Overfull \hbox (86.3253pt too wide) in paragraph at lines 7--8
 []\TU/TimesNewRoman(0)/m/n/12 Při srážce s prostředím (Collider2D na ground vrstvě) se projektil okamžitě zničí voláním \TU/lmtt/m/n/12 Destroy(gameObject)\TU/TimesNewRoman(0)/m/n/12 .
  []
@@ -593,12 +592,12 @@ Overfull \hbox (18.75629pt too wide) in paragraph at lines 3--4
 \TU/TimesNewRoman(0)/m/n/12 růst rychlosti. Skript vyžaduje \TU/lmtt/m/n/12 Rigidbody2D \TU/TimesNewRoman(0)/m/n/12 a \TU/lmtt/m/n/12 CircleCollider2D \TU/TimesNewRoman(0)/m/n/12 přes atribut \TU/lmtt/m/n/12 [RequireComponent]\TU/TimesNewRoman(0)/m/n/12 ,
  []
 
-[40]) [41] (./application/enemy_pohyb.tex) [42] (./application/enemy_prodleva.tex) [43] (./application/enemy_stun.tex [44]) (./application/enemy_rust.tex) (./application/enemy_reset.tex) (./application/enemy_animace.tex
+[41]) [42] (./application/enemy_pohyb.tex) [43] (./application/enemy_prodleva.tex) [44] (./application/enemy_stun.tex [45]) (./application/enemy_rust.tex) (./application/enemy_reset.tex) (./application/enemy_animace.tex
 Overfull \hbox (89.53786pt too wide) in paragraph at lines 3--4
 \TU/TimesNewRoman(0)/m/n/12 Rychlost rotace animace koule se dynamicky mění podle aktuální rychlosti pohybu. Metoda \TU/lmtt/m/n/12 UpdateAnimatorSpeed()
  []
 
-) [45] [46] (./application/koleblivy_tile.tex) (./application/koleblivy_tick.tex) (./application/koleblivy_limit.tex) [47] (./application/koleblivy_bounds.tex
+) [46] [47] (./application/koleblivy_tile.tex) (./application/koleblivy_tick.tex) (./application/koleblivy_limit.tex) [48] (./application/koleblivy_bounds.tex
 Overfull \hbox (12.99036pt too wide) in paragraph at lines 3--4
 \TU/TimesNewRoman(0)/m/n/12 Pro každou kolizi se počítají \TU/lmtt/m/n/12 Bounds \TU/TimesNewRoman(0)/m/n/12 a převádějí na souřadnice tilemap buněk pomocí \TU/lmtt/m/n/12 WorldToCell()\TU/TimesNewRoman(0)/m/n/12 .
  []
@@ -608,10 +607,10 @@ Overfull \hbox (1.67677pt too wide) in paragraph at lines 3--4
 \TU/TimesNewRoman(0)/m/n/12 Skript \TU/lmtt/m/n/12 DestroyOnTouch.cs \TU/TimesNewRoman(0)/m/n/12 řeší okamžité zničení objektů s tagem \TU/lmtt/m/n/12 Destroyable \TU/TimesNewRoman(0)/m/n/12 při kontaktu s kou-
  []
 
-))) [48]
+))) [49]
 \openout2 = `Závěr.aux'.
 
- (./Závěr.tex) [49
+ (./Závěr.tex) [50
 
 
 
@@ -622,7 +621,7 @@ Overfull \hbox (1.67677pt too wide) in paragraph at lines 3--4
 
 
 No file main.bbl.
-[50
+[51
 
 
 
@@ -639,6 +638,6 @@ Here is how much of TeX's memory you used:
  42820 multiletter control sequences out of 15000+600000
  630945 words of font info for 90 fonts, out of 8000000 for 9000
  24 hyphenation exceptions out of 8191
- 87i,6n,93p,1522b,1879s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 87i,6n,93p,1522b,1891s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (51 pages).
+Output written on main.pdf (52 pages).

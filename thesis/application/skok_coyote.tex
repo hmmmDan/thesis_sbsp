@@ -6,7 +6,7 @@ V momentě, kdy hráč stiskne skok, se kontroluje, zda je \texttt{lastOnGroundT
 
 Hodnota \texttt{coyoteTime} se typicky nastavuje na 0.1 až 0.2 sekundy, což odpovídá přibližně 6-12 snímkům při 60 snímcích za sekundu. Tato doba je dostatečně krátká, aby neovlivnila běžnou hru, ale dostatečně dlouhá, aby zachytila nepatrně opožděný input hráče.
 
-\begin{lstlisting}[language=csharp]
+\begin{lstlisting}[language=csharp,caption={Listing 6: Implementace coyote time}]
 // In Update() the timer decreases
 private void Update()
 {
