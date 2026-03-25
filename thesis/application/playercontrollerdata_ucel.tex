@@ -1,10 +1,10 @@
 \subsection{Účel a využití ScriptableObject}
 
-V Unity je možné vytvořit více druhů skriptů. Nejčastěji používaným je \texttt{MonoBehaviour}, který je určen především pro skripty přidělované na herní objekty v scéně. Pro ukládání dat a konfigurační parametry však není \texttt{MonoBehaviour} ideální volbou, protože vyžaduje přítomnost herního objektu a není možné jej snadno sdílet mezi více scénami.
+V Unity je možné vytvořit více druhů skriptů. Nejčastěji používaným je \texttt{MonoBehaviour}, který je určen především pro skripty přidělované na herní objekty v scéně. Pro ukládání dat a konfigurační parametry však není \texttt{MonoBehaviour} optimální volbou, jelikož vyžaduje přítomnost herního objektu a není možné jej snadno sdílet mezi více scénami.
 
 Z tohoto důvodu existuje typ \texttt{ScriptableObject}, který je navržen speciálně pro ukládání dat a konfiguračních hodnot. \texttt{ScriptableObject} je samostatný datový objekt, který není přidělen k žádnému hernímu objektu a může být vytvořen jako samostatný asset v projektu. Hlavní výhodou tohoto přístupu je možnost mít více různých sad parametrů a snadno je mezi nimi přepínat. Každý \texttt{ScriptableObject} asset může obsahovat odlišné hodnoty, což umožňuje například vytvořit různé profily obtížnosti nebo testovací scénáře.
 
-Pro vytvoření \texttt{ScriptableObject} ve editoru se používá atribut \texttt{[CreateAssetMenu]}, který přidá položku do menu pro vytvoření nového assetu. Tím získá developer možnost tweakovat hodnoty bez nutnosti otevírat samotný skript a měnit v něm konstanty. Při změně hodnot v \texttt{ScriptableObject} assetu se tyto změny okamžitě projeví ve hře, což výrazně zrychluje proces ladění herního pocitu.
+Pro vytvoření \texttt{ScriptableObject} v editoru se používá atribut \texttt{[CreateAssetMenu]}, který přidá položku do menu pro vytvoření nového assetu. Tím získá developer možnost tweakovat hodnoty bez nutnosti otevírat samotný skript a měnit v něm konstanty. Při změně hodnot v \texttt{ScriptableObject} assetu se tyto změny okamžitě projeví ve hře, což výrazně zrychluje proces ladění herního pocitu.
 
 \begin{lstlisting}[language=csharp,caption={Listing 1: Definice třídy PlayerControllerData}]
 [CreateAssetMenu(menuName = "Player Movement Data")]

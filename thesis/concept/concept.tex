@@ -1,8 +1,8 @@
-Nejprve bylo nutné stanovit základní koncept videohry. Bez něj není možné začít programovat mechaniky. Projekt vznikl v rámci game jamu, tedy časově omezené soutěže zaměřené na vývoj hry na zadané téma. S týmem jsme se rozhodli udělat hru o kuželce, která utíká před masivní bowlingovou koulí.
+Nejprve bylo nutné stanovit základní koncept videohry. Bez něj není možné začít programovat mechaniky. Projekt vznikl v rámci game jamu, tedy časově omezené soutěže zaměřené na vývoj hry na zadané téma. S týmem bylo rozhodnuto vytvořit hru o kuželce, která utíká před masivní bowlingovou koulí.
 
-Na základě tohoto konceptu bylo možné navrhnout základní funkčnost hlavních herních prvků, neboli kuželky jako hráčem ovládané postavy a bowlingové koule jako hrozby. U bowlingové koule jsme zvažovali dvě varianty řešení. První možností bylo implementovat naváděcí mechanismus, který by sledoval aktuální polohu hráče a dynamicky upravoval trajektorii pohybu. Druhou možností bylo ponechat kouli v předem definovaném směru pohybu, avšak přizpůsobit její velikost a návrh úrovně tak, aby i bez aktivního navádění představovala dostatečné nebezpečí.
+Na základě tohoto konceptu bylo možné navrhnout základní funkčnost hlavních herních prvků, neboli kuželky jako hráčem ovládané postavy a bowlingové koule jako hrozby. U bowlingové koule byly zvažovány dvě varianty řešení. První možností bylo implementovat naváděcí mechanismus, který by sledoval aktuální polohu hráče a dynamicky upravoval trajektorii pohybu. Druhou možností bylo ponechat kouli v předem definovaném směru pohybu, avšak přizpůsobit její velikost a návrh úrovně tak, aby i bez aktivního navádění představovala dostatečné nebezpečí.
 
-S ohledem na časové omezení soutěže jsme zvolili druhé řešení, což nám umožnilo věnovat více prostoru implementaci klíčových mechanik hráče. Po skončení soutěže jsme toto rozhodnutí zachovali, jelikož masivní nenaváděná koule působí herně i vizuálně výrazněji a přirozeněji než přesně naváděný objekt.
+S ohledem na časové omezení soutěže bylo zvoleno druhé řešení, což umožnilo věnovat více prostoru implementaci klíčových mechanik hráče. Po skončení soutěže se tohle rozhodnutí zachovalo, jelikož masivní nenaváděná koule působí herně i vizuálně výrazněji a přirozeněji než přesně naváděný objekt.
 
 Následovala implementace mechanik hráče, které lze rozdělit do tří hlavních oblastí: základní pohyb, rozšiřující prvky zlepšující ovladatelnost a systém střelby.
 
@@ -12,7 +12,7 @@ Prvním krokem bylo vytvoření základního pohybu, na který bylo možné pozd
 
 \section{Rozšiřující funkce}
 
-Druhým krokem bylo rozšíření základních mechanik o prvky zvyšující plynulost a komfort ovládání. Klíčovou oblastí této fáze byl systém skoku. V základní implementaci může hráč vyskočit pouze v okamžiku, kdy se dotýká země, což je řešeno pomocí vrstev (layers) a kolizemi (collisions). V praxi však hráč často dává input ke skoku s mírným zpožděním, například v momentě, kdy již technicky opustil platformu. Bez dodatečných úprav by v takové situaci ke skoku nedošlo, což by vedlo k nepřesnému a frustrujícímu ovládání. Z tohoto důvodu jsem implementoval mechanismy označované jako \textit{Coyote time} a \textit{Jump buffer}.
+Druhým krokem bylo rozšíření základních mechanik o prvky zvyšující plynulost a komfort ovládání. Klíčovou oblastí této fáze byl systém skoku. V základní implementaci může hráč vyskočit pouze v okamžiku, kdy se dotýká země, což je řešeno pomocí vrstev (layers) a kolizemi (collisions). V praxi však hráč často dává input ke skoku s mírným zpožděním, například v momentě, kdy již technicky opustil platformu. Bez dodatečných úprav by v takové situaci ke skoku nedošlo, což by vedlo k nepřesnému a frustrujícímu ovládání. Z tohoto důvodu byly implementovány mechanismy označované jako \textit{Coyote time} a \textit{Jump buffer}.
 
 \input{concept/coyotetime.tex}
 \input{concept/jumpbuffer.tex}

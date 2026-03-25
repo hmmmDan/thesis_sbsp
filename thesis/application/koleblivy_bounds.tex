@@ -1,6 +1,6 @@
 \subsection{Bounds a WorldToCell -- převod souřadnic}
 
-Pro každou kolizi se počítají \texttt{Bounds} a převádějí na souřadnice tilemap buněk pomocí \texttt{WorldToCell()}. \texttt{Bounds} representují ohraničující box collideru, zatímko \texttt{WorldToCell()} převádí world space souřadnice na grid space souřadnice tilemap.
+Pro každou kolizi se počítají \texttt{Bounds} a převádějí se na souřadnice tilemap buněk pomocí \texttt{WorldToCell()}. \texttt{Bounds} representují ohraničení box collideru, zatímco \texttt{WorldToCell()} převádí world space souřadnice na grid space souřadnice tilemap.
 
 Iteruje se přes všechny buňky v rozsahu bounds pomocí vnořených smyček. Pro každou buňku se zkontroluje, zda dlaždice existuje voláním \texttt{tilemap.HasTile(cell)}. Pokud dlaždice existuje, nastaví se na \texttt{null} voláním \texttt{tilemap.SetTile(cell, null)}.
 

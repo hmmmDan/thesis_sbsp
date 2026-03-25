@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026/Arch Linux) (preloaded format=xelatex 2026.3.24)  24 MAR 2026 22:45
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026/Arch Linux) (preloaded format=xelatex 2026.3.24)  25 MAR 2026 20:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -513,7 +513,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 5--6
 []\TU/TimesNewRoman(0)/m/n/12 Vzorec \TU/lmtt/m/n/12 Mathf.Lerp(rb.linearVelocity.x, targetSpeed, Time.fixedDeltaTime *
  []
 
-) (./application/playercontroller_kontrola.tex) [26] (./application/playercontroller_animace.tex) (./application/playercontroller_otoceni.tex) (./application/playercontroller_dash.tex) [27] (./application/skok_coyote.tex) (./application/skok_buffer.tex [28]) (./application/skok_provadeni.tex) [29] (./application/skok_cut.tex) (./application/skok_hang.tex
+) (./application/playercontroller_kontrola.tex) [26] (./application/playercontroller_animace.tex) (./application/playercontroller_otoceni.tex) (./application/playercontroller_dash.tex) [27] (./application/skok_coyote.tex) (./application/skok_buffer.tex [28]) (./application/skok_provadeni.tex
+Underfull \hbox (badness 10000) in paragraph at lines 7--1
+[]\TU/TimesNewRoman(0)/m/n/12 V \TU/lmtt/m/n/12 Update() \TU/TimesNewRoman(0)/m/n/12 se pak kontroluje, zda je \TU/lmtt/m/n/12 lastPressedJumpTime > 0 \TU/TimesNewRoman(0)/m/n/12 a současně
+ []
+
+) [29] (./application/skok_cut.tex
+Underfull \hbox (badness 1939) in paragraph at lines 5--6
+\TU/TimesNewRoman(0)/m/n/12 nění vstupu skoku. V této metodě se kontroluje, zda je hráčova vertikální rychlost klad-
+ []
+
+) (./application/skok_hang.tex
 Underfull \hbox (badness 1789) in paragraph at lines 3--4
 \TU/TimesNewRoman(0)/m/n/12 Po dosažení vrcholu skoku, kdy je vertikální rychlost nižší než \TU/lmtt/m/n/12 jumpHangTimeThreshold
  []
@@ -544,13 +554,8 @@ Underfull \hbox (badness 1292) in paragraph at lines 3--4
  []
 
 ) [35] (./application/walljump_zaklad.tex) (./application/walljump_detekce.tex) (./application/walljump_slide.tex) [36] (./application/walljump_jump.tex) [37] (./application/walljump_walltowall.tex
-Underfull \hbox (badness 2103) in paragraph at lines 3--4
-\TU/TimesNewRoman(0)/m/n/12 Zajímavou funkcí je rozpoznání \TU/TimesNewRoman(0)/m/it/12 wall-- to-- wall \TU/TimesNewRoman(0)/m/n/12 skoku. Pomocí \TU/lmtt/m/n/12 Raycast \TU/TimesNewRoman(0)/m/n/12 se detekuje, zda je
- []
-
-
-Underfull \hbox (badness 1466) in paragraph at lines 3--4
-\TU/TimesNewRoman(0)/m/n/12 na druhé straně hráče další stěna v dosahu. Pokud ano, použije se vyšší horizontální síla
+Underfull \hbox (badness 1057) in paragraph at lines 3--4
+\TU/TimesNewRoman(0)/m/n/12 Další důležitou funkcí je rozpoznání \TU/TimesNewRoman(0)/m/it/12 wall-- to-- wall \TU/TimesNewRoman(0)/m/n/12 skoku. Pomocí \TU/lmtt/m/n/12 Raycast \TU/TimesNewRoman(0)/m/n/12 se detekuje, zda
  []
 
 ) (./application/walljump_propojeni.tex) [38] (./application/strelba_system.tex) (./application/strelba_smer.tex) (./application/strelba_vytvoreni.tex [39]) (./application/strelba_naboje.tex) (./application/strelba_vystrel.tex) [40] (./application/strelba_respawn.tex) [41] (./application/strelba_chovani.tex) [42] (./application/enemy_prehled.tex) (./application/enemy_pohyb.tex) [43] (./application/enemy_prodleva.tex) (./application/enemy_stun.tex) (./application/enemy_rust.tex [44]) (./application/enemy_reset.tex) (./application/enemy_animace.tex) [45] (./application/koleblivy_tile.tex) (./application/koleblivy_tick.tex) [46] (./application/koleblivy_limit.tex
@@ -559,8 +564,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
  []
 
 ) (./application/koleblivy_bounds.tex
-Underfull \hbox (badness 3758) in paragraph at lines 3--4
-\TU/TimesNewRoman(0)/m/n/12 Pro každou kolizi se počítají \TU/lmtt/m/n/12 Bounds \TU/TimesNewRoman(0)/m/n/12 a převádějí na souřadnice tilemap buněk pomocí
+Underfull \hbox (badness 1430) in paragraph at lines 3--4
+\TU/TimesNewRoman(0)/m/n/12 Pro každou kolizi se počítají \TU/lmtt/m/n/12 Bounds \TU/TimesNewRoman(0)/m/n/12 a převádějí se na souřadnice tilemap buněk pomocí
  []
 
 ) (./application/koleblivy_destroy.tex))) [47]
@@ -573,9 +578,7 @@ Kapitola 6.
 
 
 
-]
-Kapitola 7.
-(./main.lol)
+] (./main.lol)
 \tf@lol=\write4
 \openout4 = `main.lol'.
 
@@ -584,29 +587,27 @@ Kapitola 7.
 
 
 ]
-Kapitola 8.
-
-Underfull \hbox (badness 1824) in paragraph at lines 188--189
+Underfull \hbox (badness 1824) in paragraph at lines 190--191
 []\TU/TimesNewRoman(0)/m/n/12 Tour of C#. Online. In: Microsoft Learn. Dostupné z: https://learn.microsoft.com/en-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 190--191
+Underfull \hbox (badness 10000) in paragraph at lines 192--193
 []\TU/TimesNewRoman(0)/m/n/12 PRZYLSKI, Andrew, Richard RIGBY a Richard RYAN. A Motivatio-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 190--191
+Underfull \hbox (badness 10000) in paragraph at lines 192--193
 \TU/TimesNewRoman(0)/m/n/12 nal Science Approach to the Analysis of Games. Online. Dostupné z: htt-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 190--191
+Underfull \hbox (badness 10000) in paragraph at lines 192--193
 \TU/TimesNewRoman(0)/m/n/12 ps://selfdeterminationtheory.org/SDT/documents/2010_PrzybylskiRigbyRyan_ROGP.pdf.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 191--192
+Underfull \hbox (badness 10000) in paragraph at lines 193--194
 []\TU/TimesNewRoman(0)/m/n/12 Flow Theory in Game Design. Online. In: Void1Gaming. Dostupné z: htt-
  []
 
@@ -621,7 +622,7 @@ L3 programming layer <2026-01-19>
 Here is how much of TeX's memory you used:
  15058 strings out of 470163
  294803 string characters out of 5478876
- 1028314 words of memory out of 5000000
+ 1029314 words of memory out of 5000000
  43220 multiletter control sequences out of 15000+600000
  631281 words of font info for 88 fonts, out of 8000000 for 9000
  24 hyphenation exceptions out of 8191

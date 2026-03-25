@@ -98,5 +98,5 @@
 \contentsline {subsection}{\numberline {5.8.4}Bounds a WorldToCell -- převod souřadnic}{47}{subsection.5.8.4}%
 \contentsline {subsection}{\numberline {5.8.5}DestroyOnTouch -- přehled a funkčnost}{47}{subsection.5.8.5}%
 \contentsline {chapter}{\numberline {6}Závěr}{48}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Seznam použitých kódů}{49}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Zdroje}{50}{chapter.8}%
+\contentsline {chapter}{Seznam použitých kódů}{49}{chapter*.4}%
+\contentsline {chapter}{Zdroje}{50}{chapter*.5}%

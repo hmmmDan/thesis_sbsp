@@ -1,7 +1,7 @@
 \subsection{Startovní prodleva a synchronizace s hráčem}
 
-Před samotným pohybem běží korutina \texttt{StartMovingAfterDelay()}, která čeká \texttt{startDelay} sekund. Během této doby se \texttt{\_canMove} nastaví na false a pohyb se neprovádí. To dává hráči čas na rozběhání před tím, než začne nebezpečí pronásledování.
+Před samotným pohybem běží korutina \texttt{StartMovingAfterDelay()}, která čeká \texttt{startDelay} sekund. Během této doby se \texttt{\_canMove} nastaví na false a pohyb se neprovádí. To dává hráči náskok před tím, než začne nebezpečí v podobě pronásledování koulí.
 
-Tato prodleva je důležitá pro herní design, protože bez ní by koule začala hned honit hráče, což by bylo nespravedlivé. Startovní delay poskytuje férový start a umožňuje hráči dostat se do bezpečné vzdálenosti.
+Tato prodleva je důležitá pro herní design, jelikož bez ní by se koule začala hned pohybovat ve směru hráče, což by mohlo působit nespravedlivě. Startovní delay poskytuje férový start a umožňuje hráči dostat se do bezpečnější vzdálenosti.
 
-Stejná prodleva se restartuje při respawnu, aby po smrti měl hráč opět čas na přípravu. To zajišťuje konzistentní herní podmínky a zabraňuje situacím, kdy by koule honila respawnujícího hráče okamžitě.
+Stejná prodleva se restartuje při respawnu, aby po smrti měl hráč opět čas na přípravu. To zajišťuje konzistentní herní podmínky a zabraňuje situacím, kdy by se koule začala pohybovat k respawnujícímu se hráči okamžitě.

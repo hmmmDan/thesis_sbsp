@@ -1,6 +1,6 @@
 \subsection{Wall-to-wall jump a rychlý přeskok mezi stěnami}
 
-Zajímavou funkcí je rozpoznání \textit{wall-to-wall} skoku. Pomocí \texttt{Raycast} se detekuje, zda je na druhé straně hráče další stěna v dosahu. Pokud ano, použije se vyšší horizontální síla \texttt{wallToWallJumpForceX}, což umožňuje rychlejší přeskok mezi dvěma stěnami. Pokud ne, použije se nižší \texttt{singleWallJumpForceX}.
+Další důležitou funkcí je rozpoznání \textit{wall-to-wall} skoku. Pomocí \texttt{Raycast} se detekuje, zda je na druhé straně hráče další stěna v dosahu. Pokud ano, použije se vyšší horizontální síla \texttt{wallToWallJumpForceX}, což umožňuje rychlejší přeskok mezi dvěma stěnami. Pokud ne, použije se nižší \texttt{singleWallJumpForceX}.
 
 Rozdíl mezi těmito dvěma silami je významný. Wall-to-wall jump potřebuje více horizontálního impulzu, aby hráč překonal vzdálenost mezi stěnami v krátkém čase. Single wall jump má nižší horizontální složku, jelikož cílem v tomto případě je hráče jen mírně odrazit od stěny pro vizuálně přívětivější efekt ve hře.
 

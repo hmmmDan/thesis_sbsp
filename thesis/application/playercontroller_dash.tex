@@ -4,4 +4,4 @@ V metodě \texttt{FixedUpdate()} třídy \texttt{PlayerController} se kontroluje
 
 Důvod pro deaktivaci gravitace během dashe je ten, že dash by měl být konzistentní bez ohledu na vertikální polohu. Pokud by gravitace byla stále aktivní, hráč by během dashe klesal, což by narušilo dojem rychlého výpadu. Deaktivace vstupu pohybu zajišťuje, že dash má předem definovanou trajektorii a hráč ji nemůže během dashe měnit.
 
-Propojení mezi \texttt{PlayerController} a \texttt{PlayerDash} je implementováno pomocí volání metody \texttt{IsDashing()} v \texttt{PlayerDash}, která vrací aktuální stav dashe. Toto rozhodnutí se pak používá v \texttt{FixedUpdate()} pro přeskočení standardních herních mechanik.
+Propojení mezi \texttt{PlayerController} a \texttt{PlayerDash} je implementováno pomocí volání metody \texttt{IsDashing()} v \texttt{PlayerDash}, která vrací aktuální stav dashe. Toto rozhodnutí se pak používá ve \texttt{FixedUpdate()} pro přeskočení standardních herních mechanik.

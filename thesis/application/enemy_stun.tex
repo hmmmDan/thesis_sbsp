@@ -4,7 +4,7 @@ Když projektil zasáhne kouli, volá se metoda \texttt{Stun()}. Ta inkrementuje
 
 Více stunů současně způsobuje, že rychlost zůstává na minimální hodnotě, dokud se všechny nestihnou vypořádat. Po uplynutí \texttt{stunDuration} se counter sníží a rychlost se obnoví na základní úroveň. Pokud je více stunů aktivních, rychlost zůstává na minimu.
 
-Tento systém umožňuje hráči střílet více projektilů za sebou pro delší zpomalení, ale vzhledem k omezené munici (2 náboje) je toto omezeno. Navíc po každém stunu se základní rychlost zvýší, takže koule je postupně rychlejší.
+Tento systém umožňuje hráči střílet více projektilů za sebou pro delší zpomalení, ale vzhledem k omezené munici (2 náboje) to je neefektivní. Navíc po každém stunu se základní rychlost zvýší, takže koule je postupně rychlejší.
 
 \begin{lstlisting}[language=csharp,caption={Listing 15: Metoda Stun a StunCooldown}]
 public void Stun(bool stun)

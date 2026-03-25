@@ -2,4 +2,4 @@
 
 Při výstřelu se volá \texttt{Instantiate()} s prefabem projektilu. Tato metoda vytvoří novou instanci projektilu ve scéně na specified position a rotation. Následně se získá komponenta \texttt{Rigidbody2D} na nově vytvořeném objektu a nastaví se rychlost pomocí \texttt{velocity = direction * bulletSpeed}.
 
-Projektil se nikdy nemaže manuálně po čase, vždy se zničí při kolizi s prostředím nebo koulí. Toto je implementováno v skriptu \texttt{BulletStripeShot.cs}, který detekuje kolize a volá \texttt{Destroy(gameObject)} při kontaktu. Tento přístup šetří paměť a výkon, protože projektily, které minou cíl, nikdy nevisí ve scéně.
+Projektil se nikdy nemaže manuálně po čase. Vždy se zničí při kolizi s prostředím nebo koulí. Toto je implementováno ve skriptu \texttt{BulletStripeShot.cs}, který detekuje kolize a volá \texttt{Destroy(gameObject)} při kontaktu. Tento přístup šetří paměť a výkon, protože projektily, které minou cíl, nikdy nevisí ve scéně.

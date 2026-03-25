@@ -4,7 +4,7 @@ Metoda \texttt{Jump()} se volá, když jsou splněny všechny podmínky pro skok
 
 Následně se vynuluje vertikální rychlost na \texttt{Rigidbody2D} a poté se nastaví na hodnotu \texttt{jumpForce} z \texttt{PlayerControllerData}. Toto zajistí konzistentní počáteční rychlost skoku bez ohledu na předchozí pohyb. Důležité je také vynulování časových proměnných \texttt{lastOnGroundTime} a \texttt{lastPressedJumpTime}, aby se skok neopakoval v dalších snímcích.
 
-Hodnota \texttt{jumpForce} se typicky pohybuje v rozmezí 10-20 v závislosti na nastavení gravitace a požadované výšce skoku. Správné nastavení této hodnoty je klíčové pro celkový herní pocit.
+Hodnota \texttt{jumpForce} se typicky pohybuje v rozmezí 10-20 v závislosti na nastavení gravitace a požadované výšky skoku. Správné nastavení této hodnoty je klíčové pro celkový herní pocit.
 
 \begin{lstlisting}[language=csharp,caption={Listing 7: Metoda Jump pro provedení skoku}]
 private void Jump()

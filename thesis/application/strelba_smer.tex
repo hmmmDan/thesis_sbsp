@@ -1,6 +1,6 @@
 \subsection{Směr střelby a automatické zaměření na cíl}
 
-Střelba se automaticky zaměřuje na bowlingovou kouli ve scéně. To bylo zvoleno proto, aby hráč mohl využít obě ruce na klávesnici pro pohyb a další schopnosti. Výpočet směru projektilu využívá normalizovaný vektor mezi pozicí hráče a pozicí koule.
+Střelba se automaticky zaměřuje na bowlingovou kouli ve scéně. Tento způsob byl zvolen proto, aby hráč mohl využít obě ruce na klávesnici pro pohyb a další schopnosti. Výpočet směru projektilu využívá normalizovaný vektor mezi pozicí hráče a pozicí koule.
 
 Vzorec pro výpočet směru je \texttt{(ballPosition - playerPosition).normalized()}. Tento vektor udává směr od hráče k cíli a jeho normalizace zajistí, že projektil má konstantní rychlost bez ohledu na vzdálenost.
 
