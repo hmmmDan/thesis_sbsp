@@ -28,6 +28,33 @@
     pdfpagelabels=false
 ]{hyperref}
 \usepackage{url}
+\usepackage[backend=bibtex,style=numeric,sorting=none,hyperref=true]{biblatex}
+\AtBeginBibliography{\hypersetup{colorlinks=false}}
+
+\DefineBibliographyExtras{czech}{\def\urldateformat{czech}}
+
+\makeatletter
+\patchcmd{\blx@theformat@labelnumber}{\the\value{instcount}}{\arabic{instcount}}{}{}
+\makeatother
+
+\addbibresource{Zdroje.bib}
+\DeclareLanguageMapping{czech}{czech}
+
+\DefineBibliographyStrings{czech}{
+  bibliography = {Seznam použitých zdrojů},
+  url = {Dostupné z},
+  and = {a},
+}
+\DefineBibliographyExtras{czech}{\def\urldateformat{czech}}
+\DeclareFieldFormat{url}{\bibstring{url}\addcolon\space\url{#1}}
+
+\DeclareFieldFormat[misc]{title}{\emph{#1}}
+\DeclareFieldFormat[misc]{note}{Online.\addspace In: #1\adddot}
+
+\defbibheading{czech bibliography}[\bibname]{%
+  \chapter*{Seznam použitých zdrojů}%
+  \addcontentsline{toc}{chapter}{Seznam použitých zdrojů}%
+}
 
 \def\refname{Seznam použitých zdrojů}
 
@@ -38,6 +65,9 @@
     urlcolor=black,
     pdfpagemode=UseNone,
 }
+
+\ExecuteBibliographyOptions{hyperref=true}
+\DefineBibliographyExtras{czech}{\def\urldateformat{czech}}
 
 \lstset{
     basicstyle=\ttfamily\small\color{black},
@@ -184,17 +214,7 @@ Prohlašuji, že jsem svou maturitní práci vypracoval samostatně. K práci js
 \makeatother
 \lstlistoflistings
 
-\chapter*{Zdroje}
-\addcontentsline{toc}{chapter}{Zdroje}
-\raggedright
-\begin{enumerate}
-\item[{[1]}] Game Engines Definition. Online. In: G2. Dostupné z: https://www.g2.com/glossary/game-engines-definition. [cit. 2026-03-23].
-\item[{[2]}] Tour of C\#. Online. In: Microsoft Learn. Dostupné z: https://learn.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/. [cit. 2026-03-23].
-\item[{[3]}] Git. Online. In: Git. Dostupné z: https://git-scm.com/. [cit. 2026-03-24].
-\item[{[4]}] PRZYLSKI, Andrew, Richard RIGBY a Richard RYAN. A Motivational Science Approach to the Analysis of Games. Online. Dostupné z: \url{https://selfdeterminationtheory.org/SDT/documents/2010_PrzybylskiRigbyRyan_ROGP.pdf}. [cit. 2026-03-24].
-\item[{[5]}] Flow Theory in Game Design. Online. In: Void1Gaming. Dostupné z: https://www.void1gaming.com/post/flow-theory-in-game-design. [cit. 2026-03-23].
-\item[{[6]}] Unity Documentation. Online. In: Unity. Dostupné z: https://docs.unity3d.com/. [cit. 2026-03-24].
-\item[{[7]}] MARTIN, Robert C. Clean Code: A Handbook of Agile Software Craftsmanship. Prentice Hall, 2008. [cit. 2026-03-24].
-\end{enumerate}
+\nocite{*}
+\printbibliography[heading=czech bibliography]
 
 \end{document}

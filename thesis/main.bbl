@@ -1,0 +1,143 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{none/global//global/global/global}
+  \entry{game-engines-definition}{misc}{}{}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-23]}
+    \field{note}{G2}
+    \field{title}{Game Engines Definition}
+    \verb{url}
+    \verb https://www.g2.com/glossary/game-engines-definition
+    \endverb
+  \endentry
+
+  \entry{unity-docs}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=TU}{%
+         family={Technologies},
+         familyi={T\bibinitperiod},
+         given={Unity},
+         giveni={U\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{TU1}
+    \strng{fullhash}{TU1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-24]}
+    \field{note}{Unity}
+    \field{title}{Unity Documentation}
+    \verb{url}
+    \verb https://docs.unity3d.com/
+    \endverb
+  \endentry
+
+  \entry{csharp-tour}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=M}{%
+         family={Microsoft},
+         familyi={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{M1}
+    \strng{fullhash}{M1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-23]}
+    \field{note}{Microsoft Learn}
+    \field{title}{Tour of C\#}
+    \verb{url}
+    \verb https://learn.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/
+    \endverb
+  \endentry
+
+  \entry{git}{misc}{}{}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-24]}
+    \field{note}{Git}
+    \field{title}{Git}
+    \verb{url}
+    \verb https://git-scm.com/
+    \endverb
+  \endentry
+
+  \entry{rogp}{misc}{}{}
+    \name{author}{3}{}{%
+      {{hash=PA}{%
+         family={PRZYLSKI},
+         familyi={P\bibinitperiod},
+         given={Andrew},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=RR}{%
+         family={RIGBY},
+         familyi={R\bibinitperiod},
+         given={Richard},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=RR}{%
+         family={RYAN},
+         familyi={R\bibinitperiod},
+         given={Richard},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PARRRR1}
+    \strng{fullhash}{PARRRR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-24]}
+    \field{note}{Self-Determination Theory}
+    \field{title}{A Motivational Science Approach to the Analysis of Games}
+    \verb{url}
+    \verb https://selfdeterminationtheory.org/SDT/documents/2010_PrzybylskiRigb
+    \verb yRyan_ROGP.pdf
+    \endverb
+  \endentry
+
+  \entry{flow-theory}{misc}{}{}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-23]}
+    \field{note}{Void1Gaming}
+    \field{title}{Flow Theory in Game Design}
+    \verb{url}
+    \verb https://www.void1gaming.com/post/flow-theory-in-game-design
+    \endverb
+  \endentry
+
+  \entry{clean-code}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=MRC}{%
+         family={MARTIN},
+         familyi={M\bibinitperiod},
+         given={Robert\bibnamedelima C.},
+         giveni={R\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MRC1}
+    \strng{fullhash}{MRC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-24]}
+    \field{note}{Prentice Hall}
+    \field{title}{Clean Code: A Handbook of Agile Software Craftsmanship}
+    \field{year}{2008}
+  \endentry
+\enddatalist
+\endinput

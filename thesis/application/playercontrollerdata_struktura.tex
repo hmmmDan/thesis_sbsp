@@ -1,6 +1,6 @@
 \subsection{Struktura dat a organizace}
 
-Třída \texttt{PlayerControllerData} dědí ze \texttt{ScriptableObject} a je organizována do několika sekcí, z nichž každá sdružuje parametry související s konkrétní herní mechanikou. Pro přehledné oddělení jednotlivých sekcí v editoru se používá atribut \texttt{[Header]}, který vytváří vizuální oddělovače mezi skupinami proměnných.
+Třída \texttt{PlayerControllerData} dědí ze \texttt{ScriptableObject} a je organizována do několika sekcí, z nichž každá sdružuje parametry související s konkrétní herní mechanikou \cite{clean-code}. Pro přehledné oddělení jednotlivých sekcí v editoru se používá atribut \texttt{[Header]}, který vytváří vizuální oddělovače mezi skupinami proměnných.
 
 První sekce obsahuje parametry pro běh (run), konkrétně maximální rychlost, zrychlení a poměr zrychlení ve vzduchu. Druhá sekce se zaměřuje na skok a obsahuje sílu skoku, časové parametry pro coyote time a jump buffer. Třetí sekce definuje parametry gravitace, včetně základní gravitace a multiplikátoru pro pád. Čtvrtá sekce obsahuje nastavení pro přerušení skoku (jump cut) a pátá sekce parametry pro dash. Poslední sekce se věnuje wall jump, včetně sil pro jednotlivé typy skoků.
 
